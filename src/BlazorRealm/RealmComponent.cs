@@ -26,7 +26,7 @@ namespace BlazorRealm
             Store.Change += OnChangeHandler;
         }
 
-        public virtual void OnChangeHandler(object sender, EventArgs e)
+        protected virtual void OnChangeHandler(object sender, EventArgs e)
         {
             StateHasChanged();
         }
