@@ -1,15 +1,19 @@
 ﻿@page "/fetchdata"
 @inject HttpClient Http
+@inherits RealmComponent<AppState>
+@using WeatherForecasts = BlazorStandAlone.Store.WeatherForecasts
 
 <h1>Weather forecast</h1>
 
 <p>This component demonstrates fetching data from the server.</p>
 
-@if (forecasts == null)
+<button onclick="@LoadData">Load Data</button><br />
+<button onclick="@ClearData">Clear Data</button><br />
+@if (State.Loading)
 {
     <p><em>Loading...</em></p>
 }
-else
+else if(State.WeatherForecasts != null && State.WeatherForecasts.Count() > 0)
 {
     <table class="table">
         <thead>
@@ -21,7 +25,7 @@ else
             </tr>
         </thead>
         <tbody>
-            @foreach (var forecast in forecasts)
+            @foreach (var forecast in State.WeatherForecasts)
             {
                 <tr>
                     <td>@forecast.Date.ToShortDateString()</td>
@@ -32,13 +36,18 @@ else
             }
         </tbody>
     </table>
+
 }
 
 @functions {
-    WeatherForecast[] forecasts;
 
-    protected override async Task OnInitAsync()
-    {
-        forecasts = await Http.GetJsonAsync<WeatherForecast[]>("/sample-data/weather.json");
-    }
+void LoadData()
+{
+    Dispatch(new WeatherForecasts.Operations.FetchWeatherForecasts(Store, Http));
+}
+
+void ClearData()
+{
+    Dispatch(new WeatherForecasts.Actions.ClearWeatherForecasts());
+}
 }

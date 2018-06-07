@@ -18,7 +18,7 @@ namespace BlazorStandAlone.Store
             {
                 Loading = ReduceLoading(appState.Loading, action),
                 Count = Counter.Reducer.Reduce(appState.Count, action),
-                WeatherForecasts = new List<WeatherForecast>()
+                WeatherForecasts = WeatherForecasts.Reducer.Reduce(appState.WeatherForecasts, action)
             };
         }
 

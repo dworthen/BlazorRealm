@@ -6,6 +6,6 @@ namespace BlazorStandAlone.Models
     {
         public bool Loading { get; set; } = false;
         public int Count { get; set; }
-        public List<WeatherForecast> WeatherForecasts { get; set; } = new List<WeatherForecast>();
+        public IEnumerable<WeatherForecast> WeatherForecasts { get; set; } = new WeatherForecast[] { };
     }
 }

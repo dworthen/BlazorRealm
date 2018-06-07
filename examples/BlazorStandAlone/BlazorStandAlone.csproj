@@ -18,8 +18,4 @@
     <ProjectReference Include="..\..\src\BlazorRealm\BlazorRealm.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Store\WeatherForecasts\" />
-  </ItemGroup>
-
 </Project>
