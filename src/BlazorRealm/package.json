@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "release": "standard-version"
+    "release": "standard-version -a"
   },
   "repository": {
     "type": "git",
@@ -24,7 +24,7 @@
   },
   "standard-version": {
     "scripts": {
-      "postbump": "replace \"(<Version>).*(</Version>)\" \"$1%npm_package_version%$2\" ./BlazorRealm.csproj"
+      "postbump": "replace \"(<Version>).*(</Version>)\" \"$1%npm_package_version%$2\" ./BlazorRealm.csproj && git add ./BlazorRealm.csproj"
     }
   }
 }
