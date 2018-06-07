@@ -6,6 +6,11 @@
     <IsPackable>true</IsPackable>
     <BlazorLinkOnBuild>false</BlazorLinkOnBuild>
     <LangVersion>7.3</LangVersion>
+    <PackageId>Blazor.Realm</PackageId>
+    <Version>0.2.0</Version>
+    <Authors>dworthen</Authors>
+    <Product>Realm</Product>
+    <Description>Redux state management for Blazor.net.</Description>
   </PropertyGroup>
 
   <ItemGroup>

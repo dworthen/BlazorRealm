@@ -1,0 +1,30 @@
+{
+  "name": "blazor-realm",
+  "version": "0.3.0",
+  "description": "Redux state management for Blazor.net.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "release": "standard-version",
+    "update-version": "replace \"(<Version>).*(</Version>)\" \"$1%npm_package_version%$2\" ./BlazorRealm.csproj"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dworthen/BlazorRealm.git"
+  },
+  "author": "dworthen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dworthen/BlazorRealm/issues"
+  },
+  "homepage": "https://github.com/dworthen/BlazorRealm#readme",
+  "devDependencies": {
+    "replace": "^1.0.0",
+    "standard-version": "^4.4.0"
+  },
+  "standard-version": {
+    "scripts": {
+      "postbump": "replace \"(<Version>).*(</Version>)\" \"$1%npm_package_version%$2\" ./BlazorRealm.csproj"
+    }
+  }
+}
