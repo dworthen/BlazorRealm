@@ -1,4 +1,5 @@
 ﻿using BlazorRealm;
+using BlazorRealmAsync;
 using BlazorStandAlone.Models;
 using Microsoft.AspNetCore.Blazor.Browser.Rendering;
 using Microsoft.AspNetCore.Blazor.Browser.Services;
@@ -11,10 +12,16 @@ namespace BlazorStandAlone
     {
         static void Main(string[] args)
         {
+            Store<AppState> store = null;
             var serviceProvider = new BrowserServiceProvider(services =>
             {
                 // Add any custom services here
-                services.AddRealmStore<AppState>(new AppState(), Store.RootReducer.Reduce);
+                store = services.AddRealmStore<AppState>(new AppState(), Store.RootReducer.Reduce);
+            });
+
+            store.ApplyMiddleWare(builder =>
+            {
+                builder.UseRealmAsync<AppState>();
             });
 
             new BrowserRenderer(serviceProvider).AddComponent<App>("app");

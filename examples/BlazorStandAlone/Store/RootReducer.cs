@@ -2,9 +2,6 @@
 using BlazorStandAlone.Models;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BlazorStandAlone.Store
 {
@@ -19,9 +16,23 @@ namespace BlazorStandAlone.Store
 
             return new AppState
             {
+                Loading = ReduceLoading(appState.Loading, action),
                 Count = Counter.Reducer.Reduce(appState.Count, action),
                 WeatherForecasts = new List<WeatherForecast>()
             };
+        }
+
+        private static bool ReduceLoading(bool loading, IAction action)
+        {
+            switch(action)
+            {
+                case StartLoading _:
+                    return true;
+                case EndLoading _:
+                    return false;
+                default:
+                    return loading;
+            }
         }
     }
 }

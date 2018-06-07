@@ -5,10 +5,16 @@
 
 <p>Current count: @State.Count</p>
 
-Change By: <input type="text" name="IncementAmoung" bind="@Delta" /><br/>
+Change By: <input type="text" name="IncementAmoung" bind="@Delta" /><br />
 
 <button class="btn btn-primary" onclick="@IncrementCount">Increment</button><br />
-<button class="btn btn-primary" onclick="@DecrementCount">Decrement</button>
+<button class="btn btn-primary" onclick="@DecrementCount">Decrement</button><br />
+<button class="btn btn-primary" onclick="@AsyncIncrement">Async Increment</button><br />
+
+@if (State.Loading)
+{
+    <div>Loading...</div>
+}
 
 @functions {
     int currentCount = 0;
@@ -24,6 +30,11 @@ Change By: <input type="text" name="IncementAmoung" bind="@Delta" /><br/>
     void DecrementCount()
     {
         Dispatch(new DecrementByValue(Delta));
+    }
+
+    void AsyncIncrement()
+    {
+        Dispatch(new AsyncIncrementAction(Store, Delta));
     }
 
     public override void Dispose()
