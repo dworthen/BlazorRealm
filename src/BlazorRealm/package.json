@@ -1,6 +1,6 @@
 {
   "name": "blazor-realm",
-  "version": "0.3.1",
+  "version": "0.3.0",
   "description": "Redux state management for Blazor.net.",
   "main": "index.js",
   "scripts": {
@@ -24,7 +24,8 @@
   },
   "standard-version": {
     "scripts": {
-      "postbump": "replace \"(<Version>).*(</Version>)\" \"$1%npm_package_version%$2\" ./BlazorRealm.csproj && git add ./BlazorRealm.csproj"
+      "postbump": "replace \"(<Version>).*(</Version>)\" \"$1%npm_package_version%$2\" ./BlazorRealm.csproj && git add ./BlazorRealm.csproj && echo %npm_package_version%",
+      "pretag": "echo blazor-realm@%npm_package_version%"
     }
   }
 }
