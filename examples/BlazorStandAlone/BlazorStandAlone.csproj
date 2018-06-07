@@ -13,4 +13,12 @@
     <DotNetCliToolReference Include="Microsoft.AspNetCore.Blazor.Cli" Version="0.3.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\BlazorRealm\BlazorRealm.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Store\WeatherForecasts\" />
+  </ItemGroup>
+
 </Project>

@@ -20,4 +20,16 @@
     <PackageReference Include="Microsoft.AspNetCore.Blazor.Build" Version="0.3.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <BlazorGenerate Remove="_ViewImports.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="_ViewImports.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="_ViewImports.cshtml" />
+  </ItemGroup>
+
 </Project>

@@ -1,16 +1,34 @@
 ﻿@page "/counter"
+@inherits RealmComponent<AppState>
 
 <h1>Counter</h1>
 
-<p>Current count: @currentCount</p>
+<p>Current count: @State.Count</p>
 
-<button class="btn btn-primary" onclick="@IncrementCount">Click me</button>
+Change By: <input type="text" name="IncementAmoung" bind="@Delta" /><br/>
+
+<button class="btn btn-primary" onclick="@IncrementCount">Increment</button><br />
+<button class="btn btn-primary" onclick="@DecrementCount">Decrement</button>
 
 @functions {
     int currentCount = 0;
 
+    [Parameter]
+    private int Delta { get; set; } = 1;
+
     void IncrementCount()
     {
-        currentCount++;
+        Dispatch(new IncrementByValue(Delta));
+    }
+
+    void DecrementCount()
+    {
+        Dispatch(new DecrementByValue(Delta));
+    }
+
+    public override void Dispose()
+    {
+        base.Dispose();
+        Dispatch(new ResetCount());
     }
 }
