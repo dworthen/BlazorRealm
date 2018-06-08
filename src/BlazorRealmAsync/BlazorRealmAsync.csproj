@@ -38,7 +38,7 @@
     </When>
     <Otherwise>
       <ItemGroup>
-        <ProjectReference Include="Blazor.Realm" Version="[0,1)" />
+        <PackageReference Include="Blazor.Realm" Version="0.*" />
       </ItemGroup>
     </Otherwise>
   </Choose>
