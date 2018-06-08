@@ -1,6 +1,6 @@
 {
   "name": "blazor-realm",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "Redux state management for Blazor.net.",
   "main": "index.js",
   "scripts": {
