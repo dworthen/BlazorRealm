@@ -1,12 +1,6 @@
-﻿using BlazorRealm;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static BlazorRealm.Delegates;
+﻿using static Blazor.Realm.Delegates;
 
-namespace BlazorRealmAsync
+namespace Blazor.Realm.Async
 {
     public static class HandleAsyncActions
     {

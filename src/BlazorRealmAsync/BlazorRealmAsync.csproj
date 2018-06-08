@@ -10,6 +10,7 @@
     <Version>0.0.1</Version>
     <Authors>dworthen</Authors>
     <Description>Middleware for handling async actions in Blazor.Realm</Description>
+    <AssemblyName>Blazor.Realm.Async</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>
@@ -37,7 +38,7 @@
     </When>
     <Otherwise>
       <ItemGroup>
-        <ProjectReference Include="Blazor.Realm" Version="[0,1)"/>
+        <ProjectReference Include="Blazor.Realm" Version="[0,1)" />
       </ItemGroup>
     </Otherwise>
   </Choose>

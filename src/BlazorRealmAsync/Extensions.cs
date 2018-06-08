@@ -1,11 +1,11 @@
-﻿using BlazorRealm;
+﻿using Blazor.Realm;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BlazorRealmAsync
+namespace Blazor.Realm.Async
 {
     public static class Extensions
     {
