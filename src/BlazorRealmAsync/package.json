@@ -1,0 +1,34 @@
+{
+  "name": "blazorrealmasync",
+  "version": "0.0.1",
+  "description": "Middleware for handling async action in BlazorRealm",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "release": "standard-version -a -t blazor-realm-async@",
+    "pack": "dotnet pack -o nupkgs/",
+    "prepack": "rimraf nupkgs/*",
+    "update-nuget-version": "cross-env replace \"(<Version>).*(</Version>)\" \"<Version>$npm_package_version</Version>\" ./BlazorRealmAsync.csproj"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dworthen/BlazorRealm.git"
+  },
+  "author": "dworthen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dworthen/BlazorRealm/issues"
+  },
+  "homepage": "https://github.com/dworthen/BlazorRealm#readme",
+  "devDependencies": {
+    "cross-env": "^5.1.6",
+    "replace": "^1.0.0",
+    "rimraf": "^2.6.2",
+    "standard-version": "^4.4.0"
+  },
+  "standard-version": {
+    "scripts": {
+      "postbump": "npm run update-nuget-version && git add ./BlazorRealmAsync.csproj"
+    }
+  }
+}

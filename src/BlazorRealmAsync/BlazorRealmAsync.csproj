@@ -6,6 +6,10 @@
     <IsPackable>true</IsPackable>
     <BlazorLinkOnBuild>false</BlazorLinkOnBuild>
     <LangVersion>7.3</LangVersion>
+    <PackageId>Blazor.Realm.Async</PackageId>
+    <Version>0.0.1</Version>
+    <Authors>dworthen</Authors>
+    <Description>Middleware for handling async actions in Blazor.Realm</Description>
   </PropertyGroup>
 
   <ItemGroup>
@@ -25,8 +29,17 @@
     <None Include="_ViewImports.cshtml" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\BlazorRealm\BlazorRealm.csproj" />
-  </ItemGroup>
+  <Choose>
+    <When Condition="'$(Configuration)' == 'Debug' AND Exists('..\BlazorRealm')">
+      <ItemGroup>
+        <ProjectReference Include="..\BlazorRealm\BlazorRealm.csproj" />
+      </ItemGroup>
+    </When>
+    <Otherwise>
+      <ItemGroup>
+        <ProjectReference Include="Blazor.Realm" Version="[0,1)"/>
+      </ItemGroup>
+    </Otherwise>
+  </Choose>
 
 </Project>
