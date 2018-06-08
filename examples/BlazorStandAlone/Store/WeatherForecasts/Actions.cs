@@ -1,4 +1,4 @@
-﻿using BlazorRealm;
+﻿using Blazor.Realm;
 using BlazorStandAlone.Models;
 using System.Collections.Generic;
 

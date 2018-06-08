@@ -1,7 +1,6 @@
-﻿using BlazorRealm;
+﻿using Blazor.Realm;
 using BlazorStandAlone.Models;
 using System;
-using System.Collections.Generic;
 
 namespace BlazorStandAlone.Store
 {

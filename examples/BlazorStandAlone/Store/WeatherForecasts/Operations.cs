@@ -1,5 +1,5 @@
-﻿using BlazorRealm;
-using BlazorRealmAsync;
+﻿using Blazor.Realm;
+using Blazor.Realm.Async;
 using BlazorStandAlone.Models;
 using Microsoft.AspNetCore.Blazor;
 using System;

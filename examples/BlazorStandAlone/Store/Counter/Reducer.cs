@@ -1,4 +1,4 @@
-﻿using BlazorRealm;
+﻿using Blazor.Realm;
 using static BlazorStandAlone.Store.Counter.Actions;
 
 namespace BlazorStandAlone.Store.Counter

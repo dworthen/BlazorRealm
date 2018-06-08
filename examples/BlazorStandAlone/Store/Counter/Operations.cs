@@ -1,5 +1,5 @@
-﻿using BlazorRealm;
-using BlazorRealmAsync;
+﻿using Blazor.Realm;
+using Blazor.Realm.Async;
 using BlazorStandAlone.Models;
 using System;
 using System.Threading.Tasks;
