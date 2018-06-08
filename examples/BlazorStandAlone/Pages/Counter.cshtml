@@ -6,7 +6,7 @@
 
 <p>Current count: @(State.Loading ? "Loading" : State.Count.ToString())</p>
 
-Change By: <input type="text" name="IncementAmoung" bind="@Delta" /><br />
+Change By: <input type="text" name="IncementAmoung" bind="@Delta" oninput="@Change" onerror="@Invalid"/><br />
 
 <button class="btn btn-primary" onclick="@IncrementCount">Increment</button><br />
 <button class="btn btn-primary" onclick="@DecrementCount">Decrement</button><br />
@@ -32,6 +32,16 @@ Change By: <input type="text" name="IncementAmoung" bind="@Delta" /><br />
     void AsyncIncrement()
     {
         Dispatch(new C.Operations.AsyncIncrementAction(Store, Delta));
+    }
+
+    void Change()
+    {
+        Console.WriteLine("CHANGE");
+    }
+
+    void Invalid()
+    {
+        Console.WriteLine("INVALID");
     }
 
     public override void Dispose()
