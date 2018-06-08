@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.0.2"></a>
+## [0.0.2](https://github.com/dworthen/BlazorRealm/compare/blazor-realm-async@0.0.1...0.0.2) (2018-06-08)
+
+
+### Bug Fixes
+
+* Update assembly name ([202281e](https://github.com/dworthen/BlazorRealm/commit/202281e))
+* Update assembly name and references to Realm ([7e64317](https://github.com/dworthen/BlazorRealm/commit/7e64317))
+
+
+
 <a name="0.0.1"></a>
 ## 0.0.1 (2018-06-08)
 
