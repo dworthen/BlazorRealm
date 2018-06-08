@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.AspNetCore.Blazor.Browser.Interop;
 
-namespace BlazorRealm
+namespace Blazor.Realm
 {
     public class ExampleJsInterop
     {

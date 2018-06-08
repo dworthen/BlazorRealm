@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static BlazorRealm.Delegates;
+using static Blazor.Realm.Delegates;
 
-namespace BlazorRealm
+namespace Blazor.Realm
 {
     public class RealmComponent<TState> : BlazorComponent, IDisposable
     {

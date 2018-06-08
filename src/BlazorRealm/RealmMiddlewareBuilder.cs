@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using static BlazorRealm.Delegates;
+using static Blazor.Realm.Delegates;
 
-namespace BlazorRealm
+namespace Blazor.Realm
 {
     public class RealmMiddlewareBuilder<TState>
     {

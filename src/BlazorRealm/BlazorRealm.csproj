@@ -11,6 +11,8 @@
     <Authors>dworthen</Authors>
     <Product>Realm</Product>
     <Description>Redux state management for Blazor.net.</Description>
+    <AssemblyName>Blazor.Realm</AssemblyName>
+    <RootNamespace>Blazor.Realm</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

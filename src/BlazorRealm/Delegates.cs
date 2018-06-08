@@ -1,4 +1,4 @@
-﻿namespace BlazorRealm
+﻿namespace Blazor.Realm
 {
     public class Delegates
     {

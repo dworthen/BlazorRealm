@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using static BlazorRealm.Delegates;
+using static Blazor.Realm.Delegates;
 
-namespace BlazorRealm
+namespace Blazor.Realm
 {
     public static class Extensions
     {
