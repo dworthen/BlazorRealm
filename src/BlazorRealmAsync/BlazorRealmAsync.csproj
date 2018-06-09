@@ -11,6 +11,7 @@
     <Authors>dworthen</Authors>
     <Description>Middleware for handling async actions in Blazor.Realm</Description>
     <AssemblyName>Blazor.Realm.Async</AssemblyName>
+    <RootNamespace>Blazor.Realm.Async</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
