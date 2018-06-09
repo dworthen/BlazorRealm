@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.4.0"></a>
+# [0.4.0](https://github.com/dworthen/BlazorRealm/compare/blazor-realm-async@0.0.4...0.4.0) (2018-06-09)
+
+
+### Features
+
+* Update to Blazor 0.4.0 ([dfcc386](https://github.com/dworthen/BlazorRealm/commit/dfcc386))
+* Update to Blazor 0.4.0 ([9ee6726](https://github.com/dworthen/BlazorRealm/commit/9ee6726))
+
+
+
 <a name="0.0.4"></a>
 ## [0.0.4](https://github.com/dworthen/BlazorRealm/compare/blazor-realm-async@0.0.3...0.0.4) (2018-06-09)
 
