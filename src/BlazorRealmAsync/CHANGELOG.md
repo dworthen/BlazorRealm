@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.0.4"></a>
+## [0.0.4](https://github.com/dworthen/BlazorRealm/compare/blazor-realm-async@0.0.3...0.0.4) (2018-06-09)
+
+
+### Bug Fixes
+
+* Update default root namespace ([1c9cd30](https://github.com/dworthen/BlazorRealm/commit/1c9cd30))
+
+
+
 <a name="0.0.3"></a>
 ## [0.0.3](https://github.com/dworthen/BlazorRealm/compare/blazor-realm-async@0.0.2...0.0.3) (2018-06-08)
 
