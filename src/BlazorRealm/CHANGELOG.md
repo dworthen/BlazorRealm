@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.4.0"></a>
+# [0.4.0](https://github.com/dworthen/BlazorRealm/compare/blazor-realm@0.3.3...0.4.0) (2018-06-09)
+
+
+### Bug Fixes
+
+* Update assembly name and references to Realm ([7e64317](https://github.com/dworthen/BlazorRealm/commit/7e64317))
+* Update default root namespace ([1c9cd30](https://github.com/dworthen/BlazorRealm/commit/1c9cd30))
+* Version reference for BlazorRealm ([9368fb3](https://github.com/dworthen/BlazorRealm/commit/9368fb3))
+
+
+### Features
+
+* Update to Blazor 0.4.0 ([9ee6726](https://github.com/dworthen/BlazorRealm/commit/9ee6726))
+
+
+
 <a name="0.3.3"></a>
 ## [0.3.3](https://github.com/dworthen/BlazorRealm/compare/blazor-realm@0.3.2...0.3.3) (2018-06-08)
 
