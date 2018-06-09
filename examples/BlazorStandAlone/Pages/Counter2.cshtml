@@ -1,0 +1,53 @@
+﻿@page "/counter2"
+@* 1. Inject Store<AppState> from services *@
+@inject Store<AppState> store
+@* 2. Implement IDisposable *@
+@implements IDisposable
+@using Blazor.Realm;
+
+<h1>Counter</h1>
+
+<p>Current count: @State.Count</p>
+
+Change By: <input type="text" name="IncementAmoung" bind="@ChangeAmount" /><br />
+
+<button class="btn btn-primary" onclick="@IncrementCount">Increment</button><br />
+<button class="btn btn-primary" onclick="@DecrementCount">Decrement</button><br />
+
+
+@functions {
+    private int ChangeAmount { get; set; } = 1;
+
+    // 3. Handlers for Store and State from injected services
+    private Store<AppState> Store => store;
+    private AppState State => Store.State;
+
+    void IncrementCount()
+    {
+        Store.Dispatch(new Actions.IncrementByValue(ChangeAmount));
+    }
+
+    void DecrementCount()
+    {
+        Store.Dispatch(new Actions.DecrementByValue(ChangeAmount));
+    }
+
+    protected override void OnInit()
+    {
+        // 4. Register handler for Realm Store Change event
+        Store.Change += OnChangeHandler;
+    }
+
+    protected void OnChangeHandler(object sender, EventArgs e)
+    {
+        // 5. Inform Blazor that the state has changed
+        // due to changes in the Realm Store.
+        StateHasChanged();
+    }
+
+    public virtual void Dispose()
+    {
+        // 6. Remove event handlers when component is disposed
+        Store.Change -= OnChangeHandler;
+    }
+}
