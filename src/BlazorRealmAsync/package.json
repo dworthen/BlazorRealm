@@ -1,6 +1,6 @@
 {
   "name": "blazorrealmasync",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "Middleware for handling async action in BlazorRealm",
   "main": "index.js",
   "scripts": {
