@@ -13,6 +13,13 @@
     <Description>Redux state management for Blazor.net.</Description>
     <AssemblyName>Blazor.Realm</AssemblyName>
     <RootNamespace>Blazor.Realm</RootNamespace>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <Copyright>MIT</Copyright>
+    <PackageProjectUrl>https://github.com/dworthen/BlazorRealm</PackageProjectUrl>
+    <PackageLicenseUrl>https://raw.githubusercontent.com/dworthen/BlazorRealm/master/LICENSE</PackageLicenseUrl>
+    <RepositoryUrl>https://github.com/dworthen/BlazorRealm</RepositoryUrl>
+    <RepositoryType>Git</RepositoryType>
+    <PackageTags>Blazor;Redux;State Management;Realm</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
