@@ -1,4 +1,3 @@
-
 # Created by https://www.gitignore.io/api/visualstudio
 
 ### VisualStudio ###
@@ -171,8 +170,6 @@ PublishScripts/
 # except build/, which is used as an MSBuild target.
 !**/packages/build/
 # Uncomment if necessary however generally it will be regenerated when needed
-#!**/packages/repositories.config
-# NuGet v3's project.json files produces more ignorable files
 *.nuget.props
 *.nuget.targets
 
@@ -266,7 +263,6 @@ _Pvt_Extensions
 .paket/paket.exe
 paket-files/
 
-# FAKE - F# Make
 .fake/
 
 # JetBrains Rider
@@ -280,9 +276,6 @@ paket-files/
 __pycache__/
 *.pyc
 
-# Cake - Uncomment if you are using it
-# tools/**
-# !tools/packages.config
 
 # Telerik's JustMock configuration file
 *.jmconfig
