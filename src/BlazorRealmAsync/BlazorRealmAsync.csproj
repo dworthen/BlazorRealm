@@ -17,6 +17,7 @@
     <PackageProjectUrl>https://github.com/dworthen/BlazorRealm</PackageProjectUrl>
     <RepositoryType>Git</RepositoryType>
     <PackageTags>Blazor;Redux;State Management;Realm;Middleware;Async</PackageTags>
+    <RepositoryUrl>https://github.com/dworthen/BlazorRealm</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>

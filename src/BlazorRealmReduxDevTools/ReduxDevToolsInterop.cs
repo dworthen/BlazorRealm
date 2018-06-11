@@ -5,8 +5,8 @@ namespace Blazor.Realm.ReduxDevTools
 {
     public static class ReduxDevToolsInterop
     {
-        public static event EventHandler<string> MessageReceived;
-        public static void OnMessageReceived(string message) => MessageReceived?.Invoke(null, message);
+        public static event EventHandler<MessageEventArgs> MessageReceived;
+        public static void OnMessageReceived(string message) => MessageReceived?.Invoke(null, new MessageEventArgs(message));
         public static bool IsAvailable()
         {
             return RegisteredFunction.Invoke<bool>("Blazor.Realm.ReduxDevTools.IsAvailable");
@@ -25,7 +25,7 @@ namespace Blazor.Realm.ReduxDevTools
         }
         public static void Send(object action, object state)
         {
-            RegisteredFunction.Invoke<object>("Blazor.Realm.ReduxDevTools.Send", action, state);
+            RegisteredFunction.Invoke<object>("Blazor.Realm.ReduxDevTools.Send", new { type = action.GetType().Name }, state);
         }
         public static void UnSubscribe()
         {

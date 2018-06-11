@@ -15,7 +15,7 @@
     "prepack-blazor-realm-async": "rimraf ./src/BlazorRealmAsync/nupkgs/*",
     "pack": "npm run pack-blazor-realm && npm run pack-blazor-realm-async",
     "release": "standard-version -a",
-    "update-nuget-version": "cross-env replace \"(<Version>).*(</Version>)\" \"<Version>$npm_package_version</Version>\" ./src/BlazorRealm/BlazorRealm.csproj ./src/BlazorRealmAsync/BlazorRealmAsync.csproj"
+    "update-nuget-version": "cross-env replace \"(<Version>).*(</Version>)\" \"<Version>$npm_package_version</Version>\" . -r --include=\"BlazorRealm*.csproj\""
   },
   "repository": {
     "type": "git",

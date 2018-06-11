@@ -29,6 +29,8 @@ Blazor.registerFunction(namespace + '.Subscribe', function () {
 
     devTools.subscribe((message) => {
         var json = JSON.stringify(message);
+        //console.log(json);
+        //console.log(JSON.parse(json));
     //    Blazor.invokeDotNetMethod({
     //        type: {
     //            aseembly: assemblyName,

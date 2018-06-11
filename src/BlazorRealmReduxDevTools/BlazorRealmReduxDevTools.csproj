@@ -8,6 +8,14 @@
     <LangVersion>7.3</LangVersion>
     <AssemblyName>Blazor.Realm.ReduxDevTools</AssemblyName>
     <RootNamespace>Blazor.Realm.ReduxDevTools</RootNamespace>
+    <Version>0.0.1</Version>
+    <Description>Blazor Realm middleware for connecting to Redux dev tools browser extension.</Description>
+    <Copyright>MIT</Copyright>
+    <PackageLicenseUrl>https://raw.githubusercontent.com/dworthen/BlazorRealm/master/LICENSE</PackageLicenseUrl>
+    <RepositoryUrl>https://github.com/dworthen/BlazorRealm</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/dworthen/BlazorRealm</PackageProjectUrl>
+    <RepositoryType>Git</RepositoryType>
+    <PackageTags>Blazor;Redux;State Management;Realm;Middleware;Dev Tools;</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>

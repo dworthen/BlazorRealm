@@ -50,13 +50,15 @@ Change By: <input type="text" name="IncementAmoung" bind="@ChangeAmount" /><br /
         ReduxDevToolsInterop.Init(State);
         ReduxDevToolsInterop.MessageReceived += (s, e) =>
         {
-            LastMessage = e;
+            LastMessage = JsonUtil.Serialize(e.Message);
+            //LastMessage = e;
             StateHasChanged();
         };
         ReduxDevToolsInterop.Subscribe();
 
         ReduxDevToolsInterop.Send(new Actions.IncrementByValue(100),
-            new AppState() {
+            new AppState()
+            {
                 Loading = State.Loading,
                 Count = State.Count + 100,
                 WeatherForecasts = State.WeatherForecasts
