@@ -13,7 +13,9 @@
     "prepack-blazor-realm": "rimraf ./src/BlazorRealm/nupkgs/*",
     "pack-blazor-realm-async": "dotnet pack ./src/BlazorRealmAsync/BlazorRealmAsync.csproj -o ./nupkgs/",
     "prepack-blazor-realm-async": "rimraf ./src/BlazorRealmAsync/nupkgs/*",
-    "pack": "npm run pack-blazor-realm && npm run pack-blazor-realm-async",
+    "pack-blazor-realm-reduxdevtools": "dotnet pack ./src/BlazorRealmReduxDevTools/BlazorRealmReduxDevTools.csproj -o ./nupkgs/",
+    "prepack-blazor-realm-reduxdevtools": "rimraf ./src/BlazorRealmReduxDevTools/nupkgs/*",
+    "pack": "npm run pack-blazor-realm && npm run pack-blazor-realm-async && npm run pack-blazor-realm-reduxdevtools",
     "release": "standard-version -a",
     "update-nuget-version": "cross-env replace \"(<Version>).*(</Version>)\" \"<Version>$npm_package_version</Version>\" . -r --include=\"BlazorRealm*.csproj\""
   },
