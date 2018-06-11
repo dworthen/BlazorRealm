@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.5.1"></a>
+## [0.5.1](https://github.com/dworthen/BlazorRealm/compare/v0.5.0...v0.5.1) (2018-06-11)
+
+
+### Bug Fixes
+
+* Update build for single version mono repo ([0b76764](https://github.com/dworthen/BlazorRealm/commit/0b76764))
+
+
+
 <a name="0.5.0"></a>
 # 0.5.0 (2018-06-11)
 
