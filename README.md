@@ -292,11 +292,13 @@ public class Program
                     localStore.Dispatch(new SomeAction());
 
                     // send current action to the next middleware
-                    next(action);
+                    Store<AppState> nextState = next(action);
                     // do more stuff, like more logging
                     Console.WriteLine("Action {0} complete.", action.GetType().Name);
                     Console.WriteLine("New state: {0}",
-                        JsonUtil.Serialize(localStore.State));
+                        JsonUtil.Serialize(nextState));
+
+                    return nextState;
                 };
             });
 
@@ -313,7 +315,7 @@ Extracting Middleware to extension methods
 // Logger.cs
 public static class Logger
 {
-    public static Dispatcher Log<TState>(Store<TState> store, Dispatcher next)
+    public static Dispatcher<TState> Log<TState>(Store<TState> store, Dispatcher next)
     {
         return (IAction action) =>
         {
@@ -378,7 +380,7 @@ public class AsyncIncrementCounter : IAsyncAction
 }
 ```
 
-Async actions must implement the `IAsyncAction` interface from `Blazor.Realm.Async`. `IAsyncAction`s must implement a `Task Invoke` method.
+Async actions must implement the `IAsyncAction` interface and, in turn, implementing `Task Invoke` method.
 
 In _Counter.cshtml_
 
