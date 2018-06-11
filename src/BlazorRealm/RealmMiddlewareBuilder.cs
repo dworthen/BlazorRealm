@@ -1,14 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using static Blazor.Realm.Delegates;
 
 namespace Blazor.Realm
 {
     public class RealmMiddlewareBuilder<TState>
     {
-        private readonly List<Func<Store<TState>, Dispatcher, Dispatcher>> _middleware = new List<Func<Store<TState>, Dispatcher, Dispatcher>>();
+        private readonly List<Func<Store<TState>, Dispatcher<TState>, Dispatcher<TState>>> _middleware = new List<Func<Store<TState>, Dispatcher<TState>, Dispatcher<TState>>>();
         private readonly Store<TState> _store;
-        public Dispatcher Dispatch { get; private set; }
+        internal Dispatcher<TState> Dispatch { get; set; }
 
         public RealmMiddlewareBuilder(Store<TState> store)
         {
@@ -25,7 +24,7 @@ namespace Blazor.Realm
             }
         }
 
-        public void Use(Func<Store<TState>, Dispatcher, Dispatcher> middleware)
+        public void Use(Func<Store<TState>, Dispatcher<TState>, Dispatcher<TState>> middleware)
         {
             _middleware.Add(middleware);
         }

@@ -15,6 +15,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\BlazorRealmAsync\BlazorRealmAsync.csproj" />
+    <ProjectReference Include="..\..\src\BlazorRealmReduxDevTools\BlazorRealmReduxDevTools.csproj" />
     <ProjectReference Include="..\..\src\BlazorRealm\BlazorRealm.csproj" />
   </ItemGroup>
 

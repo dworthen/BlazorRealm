@@ -19,6 +19,8 @@ namespace BlazorStandAlone
 
             store.ApplyMiddleWare(builder =>
             {
+                builder.UseUriLogger<AppState>(serviceProvider);
+
                 builder.UseRealmAsync<AppState>();
             });
 

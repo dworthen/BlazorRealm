@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static Blazor.Realm.Delegates;
 
 namespace Blazor.Realm
 {
@@ -14,7 +13,7 @@ namespace Blazor.Realm
         public Store<TState> Store { get; set; }
 
         public TState State => Store.State;
-        public Dispatcher Dispatch => Store.Dispatch;
+        public Dispatcher<TState> Dispatch => Store.Dispatch;
 
         public virtual void Dispose()
         {

@@ -3,7 +3,7 @@
 @inject Store<AppState> store
 @* 2. Implement IDisposable *@
 @implements IDisposable
-@using Blazor.Realm;
+@inject IUriHelper uriHelper
 
 <h1>Counter</h1>
 
@@ -14,8 +14,17 @@ Change By: <input type="text" name="IncementAmoung" bind="@ChangeAmount" /><br /
 <button class="btn btn-primary" onclick="@IncrementCount">Increment</button><br />
 <button class="btn btn-primary" onclick="@DecrementCount">Decrement</button><br />
 
+<div>
+    <p>Is Available: @IsAvailable</p>
+    <p>Last Message: @LastMessage</p>
+</div>
+
 
 @functions {
+    private bool IsAvailable => ReduxDevToolsInterop.IsAvailable();
+    private string LastMessage = "";
+
+
     private int ChangeAmount { get; set; } = 1;
 
     // 3. Handlers for Store and State from injected services
@@ -36,6 +45,31 @@ Change By: <input type="text" name="IncementAmoung" bind="@ChangeAmount" /><br /
     {
         // 4. Register handler for Realm Store Change event
         Store.Change += OnChangeHandler;
+
+        ReduxDevToolsInterop.Connect();
+        ReduxDevToolsInterop.Init(State);
+        ReduxDevToolsInterop.MessageReceived += (s, e) =>
+        {
+            LastMessage = e;
+            StateHasChanged();
+        };
+        ReduxDevToolsInterop.Subscribe();
+
+        ReduxDevToolsInterop.Send(new Actions.IncrementByValue(100),
+            new AppState() {
+                Loading = State.Loading,
+                Count = State.Count + 100,
+                WeatherForecasts = State.WeatherForecasts
+            });
+        ReduxDevToolsInterop.Send(new Actions.IncrementByValue(50),
+            new AppState()
+            {
+                Loading = State.Loading,
+                Count = State.Count + 50,
+                WeatherForecasts = State.WeatherForecasts
+            });
+
+
     }
 
     protected void OnChangeHandler(object sender, EventArgs e)

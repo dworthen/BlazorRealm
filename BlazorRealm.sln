@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorStandAlone", "example
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorRealmAsync", "src\BlazorRealmAsync\BlazorRealmAsync.csproj", "{1BD0F7C1-0DD8-4600-9218-7728D6CE8D7F}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorRealmReduxDevTools", "src\BlazorRealmReduxDevTools\BlazorRealmReduxDevTools.csproj", "{978D2FCB-A530-485D-A733-4C42E30FF38F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{1BD0F7C1-0DD8-4600-9218-7728D6CE8D7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1BD0F7C1-0DD8-4600-9218-7728D6CE8D7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1BD0F7C1-0DD8-4600-9218-7728D6CE8D7F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{978D2FCB-A530-485D-A733-4C42E30FF38F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{978D2FCB-A530-485D-A733-4C42E30FF38F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{978D2FCB-A530-485D-A733-4C42E30FF38F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{978D2FCB-A530-485D-A733-4C42E30FF38F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

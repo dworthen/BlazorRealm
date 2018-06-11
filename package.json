@@ -1,6 +1,6 @@
 {
-  "name": "br",
-  "version": "1.0.0",
+  "name": "blaozr-realm",
+  "version": "0.5.0",
   "description": "",
   "main": "index.js",
   "directories": {
@@ -8,7 +8,14 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "clean": "rimraf **/BlazorRealm*/bin/* && rimraf **/BlazorStandAlone/bin/*"
+    "clean-build": "rimraf **/BlazorRealm*/bin/* && rimraf **/BlazorStandAlone/bin/*",
+    "pack-blazor-realm": "dotnet pack ./src/BlazorRealm/BlazorRealm.csproj -o ./nupkgs/",
+    "prepack-blazor-realm": "rimraf ./src/BlazorRealm/nupkgs/*",
+    "pack-blazor-realm-async": "dotnet pack ./src/BlazorRealmAsync/BlazorRealmAsync.csproj -o ./nupkgs/",
+    "prepack-blazor-realm-async": "rimraf ./src/BlazorRealmAsync/nupkgs/*",
+    "pack": "npm run pack-blazor-realm && npm run pack-blazor-realm-async",
+    "release": "standard-version -a",
+    "update-nuget-version": "cross-env replace \"(<Version>).*(</Version>)\" \"<Version>$npm_package_version</Version>\" . -r --include=\"BlazorRealm.csproj\""
   },
   "repository": {
     "type": "git",
@@ -21,6 +28,14 @@
   },
   "homepage": "https://github.com/dworthen/BlazorRealm#readme",
   "devDependencies": {
-    "rimraf": "^2.6.2"
+    "cross-env": "^5.1.6",
+    "replace": "^1.0.0",
+    "rimraf": "^2.6.2",
+    "standard-version": "^4.4.0"
+  },
+  "standard-version": {
+    "scripts": {
+      "postbump": "npm run update-nuget-version && git add *.csproj"
+    }
   }
 }

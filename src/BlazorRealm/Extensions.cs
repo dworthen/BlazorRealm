@@ -1,5 +1,4 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using static Blazor.Realm.Delegates;
 
 namespace Blazor.Realm
 {

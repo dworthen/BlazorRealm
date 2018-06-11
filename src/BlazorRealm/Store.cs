@@ -1,5 +1,4 @@
 ﻿using System;
-using static Blazor.Realm.Delegates;
 
 namespace Blazor.Realm
 {
@@ -9,7 +8,7 @@ namespace Blazor.Realm
         private readonly RealmMiddlewareBuilder<TState> _builder;
 
         public TState State { get; private set; }
-        public Dispatcher Dispatch { get; private set; }
+        public Dispatcher<TState> Dispatch { get; private set; }
         public event EventHandler Change;
 
         //TODO: Implement IBuilder interface and pass in Builder to decouple.
@@ -19,6 +18,16 @@ namespace Blazor.Realm
             _rootReducer = rootReducer;
             Dispatch = InitialDispatch;
             _builder = new RealmMiddlewareBuilder<TState>(this);
+            Dispatch = (IAction action) =>
+            {
+                TState localState = _builder.Dispatch(action);
+                if (localState != null)
+                {
+                    State = localState;
+                }
+                OnChange(null);
+                return State;
+            };
         }
 
         public void OnChange(EventArgs e)
@@ -26,17 +35,18 @@ namespace Blazor.Realm
             Change?.Invoke(this, e);
         }
 
-        public void InitialDispatch(IAction action)
+        private TState InitialDispatch(IAction action)
         {
-            State = _rootReducer(State, action);
-            OnChange(null);
+            TState localState = _rootReducer(State, action);
+            //OnChange(null);
+            return localState;
         }
 
         public void ApplyMiddleWare(Action<RealmMiddlewareBuilder<TState>> builder = null)
         {
             builder?.Invoke(_builder);
             _builder.Build();
-            Dispatch = _builder.Dispatch;
+            //Dispatch = _builder.Dispatch;
         }
     }
 }
