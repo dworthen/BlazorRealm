@@ -3,62 +3,69 @@
 
 <h1>Counter</h1>
 
-@if(State.Loading)
+@if (State.Loading)
 {
     <div><em>Loading...</em></div>
-} else
+}
+else
 {
     <p>
         Current count: @State.Count
     </p>
 
     <p>
-        Change By: <input type="text" name="IncementAmoung" bind="@Delta" oninput="@Change" onerror="@Invalid"/>
+        Change By: <input type="text" name="IncementAmount" bind="@Delta" />
     </p>
 
 
     <button class="btn btn-primary" onclick="@IncrementCount">Increment</button>
     <button class="btn btn-primary" onclick="@DecrementCount">Decrement</button>
     <button class="btn btn-primary" onclick="@AsyncIncrement">Async Increment</button>
+    <button class="btn btn-primary" onclick="@Reset">Reset</button>
 
 }
 
 
 
 @functions {
-    int currentCount = 0;
+int currentCount = 0;
 
-    [Parameter]
-    private int Delta { get; set; } = 1;
+[Parameter]
+private int Delta { get; set; } = 1;
 
-    void IncrementCount()
-    {
-        Dispatch(new Actions.Counter.IncrementByValue(Delta));
-    }
+void IncrementCount()
+{
+    Dispatch(new Actions.Counter.IncrementByValue(Delta));
+}
 
-    void DecrementCount()
-    {
-        Dispatch(new Actions.Counter.DecrementByValue(Delta));
-    }
+void DecrementCount()
+{
+    Dispatch(new Actions.Counter.DecrementByValue(Delta));
+}
 
-    void AsyncIncrement()
-    {
-        Dispatch(new Operations.Counter.IncrementByValue(Store, Delta));
-    }
+void AsyncIncrement()
+{
+    Dispatch(new Operations.Counter.IncrementByValue(Store, Delta));
+}
 
-    void Change()
-    {
-        Console.WriteLine("CHANGE");
-    }
+void Change()
+{
+    Console.WriteLine("CHANGE");
+}
 
-    void Invalid()
-    {
-        Console.WriteLine("INVALID");
-    }
+void Invalid()
+{
+    Console.WriteLine("INVALID");
+}
 
-    public override void Dispose()
-    {
-        base.Dispose();
-        Dispatch(new Actions.Counter.Reset());
-    }
+void Reset()
+{
+    Dispatch(new Actions.Counter.Reset());
+}
+
+public override void Dispose()
+{
+    base.Dispose();
+    Dispatch(new Actions.Counter.Dispose());
+}
 }

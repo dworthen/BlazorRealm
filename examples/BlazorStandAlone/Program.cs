@@ -24,7 +24,7 @@ namespace BlazorStandAlone
                 builder.UseRealmReduxDevTools<AppState>(serviceProvider, new System.Type[] {
                     // Ignore Reset actions in Redux DevTools
                     // browser extension
-                    typeof(Actions.Counter.Reset)
+                    typeof(Actions.Counter.Dispose)
                 });
             });
 

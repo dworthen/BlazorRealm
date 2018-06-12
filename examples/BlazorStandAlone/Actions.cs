@@ -28,6 +28,8 @@ namespace BlazorStandAlone.Actions
         }
 
         public class Reset : IAction { }
+
+        public class Dispose : Reset { }
     }
 
     namespace WeatherForecasts
