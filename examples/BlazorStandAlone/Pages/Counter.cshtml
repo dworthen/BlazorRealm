@@ -1,16 +1,28 @@
 ﻿@page "/counter"
 @inherits RealmComponent<AppState>
-@using C = BlazorStandAlone.Store.Counter
 
 <h1>Counter</h1>
 
-<p>Current count: @(State.Loading ? "Loading" : State.Count.ToString())</p>
+@if(State.Loading)
+{
+    <div><em>Loading...</em></div>
+} else
+{
+    <p>
+        Current count: @State.Count
+    </p>
 
-Change By: <input type="text" name="IncementAmoung" bind="@Delta" oninput="@Change" onerror="@Invalid"/><br />
+    <p>
+        Change By: <input type="text" name="IncementAmoung" bind="@Delta" oninput="@Change" onerror="@Invalid"/>
+    </p>
 
-<button class="btn btn-primary" onclick="@IncrementCount">Increment</button><br />
-<button class="btn btn-primary" onclick="@DecrementCount">Decrement</button><br />
-<button class="btn btn-primary" onclick="@AsyncIncrement">Async Increment</button><br />
+
+    <button class="btn btn-primary" onclick="@IncrementCount">Increment</button>
+    <button class="btn btn-primary" onclick="@DecrementCount">Decrement</button>
+    <button class="btn btn-primary" onclick="@AsyncIncrement">Async Increment</button>
+
+}
+
 
 
 @functions {
@@ -21,17 +33,17 @@ Change By: <input type="text" name="IncementAmoung" bind="@Delta" oninput="@Chan
 
     void IncrementCount()
     {
-        Dispatch(new C.Actions.IncrementByValue(Delta));
+        Dispatch(new Actions.Counter.IncrementByValue(Delta));
     }
 
     void DecrementCount()
     {
-        Dispatch(new C.Actions.DecrementByValue(Delta));
+        Dispatch(new Actions.Counter.DecrementByValue(Delta));
     }
 
     void AsyncIncrement()
     {
-        Dispatch(new C.Operations.AsyncIncrementAction(Store, Delta));
+        Dispatch(new Operations.Counter.IncrementByValue(Store, Delta));
     }
 
     void Change()
@@ -47,6 +59,6 @@ Change By: <input type="text" name="IncementAmoung" bind="@Delta" oninput="@Chan
     public override void Dispose()
     {
         base.Dispose();
-        Dispatch(new C.Actions.ResetCount());
+        Dispatch(new Actions.Counter.Reset());
     }
 }

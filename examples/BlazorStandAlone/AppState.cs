@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace BlazorStandAlone.Models
+namespace BlazorStandAlone
 {
     public class AppState
     {

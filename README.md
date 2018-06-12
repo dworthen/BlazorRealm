@@ -315,7 +315,7 @@ public class Program
                     localStore.Dispatch(new SomeAction());
 
                     // send current action to the next middleware
-                    Store<AppState> nextState = next(action);
+                    AppState nextState = next(action);
                     // do more stuff, like more logging
                     Console.WriteLine("Action {0} complete.", action.GetType().Name);
                     Console.WriteLine("New state: {0}",
@@ -419,7 +419,7 @@ In _Counter.cshtml_
     void AsyncIncrement() // this method is not really async
     {
         // No need to await async action
-        Dispatch(new AsyncIncrementAction(Store, Delta));
+        Dispatch(new AsyncIncrementAction(Store, ChangeAmount));
     }
 
     ...

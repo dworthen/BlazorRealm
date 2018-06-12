@@ -1,10 +1,8 @@
 ﻿using Blazor.Realm;
 using Blazor.Realm.Async;
 using Blazor.Realm.ReduxDevTools;
-using BlazorStandAlone.Models;
 using Microsoft.AspNetCore.Blazor.Browser.Rendering;
 using Microsoft.AspNetCore.Blazor.Browser.Services;
-using static BlazorStandAlone.Store.Counter.Actions;
 
 namespace BlazorStandAlone
 {
@@ -16,16 +14,17 @@ namespace BlazorStandAlone
             var serviceProvider = new BrowserServiceProvider(services =>
             {
                 // Add any custom services here
-                store = services.AddRealmStore<AppState>(new AppState(), Store.RootReducer.Reduce);
+                store = services.AddRealmStore<AppState>(new AppState(), Reducers.RootReducer);
             });
 
             store.ApplyMiddleWare(builder =>
             {
-                //builder.UseUriLogger<AppState>(serviceProvider);
                 builder.UseRealmAsync<AppState>();
 
                 builder.UseRealmReduxDevTools<AppState>(serviceProvider, new System.Type[] {
-                    typeof(ResetCount)
+                    // Ignore Reset actions in Redux DevTools
+                    // browser extension
+                    typeof(Actions.Counter.Reset)
                 });
             });
 

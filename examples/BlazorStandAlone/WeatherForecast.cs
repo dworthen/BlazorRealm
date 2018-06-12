@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace BlazorStandAlone.Models
+namespace BlazorStandAlone
 {
     public class WeatherForecast
     {

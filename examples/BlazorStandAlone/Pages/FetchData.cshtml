@@ -1,7 +1,6 @@
 ﻿@page "/fetchdata"
 @inject HttpClient Http
 @inherits RealmComponent<AppState>
-@using WeatherForecasts = BlazorStandAlone.Store.WeatherForecasts
 
 <h1>Weather forecast</h1>
 
@@ -41,13 +40,13 @@ else if(State.WeatherForecasts != null && State.WeatherForecasts.Count() > 0)
 
 @functions {
 
-void LoadData()
-{
-    Dispatch(new WeatherForecasts.Operations.FetchWeatherForecasts(Store, Http));
-}
+    void LoadData()
+    {
+        Dispatch(new Operations.WeatherForecasts.Fetch(Store, Http));
+    }
 
-void ClearData()
-{
-    Dispatch(new WeatherForecasts.Actions.ClearWeatherForecasts());
-}
+    void ClearData()
+    {
+        Dispatch(new Actions.WeatherForecasts.Clear());
+    }
 }
