@@ -52,7 +52,7 @@ namespace Blazor.Realm.ReduxDevTools
                         return a.State;
                     default:
                         TState nextState = next(action);
-                        if(nextState != null && Array.IndexOf(ActionsToIgnore, action.GetType()) == -1)
+                        if (nextState != null && (ActionsToIgnore == null || Array.IndexOf(ActionsToIgnore, action.GetType()) == -1))
                         {
                             History.Add(new Tuple<string, string>(UriHelper.GetAbsoluteUri(), JsonUtil.Serialize(nextState)));
                             ReduxDevToolsInterop.Send(action, nextState);
