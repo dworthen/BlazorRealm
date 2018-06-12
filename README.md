@@ -6,27 +6,25 @@ Redux inspired state management for [blazor.net](https://blazor.net).
 >
 > Blazor is an unsupported experimental web framework that shouldn't be used for production workloads at this time.
 
+- [Blazor Realm](#blazor-realm)
+- [Getting Started](#getting-started)
+- [Application State](#application-state)
+- [Actions](#actions)
+- [Reducer](#reducer)
+- [Register the App Store as a Service](#register-the-app-store-as-a-service)
+- [Blazor Components](#blazor-components)
+    - [Component Pattern (boilerplate)](#component-pattern-boilerplate)
+- [Middleware](#middleware)
+    - [Middleware as Extension Methods](#middleware-as-extension-methods)
+- [Async Actions](#async-actions)
+    - [Dispatching Async Actions](#dispatching-async-actions)
+- [Redux Dev Tools](#redux-dev-tools)
+    - [Ignoring Specific Actions in Redux Dev Tools](#ignoring-specific-actions-in-redux-dev-tools)
+
 # Getting Started
 
 1.  For getting started with Blazor, visit https://blazor.net/docs/get-started.html.
 2.  Install https://www.nuget.org/packages/Blazor.Realm/.
-3.  Add `@using Blazor.Realm;` to _\_ViewImports.cshtml_.
-4.  Add the `RealmStore` service in _program.cs_
-
-    ```C#
-    static void Main(string[] args)
-    {
-        var serviceProvider = new BrowserServiceProvider(services =>
-        {
-            // Add any custom services here
-            services.AddRealmStore<AppState>(new AppState(), RootReducer);
-        });
-
-        new BrowserRenderer(serviceProvider).AddComponent<App>("app");
-    }
-    ```
-
-    Don't forget to add `using Blazor.Realm;`
 
 > **NOTE**
 >
@@ -86,12 +84,13 @@ public class SetWeatherForecasts : IAction
 }
 ```
 
-Actions must implement `IAction`. Don't forget `using Blazor.Realm`.
+Actions must implement `IAction`. Don't forget to add `using Blazor.Realm;`.
 
 # Reducer
 
 ```C#
 // Reducer.cs
+
 public static class RootReducer
 {
     public static AppState RootReducer(AppState appState, IAction action)
@@ -145,6 +144,25 @@ public static class RootReducer
 
 }
 ```
+
+Don't forget to add `using Blazor.Realm;`.
+
+# Register the App Store as a Service
+
+```C#
+static void Main(string[] args)
+{
+    var serviceProvider = new BrowserServiceProvider(services =>
+    {
+        // Add any custom services here
+        services.AddRealmStore<AppState>(new AppState(), RootReducer);
+    });
+
+    new BrowserRenderer(serviceProvider).AddComponent<App>("app");
+}
+```
+
+Don't forget to add `using Blazor.Realm;`.
 
 # Blazor Components
 
@@ -208,18 +226,20 @@ Change By: <input type="text" name="IncementAmount" bind="@ChangeAmount" /><br /
 }
 ```
 
-The basic pattern (boilerplate)
+## Component Pattern (boilerplate)
 
 1.  Inject `Store<AppState>`.
 2.  Register event handler for `Blazor.Realm.Store`'s `change` event in `OnInit`.
 3.  Remove event handlers in the component's `Dispose`.
 4.  `Dispatch` actions and read state from `Store.State`.
 
-The first three items are repeated in all components using a Realm store. Instead of repeating this pattern, components may inherit from `Blazor.Realm.RealmComponent`.
+The first three items are repeated in all components connecting a Realm store. Instead of repeating this pattern, components may inherit from `Blazor.Realm.RealmComponent`.
 
 ```C#
 @page "/counter"
 @inherits RealmComponent<AppState>
+@* Or add to _ViewImports.cshtml *@
+@using Blazor.Realm;
 
 <h1>Counter</h1>
 
@@ -233,6 +253,10 @@ Change By: <input type="text" name="IncementAmount" bind="@ChangeAmount"/><br />
 
 @functions {
     private int ChangeAmount { get; set; } = 1;
+
+    /**
+    * Inheritiing from RealmComponent exposes Store, State and Dispatch.
+    */
 
     void IncrementCount()
     {
@@ -274,8 +298,7 @@ public class Program
 
         store.ApplyMiddleWare(builder =>
         {
-            builder.UseRealmAsync<AppState>();
-
+            // Example middleware
             builder.Use((Store<AppState> localStore, Dispatcher next) =>
             {
                 return (IAction action) =>
@@ -309,7 +332,7 @@ public class Program
 }
 ```
 
-Extracting Middleware to extension methods
+## Middleware as Extension Methods
 
 ```C#
 // Logger.cs
@@ -348,7 +371,7 @@ As with Redux, Async actions in Realm are handled by middleware. Download the [B
 Following a [ducks](https://medium.freecodecamp.org/scaling-your-redux-app-with-ducks-6115955638be) organizational structure, I place async actions in a seperate _Operations.cs_ file.
 
 ```C#
-// Operations
+// Operations.cs
 
 public class AsyncIncrementCounter : IAsyncAction
 {
@@ -362,10 +385,6 @@ public class AsyncIncrementCounter : IAsyncAction
 
     public async Task Invoke()
     {
-        // Async actions work with the Realm
-        // store in a synchronous way
-        // by dispatching event.
-
         // Dispatch events to handle the start, middle
         // and end of async actions.
         // StartLoading and Endloading
@@ -380,7 +399,9 @@ public class AsyncIncrementCounter : IAsyncAction
 }
 ```
 
-Async actions must implement the `IAsyncAction` interface and, in turn, implementing `Task Invoke` method.
+Async actions must implement the `IAsyncAction` interface and, in turn, implement `Task Invoke` method.
+
+## Dispatching Async Actions
 
 In _Counter.cshtml_
 
@@ -403,4 +424,54 @@ In _Counter.cshtml_
 
     ...
 }
+```
+
+# Redux Dev Tools
+
+Connecting to the [Redux DevTools](http://extension.remotedev.io/) browser extension is handled by middleware.
+
+Steps for connecting to Redux Dev Tools:
+
+1. [Install the browser extension](http://extension.remotedev.io/#installation).
+2. Install the middleware, https://www.nuget.org/packages/Blazor.Realm.ReduxDevTools/
+
+Using the middleware
+
+```C#
+// program.cs
+Store<AppState> store = null;
+var serviceProvider = new BrowserServiceProvider(services =>
+{
+    // Add any custom services here
+    store = services.AddRealmStore<AppState>(new AppState(), Store.RootReducer.Reduce);
+});
+
+store.ApplyMiddleWare(builder =>
+{
+    builder.UseRealmAsync<AppState>();
+
+    builder.UseRealmReduxDevTools<AppState>(serviceProvider);
+});
+
+new BrowserRenderer(serviceProvider).AddComponent<App>("app");
+```
+
+> **NOTE**
+>
+> The order in which middleware is registred matters. Add `builder.UseRealmReduxDevTools` after `builder.UseRealmAsync`.
+
+## Ignoring Specific Actions in Redux Dev Tools
+
+```C#
+// program.cs
+store.ApplyMiddleWare(builder =>
+{
+    builder.UseRealmAsync<AppState>();
+
+    builder.UseRealmReduxDevTools<AppState>(serviceProvider, new Type[] {
+        // ResetCount actions will not show up in the Redux DevTools 
+        // browser extension
+        typeof(ResetCount)
+    });
+});
 ```
