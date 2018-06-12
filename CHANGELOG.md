@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.5.4"></a>
+## [0.5.4](https://github.com/dworthen/BlazorRealm/compare/v0.5.3...v0.5.4) (2018-06-12)
+
+
+### Bug Fixes
+
+* Allow for empty actionsToIgnore list ([05da838](https://github.com/dworthen/BlazorRealm/commit/05da838))
+
+
+
 <a name="0.5.3"></a>
 ## [0.5.3](https://github.com/dworthen/BlazorRealm/compare/v0.5.2...v0.5.3) (2018-06-11)
 
