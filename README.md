@@ -1,6 +1,6 @@
 # Blazor Realm
 
-Redux inspired state management for [blazor.net](https://blazor.net).
+Redux state management for [blazor.net](https://blazor.net).
 
 > **NOTE FROM BLAZOR**
 >
@@ -172,10 +172,9 @@ to _\_ViewImports.cshtml_
 
 ```C#
 @page "/counter"
-@* 1. Inject Store<AppState> from services *@
 @inject Store<AppState> store
-@* 2. Implement IDisposable *@
 @implements IDisposable
+
 @* Or add to _ViewImports.cshtml *@
 @using Blazor.Realm;
 
@@ -192,9 +191,9 @@ Change By: <input type="text" name="IncementAmount" bind="@ChangeAmount" /><br /
 @functions {
     private int ChangeAmount { get; set; } = 1;
 
-    // 3. Handlers for Store and State from injected services
+    // Handlers for Store and State from injected services
     private Store<AppState> Store => store;
-    private AppState State => Store.State;
+    private AppState State;
 
     void IncrementCount()
     {
@@ -208,20 +207,29 @@ Change By: <input type="text" name="IncementAmount" bind="@ChangeAmount" /><br /
 
     protected override void OnInit()
     {
-        // 4. Register handler for Realm Store Change event
+        // Retrieve State from the store
+        // Store.GetState returns a clone of State
+        // as long as State is serializable.
+        // This makes it ok to bind to @State in local
+        // components as it will not mutate central state.
+        // Only dispatching actions will update central state.
+        State = Store.GetState();
+        // Register handler for Realm Store Change event
         Store.Change += OnChangeHandler;
     }
 
     protected void OnChangeHandler(object sender, EventArgs e)
     {
-        // 5. Inform Blazor that the state has changed
-        // due to changes in the Realm Store.
+        // Retreive new state on changes
+        // and inform Blazor that state has changed 
+        // for rerender.
+        State = Store.GetState();
         StateHasChanged();
     }
 
     public virtual void Dispose()
     {
-        // 6. Remove event handlers when component is disposed
+        // Remove event handlers when component is disposed
         Store.Change -= OnChangeHandler;
     }
 }
@@ -230,11 +238,12 @@ Change By: <input type="text" name="IncementAmount" bind="@ChangeAmount" /><br /
 ## Component Pattern (boilerplate)
 
 1.  Inject `Store<AppState>`.
-2.  Register event handler for `Blazor.Realm.Store`'s `change` event in `OnInit`.
-3.  Remove event handlers in the component's `Dispose`.
-4.  `Dispatch` actions and read state from `Store.State`.
+2.  Store a local copy of state, `State = Store.GetState()`.
+3.  Register event handler for the change event in `OnInit` and Update local state.
+4.  Remove event handlers in `Dispose`.
+5.  `Dispatch` actions and read state from `State`.
 
-The first three items are repeated in all components connecting a Realm store. Instead of repeating this pattern, components may inherit from `Blazor.Realm.RealmComponent`.
+The first 4 items are repeated in all components connecting to a Realm store. Instead of repeating this pattern, components may inherit from `Blazor.Realm.RealmComponent`.
 
 ```C#
 @page "/counter"
@@ -304,6 +313,21 @@ public class Program
         {
             return (IAction action) =>
             {
+                /**
+                * localStore = Store singleton. This allows one to dispatch
+                * actions down the whole middleware pipeline. Example: error
+                * handling middleware. Try passing actions down pipeline but if exception
+                * is caught then dispatch a new ErrorAction down the pipeline for the
+                * application to handle.
+                *
+                * next = next middleware in the pipeline.  next(action) will continue
+                * sending the current action down the middleware pipeline.
+                *
+                * action = current action dispatched. 
+                *
+                * returns TState = Application State.
+                */
+
                 // Do stuff, like logging
                 Console.WriteLine("Dispatching {0}", action.GetType().Name);
                 Console.WriteLine("Old state: {0}",
@@ -341,7 +365,7 @@ public class Logger<TState>
     private readonly Store<TState> _store;
     private readonly Dispatcher<TState> _next;
 
-    public Logger(Store<TState> store, Dispatcher<TSate> dispatcher) 
+    public Logger(Store<TState> store, Dispatcher<TSate> next) 
     {
         _store = store;
         _next = next;
@@ -349,12 +373,13 @@ public class Logger<TState>
 
     public TState Invoke(IAction action)
     {
-        // Logger
+        // Logger implementation...
         return _next(action);
     }
 }
 
 // Extensions.cs
+// Optional
 public static class Extensions
 {
     public static IRealmStoreBuilder UseLogger<TState>(this IRealmStoreBuilder<TState> builder)
@@ -457,7 +482,6 @@ In _Counter.cshtml_
 
     void AsyncIncrement() // this method is not really async
     {
-        // No need to await async action
         Dispatch(new AsyncIncrementAction(Store, ChangeAmount));
     }
 
