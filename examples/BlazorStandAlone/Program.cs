@@ -18,7 +18,7 @@ namespace BlazorStandAlone
                 services.AddRealmStore<AppState>(new AppState(), Reducers.RootReducer);
             });
 
-            IRealmStoreBuilder<AppState> RealmStoreBuilder = serviceProvider.GetService <IRealmStoreBuilder<AppState>>();
+            IRealmStoreBuilder<AppState> RealmStoreBuilder = serviceProvider.GetService<IRealmStoreBuilder<AppState>>();
 
             //RealmStoreBuilder.UseRealmAsync<AppState>();
 

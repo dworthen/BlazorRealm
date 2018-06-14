@@ -17,6 +17,7 @@ Redux inspired state management for [blazor.net](https://blazor.net).
 - [Middleware](#middleware)
     - [Middleware as Extension Methods](#middleware-as-extension-methods)
 - [Async Actions](#async-actions)
+    - [Adding Async Middleware](#adding-async-middleware)
     - [Dispatching Async Actions](#dispatching-async-actions)
 - [Redux Dev Tools](#redux-dev-tools)
     - [Ignoring Specific Actions in Redux Dev Tools](#ignoring-specific-actions-in-redux-dev-tools)
@@ -91,7 +92,7 @@ Actions must implement `IAction`. Don't forget to add `using Blazor.Realm;`.
 ```C#
 // Reducer.cs
 
-public static class RootReducer
+public static class Reducers
 {
     public static AppState RootReducer(AppState appState, IAction action)
     {
@@ -289,43 +290,42 @@ public class Program
 {
     static void Main(string[] args)
     {
-        Store<AppState> store = null;
         var serviceProvider = new BrowserServiceProvider(services =>
         {
             // Add any custom services here
-            store = services.AddRealmStore<AppState>(new AppState(), Store.RootReducer.Reduce);
+            services.AddRealmStore<AppState>(new AppState(), RootReducer);
         });
 
-        store.ApplyMiddleWare(builder =>
+        // using Microsoft.Extensions.DependencyInjection;
+        IRealmStoreBuilder<AppState> RealmStoreBuilder = 
+            ServiceProvider.GetService<IRealmStoreBuilder<AppState>>();
+
+        RealmStoreBuilder.Use((Store<AppState> localStore, Dispatcher<AppState> next) =>
         {
-            // Example middleware
-            builder.Use((Store<AppState> localStore, Dispatcher next) =>
+            return (IAction action) =>
             {
-                return (IAction action) =>
-                {
-                    // Do stuff, like logging
-                    Console.WriteLine("Dispatching {0}", action.GetType().Name);
-                    Console.WriteLine("Old state: {0}",
-                        JsonUtil.Serialize(localStore.State));
+                // Do stuff, like logging
+                Console.WriteLine("Dispatching {0}", action.GetType().Name);
+                Console.WriteLine("Old state: {0}",
+                    JsonUtil.Serialize(localStore.State));
 
-                    // May also dispatch new actions.
-                    // This will send the action through the
-                    // whole middleware pipeline,
-                    // not just the next one in the pipeline.
-                    localStore.Dispatch(new SomeAction());
+                // May also dispatch new actions.
+                // This will send the action through the
+                // whole middleware pipeline,
+                // not just the next one in the pipeline.
+                localStore.Dispatch(new SomeAction());
 
-                    // send current action to the next middleware
-                    AppState nextState = next(action);
-                    // do more stuff, like more logging
-                    Console.WriteLine("Action {0} complete.", action.GetType().Name);
-                    Console.WriteLine("New state: {0}",
-                        JsonUtil.Serialize(nextState));
+                // send current action to the next middleware
+                AppState nextState = next(action);
+                // do more stuff, like more logging
+                Console.WriteLine("Action {0} complete.", action.GetType().Name);
+                Console.WriteLine("New state: {0}",
+                    JsonUtil.Serialize(nextState));
 
-                    return nextState;
-                };
-            });
-
+                return nextState;
+            };
         });
+
 
         new BrowserRenderer(serviceProvider).AddComponent<App>("app");
     }
@@ -336,32 +336,49 @@ public class Program
 
 ```C#
 // Logger.cs
-public static class Logger
+public class Logger<TState>
 {
-    public static Dispatcher<TState> Log<TState>(Store<TState> store, Dispatcher next)
+    private readonly Store<TState> _store;
+    private readonly Dispatcher<TState> _next;
+
+    public Logger(Store<TState> store, Dispatcher<TSate> dispatcher) 
     {
-        return (IAction action) =>
-        {
-            // Logger
-        };
+        _store = store;
+        _next = next;
+    }
+
+    public TState Invoke(IAction action)
+    {
+        // Logger
+        return _next(action);
     }
 }
 
 // Extensions.cs
 public static class Extensions
 {
-    public static void UseLogger<TState>(this RealmMiddlewareBuilder<TState> builder)
+    public static IRealmStoreBuilder UseLogger<TState>(this IRealmStoreBuilder<TState> builder)
     {
-        builder.Use(Logger.Log);
+        return builder.UseMiddleware<TState, Logger<TState>>();
     }
 }
 
 // Program.cs
 
-store.ApplyMiddleWare(builder =>
-{
-    builder.UseLogger<AppState>();
-});
+...
+
+// using Microsoft.Extensions.DependencyInjection;
+IRealmStoreBuilder<AppState> RealmStoreBuilder = 
+    ServiceProvider.GetService<IRealmStoreBuilder<AppState>>();
+
+RealmStoreBuilder.UseLogger<AppState>();
+// Or without using an extension
+// RealmStoreBuilder.UseMiddleware<AppState, Logger<AppState>>();
+
+new BrowserRenderer(serviceProvider).AddComponent<App>("app");
+
+...
+
 ```
 
 # Async Actions
@@ -401,6 +418,28 @@ public class AsyncIncrementCounter : IAsyncAction
 
 Async actions must implement the `IAsyncAction` interface and, in turn, implement `Task Invoke` method.
 
+## Adding Async Middleware
+
+```C#
+// program.cs
+
+var serviceProvider = new BrowserServiceProvider(services =>
+{
+    // Add any custom services here
+    services.AddRealmStore<AppState>(new AppState(), RootReducer);
+});
+
+// using Microsoft.Extensions.DependencyInjection;
+IRealmStoreBuilder<AppState> RealmStoreBuilder = 
+    ServiceProvider.GetService<IRealmStoreBuilder<AppState>>();
+
+RealmStoreBuilder.UseRealmAsync<AppState>();
+
+new BrowserRenderer(serviceProvider).AddComponent<App>("app");
+
+
+```
+
 ## Dispatching Async Actions
 
 In _Counter.cshtml_
@@ -439,39 +478,36 @@ Using the middleware
 
 ```C#
 // program.cs
-Store<AppState> store = null;
 var serviceProvider = new BrowserServiceProvider(services =>
 {
     // Add any custom services here
-    store = services.AddRealmStore<AppState>(new AppState(), Store.RootReducer.Reduce);
+    services.AddRealmStore<AppState>(new AppState(), RootReducer);
 });
 
-store.ApplyMiddleWare(builder =>
-{
-    builder.UseRealmAsync<AppState>();
+// using Microsoft.Extensions.DependencyInjection;
+IRealmStoreBuilder<AppState> RealmStoreBuilder = 
+    ServiceProvider.GetService<IRealmStoreBuilder<AppState>>();
 
-    builder.UseRealmReduxDevTools<AppState>(serviceProvider);
-});
+RealmStoreBuilder.UseRealmAsync<AppState>();
+
+RealmStoreBuilder.UseRealmReduxDevTools<AppState>();
 
 new BrowserRenderer(serviceProvider).AddComponent<App>("app");
 ```
 
 > **NOTE**
 >
-> The order in which middleware is registred matters. Add `builder.UseRealmReduxDevTools` after `builder.UseRealmAsync`.
+> The order in which middleware is registred matters. Add `UseRealmReduxDevTools` after `UseRealmAsync`.
 
 ## Ignoring Specific Actions in Redux Dev Tools
 
 ```C#
 // program.cs
-store.ApplyMiddleWare(builder =>
-{
-    builder.UseRealmAsync<AppState>();
 
-    builder.UseRealmReduxDevTools<AppState>(serviceProvider, new Type[] {
-        // ResetCount actions will not show up in the Redux DevTools 
-        // browser extension
-        typeof(ResetCount)
-    });
+RealmStoreBuilder.UseRealmReduxDevTools<AppState>(new Type[] {
+    // ResetCount actions will not show up in the Redux DevTools 
+    // browser extension
+    typeof(ResetCount)
 });
+
 ```
