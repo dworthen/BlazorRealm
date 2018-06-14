@@ -491,6 +491,8 @@ In _Counter.cshtml_
 
 # Redux Dev Tools
 
+![Redux DevTools](docs/images/redux-devtools.GIF)
+
 Connecting to the [Redux DevTools](http://extension.remotedev.io/) browser extension is handled by middleware.
 
 Steps for connecting to Redux Dev Tools:
