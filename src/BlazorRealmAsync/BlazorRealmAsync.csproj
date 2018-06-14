@@ -12,12 +12,13 @@
     <Description>Middleware for handling async actions in Blazor.Realm</Description>
     <AssemblyName>Blazor.Realm.Async</AssemblyName>
     <RootNamespace>Blazor.Realm.Async</RootNamespace>
-    <Copyright>MIT</Copyright>
+    <Copyright>Copyright (c) 2018 Derek Worthen. All rights reserved.</Copyright>
     <PackageLicenseUrl>https://raw.githubusercontent.com/dworthen/BlazorRealm/master/LICENSE</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/dworthen/BlazorRealm</PackageProjectUrl>
     <RepositoryType>Git</RepositoryType>
     <PackageTags>Blazor;Redux;State Management;Realm;Middleware;Async</PackageTags>
     <RepositoryUrl>https://github.com/dworthen/BlazorRealm</RepositoryUrl>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
   </PropertyGroup>
 
   <ItemGroup>

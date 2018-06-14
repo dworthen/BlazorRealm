@@ -6,9 +6,9 @@ namespace Blazor.Realm
     public class RealmComponent<TState> : BlazorComponent, IDisposable
     {
         [Inject]
-        public Store<TState> Store { get; set; }
+        public Store<TState> Store { get; private set; }
 
-        public TState State => Store.State;
+        public TState State { get; private set; }
         public Action<IAction> Dispatch => Store.Dispatch;
 
         public virtual void Dispose()
@@ -18,11 +18,13 @@ namespace Blazor.Realm
 
         protected override void OnInit()
         {
+            State = Store.GetState();
             Store.Change += OnChangeHandler;
         }
 
         protected virtual void OnChangeHandler(object sender, EventArgs e)
         {
+            State = Store.GetState();
             StateHasChanged();
         }
     }

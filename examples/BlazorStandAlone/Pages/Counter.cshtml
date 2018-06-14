@@ -10,7 +10,14 @@
 else
 {
     <p>
-        Current count: @State.Count
+        Current count from central store: @Store.GetState().Count
+    </p>
+    <p>
+        Current count from local state: @State.Count
+    </p>
+
+    <p>
+        Set Count to: <input type="text" bind="@State.Count" />
     </p>
 
     <p>
@@ -22,14 +29,13 @@ else
     <button class="btn btn-primary" onclick="@DecrementCount">Decrement</button>
     <button class="btn btn-primary" onclick="@AsyncIncrement">Async Increment</button>
     <button class="btn btn-primary" onclick="@Reset">Reset</button>
+    <button class="btn btn-primary" onclick="@SetCount">Set Count</button>
 
 }
 
 
 
 @functions {
-    int currentCount = 0;
-
     [Parameter]
     private int Delta { get; set; } = 1;
 
@@ -46,6 +52,11 @@ else
     void AsyncIncrement()
     {
         Dispatch(new Operations.Counter.IncrementByValue(Store, Delta));
+    }
+
+    void SetCount()
+    {
+        Dispatch(new Actions.Counter.Set(State.Count));
     }
 
     void Change()

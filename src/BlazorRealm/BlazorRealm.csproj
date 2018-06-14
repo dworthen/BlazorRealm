@@ -14,7 +14,7 @@
     <AssemblyName>Blazor.Realm</AssemblyName>
     <RootNamespace>Blazor.Realm</RootNamespace>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <Copyright>MIT</Copyright>
+    <Copyright>Copyright (c) 2018 Derek Worthen. All rights reserved.</Copyright>
     <PackageProjectUrl>https://github.com/dworthen/BlazorRealm</PackageProjectUrl>
     <PackageLicenseUrl>https://raw.githubusercontent.com/dworthen/BlazorRealm/master/LICENSE</PackageLicenseUrl>
     <RepositoryUrl>https://github.com/dworthen/BlazorRealm</RepositoryUrl>

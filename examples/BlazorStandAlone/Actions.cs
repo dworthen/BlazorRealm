@@ -27,6 +27,15 @@ namespace BlazorStandAlone.Actions
             }
         }
 
+        public class Set : IAction
+        {
+            public int Value { get; set; }
+            public Set(int value)
+            {
+                Value = value;
+            }
+        }
+
         public class Reset : IAction { }
 
         public class Dispose : Reset { }

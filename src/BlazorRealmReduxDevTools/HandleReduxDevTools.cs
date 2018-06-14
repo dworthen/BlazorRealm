@@ -27,10 +27,11 @@ namespace Blazor.Realm.ReduxDevTools
             ServiceProvider = serviceProvider;
             ActionsToIgnore = actionsToIgnore ?? new Type[] { };
             UriHelper = ServiceProvider.GetService(typeof(IUriHelper)) as IUriHelper;
-            History.Add(new Tuple<string, string>(UriHelper.GetAbsoluteUri(), JsonUtil.Serialize(store.State)));
+            TState state = store.GetState();
+            History.Add(new Tuple<string, string>(UriHelper.GetAbsoluteUri(), JsonUtil.Serialize(state)));
 
             ReduxDevToolsInterop.Connect();
-            ReduxDevToolsInterop.Init(store.State);
+            ReduxDevToolsInterop.Init(state);
             ReduxDevToolsInterop.MessageReceived += (object sender, MessageEventArgs eventArgs) =>
             {
                 if(eventArgs.Message.Payload?.Type == "JUMP_TO_STATE" || eventArgs.Message.Payload?.Type == "JUMP_TO_ACTION")

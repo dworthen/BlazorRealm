@@ -46,6 +46,8 @@ namespace BlazorStandAlone
                     return count - 1;
                 case Actions.Counter.DecrementByValue a:
                     return count - a.Value;
+                case Actions.Counter.Set a:
+                    return a.Value;
                 case Actions.Counter.Reset _:
                     return 0;
                 default:

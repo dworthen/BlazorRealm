@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Blazor;
+using System;
 
 namespace Blazor.Realm
 {
@@ -7,7 +8,7 @@ namespace Blazor.Realm
         private readonly Reducer<TState> _rootReducer;
         internal Dispatcher<TState> _dispatch;
 
-        public TState State { get; private set; }
+        private TState State { get; set; }
         public event EventHandler Change;
 
         //TODO: Implement IBuilder interface and pass in Builder to decouple.
@@ -21,6 +22,17 @@ namespace Blazor.Realm
         public void OnChange(EventArgs e)
         {
             Change?.Invoke(this, e);
+        }
+
+        public TState GetState()
+        {
+            try
+            {
+                return JsonUtil.Deserialize<TState>(JsonUtil.Serialize(State));
+            } catch (Exception e)
+            {
+                return State;
+            }
         }
 
         internal TState InitialDispatch(IAction action)
