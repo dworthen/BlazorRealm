@@ -1,6 +1,6 @@
 ﻿namespace Blazor.Realm
 {
-    public interface IAction
+    public interface IRealmAction
     {
         
     }

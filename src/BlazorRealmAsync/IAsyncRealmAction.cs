@@ -2,7 +2,7 @@
 
 namespace Blazor.Realm.Async
 {
-    public interface IAsyncAction : IAction
+    public interface IAsyncRealmAction : IRealmAction
     {
         Task Invoke();
     }

@@ -14,9 +14,9 @@ namespace Blazor.Realm.Async
             _next = next;
         }
 
-        public TState Invoke(IAction action)
+        public TState Invoke(IRealmAction action)
         {
-            if (action is IAsyncAction)
+            if (action is IAsyncRealmAction)
             {
                 action.GetType().GetMethod("Invoke").Invoke(action, null);
                 return default(TState);

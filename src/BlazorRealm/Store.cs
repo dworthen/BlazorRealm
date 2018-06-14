@@ -5,10 +5,11 @@ namespace Blazor.Realm
 {
     public class Store<TState>
     {
+        private TState State;
         private readonly Reducer<TState> _rootReducer;
+
         internal Dispatcher<TState> _dispatch;
 
-        private TState State { get; set; }
         public event EventHandler Change;
 
         //TODO: Implement IBuilder interface and pass in Builder to decouple.
@@ -35,13 +36,13 @@ namespace Blazor.Realm
             }
         }
 
-        internal TState InitialDispatch(IAction action)
+        internal TState InitialDispatch(IRealmAction action)
         {
             TState localState = _rootReducer(State, action);
             return localState;
         }
 
-        public void Dispatch(IAction action)
+        public void Dispatch(IRealmAction action)
         {
             TState localState = _dispatch(action);
             if (localState != null)

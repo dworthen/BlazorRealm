@@ -50,7 +50,7 @@ namespace Blazor.Realm.ReduxDevTools
             ReduxDevToolsInterop.Subscribe();
         }
 
-        public TState Invoke(IAction action)
+        public TState Invoke(IRealmAction action)
         {
             switch(action)
             {
@@ -69,7 +69,7 @@ namespace Blazor.Realm.ReduxDevTools
         
     }
 
-    class RealmReduxDevToolsAppState<TState> : IAction
+    class RealmReduxDevToolsAppState<TState> : IRealmAction
     {
         public TState State { get; set; }
 

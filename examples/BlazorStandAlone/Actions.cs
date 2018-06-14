@@ -5,9 +5,9 @@ namespace BlazorStandAlone.Actions
 {
     namespace Counter
     {
-        public class IncrementByOne : IAction { }
+        public class IncrementByOne : IRealmAction { }
 
-        public class IncrementByValue : IAction
+        public class IncrementByValue : IRealmAction
         {
             public int Value { get; set; }
             public IncrementByValue(int value)
@@ -16,9 +16,9 @@ namespace BlazorStandAlone.Actions
             }
         }
 
-        public class DecrementByOne : IAction { }
+        public class DecrementByOne : IRealmAction { }
 
-        public class DecrementByValue : IAction
+        public class DecrementByValue : IRealmAction
         {
             public int Value { get; set; }
             public DecrementByValue(int value)
@@ -27,7 +27,7 @@ namespace BlazorStandAlone.Actions
             }
         }
 
-        public class Set : IAction
+        public class Set : IRealmAction
         {
             public int Value { get; set; }
             public Set(int value)
@@ -36,16 +36,16 @@ namespace BlazorStandAlone.Actions
             }
         }
 
-        public class Reset : IAction { }
+        public class Reset : IRealmAction { }
 
         public class Dispose : Reset { }
     }
 
     namespace WeatherForecasts
     {
-        public class Clear : IAction { }
+        public class Clear : IRealmAction { }
 
-        public class Set : IAction
+        public class Set : IRealmAction
         {
             public IEnumerable<WeatherForecast> WeatherForecasts { get; set; }
             public Set(IEnumerable<WeatherForecast> forecasts)
@@ -57,7 +57,7 @@ namespace BlazorStandAlone.Actions
 
     namespace Loading
     {
-        public class Start : IAction { }
-        public class Complete : IAction { }
+        public class Start : IRealmAction { }
+        public class Complete : IRealmAction { }
     }
 }

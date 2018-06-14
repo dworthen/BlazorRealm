@@ -9,14 +9,12 @@ namespace Blazor.Realm
     {
         internal const string InvokeMethodName = "Invoke";
 
-        //private static readonly MethodInfo GetServiceInfo = typeof(UseMiddlewareExtensions).GetMethod(nameof(GetService), BindingFlags.NonPublic | BindingFlags.Static);
-
-        public static IRealmStoreBuilder<TState> UseMiddleware<TState, TMiddleware>(this IRealmStoreBuilder<TState> builder, params object[] args)
+        public static IStoreBuilder<TState> UseMiddleware<TState, TMiddleware>(this IStoreBuilder<TState> builder, params object[] args)
         {
             return builder.UseMiddleware(typeof(TMiddleware), args);
         }
 
-        public static IRealmStoreBuilder<TState> UseMiddleware<TState>(this IRealmStoreBuilder<TState> builder, Type middleware, params object[] args)
+        public static IStoreBuilder<TState> UseMiddleware<TState>(this IStoreBuilder<TState> builder, Type middleware, params object[] args)
         {
 
             IServiceProvider serviceProvider = builder.ServiceProvider;
@@ -41,7 +39,7 @@ namespace Blazor.Realm
                 }
 
                 ParameterInfo[] parameters = methodinfo.GetParameters();
-                if (parameters.Length != 1 || parameters[0].ParameterType != typeof(IAction))
+                if (parameters.Length != 1 || parameters[0].ParameterType != typeof(IRealmAction))
                 {
                     throw new InvalidOperationException("ERROR 3");
                 }
@@ -58,17 +56,6 @@ namespace Blazor.Realm
                 
             });
 
-        }
-
-        private static object GetService(IServiceProvider sp, Type type, Type middleware)
-        {
-            var service = sp.GetService(type);
-            if (service == null)
-            {
-                throw new InvalidOperationException();
-            }
-
-            return service;
         }
     }
 }

@@ -10,7 +10,7 @@ namespace BlazorStandAlone.Operations
 
     namespace Counter
     {
-        public class IncrementByValue : IAsyncAction
+        public class IncrementByValue : IAsyncRealmAction
         {
             public Store<AppState> Store { get; set; }
             public int IncrementAmount { get; set; }
@@ -32,7 +32,7 @@ namespace BlazorStandAlone.Operations
 
     namespace WeatherForecasts
     {
-        public class Fetch : IAsyncAction
+        public class Fetch : IAsyncRealmAction
         {
             public Store<AppState> Store { get; set; }
             public HttpClient Client { get; set; }

@@ -9,7 +9,7 @@ namespace Blazor.Realm
         public Store<TState> Store { get; private set; }
 
         public TState State { get; private set; }
-        public Action<IAction> Dispatch => Store.Dispatch;
+        public Action<IRealmAction> Dispatch => Store.Dispatch;
 
         public virtual void Dispose()
         {

@@ -6,7 +6,7 @@ namespace BlazorStandAlone
 {
     public static class Reducers
     {
-        public static AppState RootReducer(AppState appState, IAction action)
+        public static AppState RootReducer(AppState appState, IRealmAction action)
         {
             if(appState == null)
             {
@@ -21,7 +21,7 @@ namespace BlazorStandAlone
             };
         }
 
-        private static bool ReduceLoading(bool loading, IAction action)
+        private static bool ReduceLoading(bool loading, IRealmAction action)
         {
             switch(action)
             {
@@ -34,7 +34,7 @@ namespace BlazorStandAlone
             }
         }
 
-        public static int CountReducer(int count, IAction action)
+        public static int CountReducer(int count, IRealmAction action)
         {
             switch (action)
             {
@@ -55,7 +55,7 @@ namespace BlazorStandAlone
             }
         }
 
-        public static IEnumerable<WeatherForecast> WeatherForecastsReducer(IEnumerable<WeatherForecast> forecasts, IAction action)
+        public static IEnumerable<WeatherForecast> WeatherForecastsReducer(IEnumerable<WeatherForecast> forecasts, IRealmAction action)
         {
             switch (action)
             {

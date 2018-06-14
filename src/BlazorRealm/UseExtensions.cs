@@ -8,13 +8,13 @@ namespace Blazor.Realm
 {
     public static class UseExtensions
     {
-        public static IRealmStoreBuilder<TState> Use<TState>(this IRealmStoreBuilder<TState> builder, Func<Dispatcher<TState>, Dispatcher<TState>> middleware)
+        public static IStoreBuilder<TState> Use<TState>(this IStoreBuilder<TState> builder, Func<Dispatcher<TState>, Dispatcher<TState>> middleware)
         {
             builder.Middleware?.Add(middleware);
-            return builder.BuildRealmStore();
+            return builder.Build();
         }
 
-        public static IRealmStoreBuilder<TState> Use<TState>(this IRealmStoreBuilder<TState> builder, Func<Store<TState>, Dispatcher<TState>, Dispatcher<TState>> middleware)
+        public static IStoreBuilder<TState> Use<TState>(this IStoreBuilder<TState> builder, Func<Store<TState>, Dispatcher<TState>, Dispatcher<TState>> middleware)
         {
             return builder.Use((Dispatcher<TState> next) =>
             {
