@@ -5,10 +5,9 @@ namespace Blazor.Realm
     public class Store<TState>
     {
         private readonly Reducer<TState> _rootReducer;
-        private readonly RealmMiddlewareBuilder<TState> _builder;
+        internal Dispatcher<TState> _dispatch;
 
         public TState State { get; private set; }
-        public Dispatcher<TState> Dispatch { get; private set; }
         public event EventHandler Change;
 
         //TODO: Implement IBuilder interface and pass in Builder to decouple.
@@ -16,18 +15,7 @@ namespace Blazor.Realm
         {
             State = initialState;
             _rootReducer = rootReducer;
-            Dispatch = InitialDispatch;
-            _builder = new RealmMiddlewareBuilder<TState>(this);
-            Dispatch = (IAction action) =>
-            {
-                TState localState = _builder.Dispatch(action);
-                if (localState != null)
-                {
-                    State = localState;
-                }
-                OnChange(null);
-                return State;
-            };
+            _dispatch = InitialDispatch;
         }
 
         public void OnChange(EventArgs e)
@@ -35,18 +23,20 @@ namespace Blazor.Realm
             Change?.Invoke(this, e);
         }
 
-        private TState InitialDispatch(IAction action)
+        internal TState InitialDispatch(IAction action)
         {
             TState localState = _rootReducer(State, action);
-            //OnChange(null);
             return localState;
         }
 
-        public void ApplyMiddleWare(Action<RealmMiddlewareBuilder<TState>> builder = null)
+        public void Dispatch(IAction action)
         {
-            builder?.Invoke(_builder);
-            _builder.Build();
-            //Dispatch = _builder.Dispatch;
+            TState localState = _dispatch(action);
+            if (localState != null)
+            {
+                State = localState;
+                OnChange(null);
+            }
         }
     }
 }

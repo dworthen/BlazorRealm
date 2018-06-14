@@ -32,6 +32,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="RealmMiddlewareBuilder.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Remove="_ViewImports.cshtml" />
   </ItemGroup>
 

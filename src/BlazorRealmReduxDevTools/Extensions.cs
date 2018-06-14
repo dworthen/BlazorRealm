@@ -5,10 +5,14 @@ namespace Blazor.Realm.ReduxDevTools
 {
     public static class Extensions
     {
-        public static void UseRealmReduxDevTools<TState>(this RealmMiddlewareBuilder<TState> builder, BrowserServiceProvider serviceProvider, Type[] actionsToIgnore = null)
+        public static void UseRealmReduxDevTools<TState>(this IRealmStoreBuilder<TState> builder)
         {
-            HandleReduxDevTools<TState> devTools = new HandleReduxDevTools<TState>(serviceProvider, actionsToIgnore);
-            builder.Use(devTools.Handle);
+            builder.UseMiddleware<TState, HandleReduxDevTools<TState>>(builder.ServiceProvider);
+        }
+
+        public static void UseRealmReduxDevTools<TState>(this IRealmStoreBuilder<TState> builder, Type[] actionsToIgnore)
+        {
+            builder.UseMiddleware<TState, HandleReduxDevTools<TState>>(builder.ServiceProvider, actionsToIgnore);
         }
     }
 }

@@ -2,21 +2,29 @@
 
 namespace Blazor.Realm.Async
 {
-    public static class HandleAsyncActions
+    public class HandleAsyncActions<TState>
     {
-        public static Dispatcher<TState> Handle<TState>(Store<TState> store, Dispatcher<TState> next)
+
+        private readonly Store<TState> _store;
+        private readonly Dispatcher<TState> _next;
+
+        public HandleAsyncActions(Store<TState> store, Dispatcher<TState> next)
         {
-            return (IAction action) =>
+            _store = store;
+            _next = next;
+        }
+
+        public TState Invoke(IAction action)
+        {
+            if (action is IAsyncAction)
             {
-                if (action is IAsyncAction)
-                {
-                    action.GetType().GetMethod("Invoke").Invoke(action, null);
-                    return default(TState);
-                } else
-                {
-                    return next(action);
-                }
-            };
+                action.GetType().GetMethod("Invoke").Invoke(action, null);
+                return default(TState);
+            }
+            else
+            {
+                return _next(action);
+            }
         }
 
     }

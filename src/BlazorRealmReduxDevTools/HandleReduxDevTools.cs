@@ -8,18 +8,25 @@ namespace Blazor.Realm.ReduxDevTools
 {
     public class HandleReduxDevTools<TState>
     {
-        private BrowserServiceProvider ServiceProvider { get; set; }
-        private IUriHelper UriHelper { get; set; }
+        private readonly IServiceProvider ServiceProvider;
+        private readonly IUriHelper UriHelper;
+        private readonly List<Tuple<string, string>> History = new List<Tuple<string, string>>();
+        private readonly Type[] ActionsToIgnore;
+        private readonly Store<TState> Store;
+        private readonly Dispatcher<TState> Next;
 
-        private List<Tuple<string, string>> History { get; set; } = new List<Tuple<string, string>>();
-        private Type[] ActionsToIgnore { get; set; }
-
-        public HandleReduxDevTools(BrowserServiceProvider serviceProvider, Type[] actionsToIgnore = null)
+        public HandleReduxDevTools(Store<TState> store, Dispatcher<TState> next, IServiceProvider serviceProvider) : this(store, next, serviceProvider, new Type[] { })
         {
+
+        }
+
+        public HandleReduxDevTools(Store<TState> store, Dispatcher<TState> next, IServiceProvider serviceProvider, Type[] actionsToIgnore)
+        {
+            Store = store;
+            Next = next;
             ServiceProvider = serviceProvider;
-            ActionsToIgnore = actionsToIgnore;
+            ActionsToIgnore = actionsToIgnore ?? new Type[] { };
             UriHelper = ServiceProvider.GetService(typeof(IUriHelper)) as IUriHelper;
-            Store<TState> store = ServiceProvider.GetService(typeof(Store<TState>)) as Store<TState>;
             History.Add(new Tuple<string, string>(UriHelper.GetAbsoluteUri(), JsonUtil.Serialize(store.State)));
 
             ReduxDevToolsInterop.Connect();
@@ -42,29 +49,24 @@ namespace Blazor.Realm.ReduxDevTools
             ReduxDevToolsInterop.Subscribe();
         }
 
-        public Dispatcher<TState> Handle(Store<TState> store, Dispatcher<TState> next)
+        public TState Invoke(IAction action)
         {
-            return (IAction action) =>
+            switch(action)
             {
-                switch(action)
-                {
-                    case RealmReduxDevToolsAppState<TState> a:
-                        return a.State;
-                    default:
-                        TState nextState = next(action);
-                        if (nextState != null && (ActionsToIgnore == null || Array.IndexOf(ActionsToIgnore, action.GetType()) == -1))
-                        {
-                            History.Add(new Tuple<string, string>(UriHelper.GetAbsoluteUri(), JsonUtil.Serialize(nextState)));
-                            ReduxDevToolsInterop.Send(action, nextState);
-                        }
-                        return nextState;
-                }
-            };
+                case RealmReduxDevToolsAppState<TState> a:
+                    return a.State;
+                default:
+                    TState nextState = Next(action);
+                    if (nextState != null && Array.IndexOf(ActionsToIgnore, action.GetType()) == -1)
+                    {
+                        History.Add(new Tuple<string, string>(UriHelper.GetAbsoluteUri(), JsonUtil.Serialize(nextState)));
+                        ReduxDevToolsInterop.Send(action, nextState);
+                    }
+                    return nextState;
+            }
         }
         
     }
-
-    class Init: IAction { }
 
     class RealmReduxDevToolsAppState<TState> : IAction
     {

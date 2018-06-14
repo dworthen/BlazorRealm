@@ -1,9 +1,5 @@
 ﻿using Microsoft.AspNetCore.Blazor.Components;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Blazor.Realm
 {
@@ -13,7 +9,7 @@ namespace Blazor.Realm
         public Store<TState> Store { get; set; }
 
         public TState State => Store.State;
-        public Dispatcher<TState> Dispatch => Store.Dispatch;
+        public Action<IAction> Dispatch => Store.Dispatch;
 
         public virtual void Dispose()
         {

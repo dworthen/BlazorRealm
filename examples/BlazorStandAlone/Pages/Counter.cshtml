@@ -28,44 +28,44 @@ else
 
 
 @functions {
-int currentCount = 0;
+    int currentCount = 0;
 
-[Parameter]
-private int Delta { get; set; } = 1;
+    [Parameter]
+    private int Delta { get; set; } = 1;
 
-void IncrementCount()
-{
-    Dispatch(new Actions.Counter.IncrementByValue(Delta));
-}
+    void IncrementCount()
+    {
+        Dispatch(new Actions.Counter.IncrementByValue(Delta));
+    }
 
-void DecrementCount()
-{
-    Dispatch(new Actions.Counter.DecrementByValue(Delta));
-}
+    void DecrementCount()
+    {
+        Dispatch(new Actions.Counter.DecrementByValue(Delta));
+    }
 
-void AsyncIncrement()
-{
-    Dispatch(new Operations.Counter.IncrementByValue(Store, Delta));
-}
+    void AsyncIncrement()
+    {
+        Dispatch(new Operations.Counter.IncrementByValue(Store, Delta));
+    }
 
-void Change()
-{
-    Console.WriteLine("CHANGE");
-}
+    void Change()
+    {
+        Console.WriteLine("CHANGE");
+    }
 
-void Invalid()
-{
-    Console.WriteLine("INVALID");
-}
+    void Invalid()
+    {
+        Console.WriteLine("INVALID");
+    }
 
-void Reset()
-{
-    Dispatch(new Actions.Counter.Reset());
-}
+    void Reset()
+    {
+        Dispatch(new Actions.Counter.Reset());
+    }
 
-public override void Dispose()
-{
-    base.Dispose();
-    Dispatch(new Actions.Counter.Dispose());
-}
+    public override void Dispose()
+    {
+        base.Dispose();
+        Dispatch(new Actions.Counter.Dispose());
+    }
 }

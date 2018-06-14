@@ -9,9 +9,9 @@ namespace Blazor.Realm.Async
 {
     public static class Extensions
     {
-        public static void UseRealmAsync<TState>(this RealmMiddlewareBuilder<TState> builder)
+        public static IRealmStoreBuilder<TState> UseRealmAsync<TState>(this IRealmStoreBuilder<TState> builder)
         {
-            builder.Use(HandleAsyncActions.Handle);
+            return builder.UseMiddleware<TState, HandleAsyncActions<TState>>();
         }
     }
 }
