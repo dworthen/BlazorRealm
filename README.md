@@ -48,9 +48,9 @@ public class AppState
 //Actions.cs
 
 // Counter Actions
-public class IncrementByOne : IAction { }
+public class IncrementByOne : IRealmAction { }
 
-public class IncrementByValue : IAction
+public class IncrementByValue : IRealmAction
 {
     public int Value { get; set; }
     public IncrementByValue(int value)
@@ -59,9 +59,9 @@ public class IncrementByValue : IAction
     }
 }
 
-public class DecrementByOne : IAction { }
+public class DecrementByOne : IRealmAction { }
 
-public class DecrementByValue : IAction
+public class DecrementByValue : IRealmAction
 {
     public int Value { get; set; }
     public DecrementByValue(int value)
@@ -70,12 +70,12 @@ public class DecrementByValue : IAction
     }
 }
 
-public class ResetCount : IAction { }
+public class ResetCount : IRealmAction { }
 
 // WeatherForecasts Actions
-public class ClearWeatherForecasts : IAction { }
+public class ClearWeatherForecasts : IRealmAction { }
 
-public class SetWeatherForecasts : IAction
+public class SetWeatherForecasts : IRealmAction
 {
     public IEnumerable<WeatherForecast> WeatherForecasts { get; set; }
     public SetWeatherForecasts(IEnumerable<WeatherForecast> forecasts)
@@ -85,7 +85,7 @@ public class SetWeatherForecasts : IAction
 }
 ```
 
-Actions must implement `IAction`. Don't forget to add `using Blazor.Realm;`.
+Actions must implement `IRealmAction`. Don't forget to add `using Blazor.Realm;`.
 
 # Reducer
 
@@ -94,7 +94,7 @@ Actions must implement `IAction`. Don't forget to add `using Blazor.Realm;`.
 
 public static class Reducers
 {
-    public static AppState RootReducer(AppState appState, IAction action)
+    public static AppState RootReducer(AppState appState, IRealmAction action)
     {
         if(appState == null)
         {
@@ -110,7 +110,7 @@ public static class Reducers
         };
     }
 
-    public static int CounterReducer(int count, IAction action)
+    public static int CounterReducer(int count, IRealmAction action)
     {
         switch(action)
         {
@@ -130,7 +130,7 @@ public static class Reducers
     }
 
     public static IEnumerable<WeatherForecast>
-    WeatherForecastsReducer(IEnumerable<WeatherForecast> forecasts, IAction action)
+    WeatherForecastsReducer(IEnumerable<WeatherForecast> forecasts, IRealmAction action)
     {
         switch(action)
         {
@@ -311,7 +311,7 @@ public class Program
 
         RealmStoreBuilder.Use((Store<AppState> localStore, Dispatcher<AppState> next) =>
         {
-            return (IAction action) =>
+            return (IRealmAction action) =>
             {
                 /**
                 * localStore = Store singleton. This allows one to dispatch
@@ -371,7 +371,7 @@ public class Logger<TState>
         _next = next;
     }
 
-    public TState Invoke(IAction action)
+    public TState Invoke(IRealmAction action)
     {
         // Logger implementation...
         return _next(action);
@@ -415,7 +415,7 @@ Following a [ducks](https://medium.freecodecamp.org/scaling-your-redux-app-with-
 ```C#
 // Operations.cs
 
-public class AsyncIncrementCounter : IAsyncAction
+public class AsyncIncrementCounter : IAsyncRealmAction
 {
     public Store<AppState> Store { get; set; }
     public int IncrementAmount { get; set; }
@@ -441,7 +441,7 @@ public class AsyncIncrementCounter : IAsyncAction
 }
 ```
 
-Async actions must implement the `IAsyncAction` interface and, in turn, implement `Task Invoke` method.
+Async actions must implement the `IAsyncRealmAction` interface and, in turn, implement `Task Invoke` method.
 
 ## Adding Async Middleware
 
