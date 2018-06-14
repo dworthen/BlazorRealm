@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.5.7"></a>
+## [0.5.7](https://github.com/dworthen/BlazorRealm/compare/v0.5.6...v0.5.7) (2018-06-14)
+
+
+### Bug Fixes
+
+* Update IStoreBuilder contract ([4447f5f](https://github.com/dworthen/BlazorRealm/commit/4447f5f))
+
+
+
 <a name="0.5.6"></a>
 ## [0.5.6](https://github.com/dworthen/BlazorRealm/compare/v0.5.5...v0.5.6) (2018-06-14)
 
