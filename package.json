@@ -8,6 +8,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "build:docs": "gitbook build ./docs && cp ./docs/_book/* ./gh-pages -r",
     "clean-build": "rimraf **/BlazorRealm*/bin/* && rimraf **/BlazorStandAlone/bin/*",
     "pack-blazor-realm": "dotnet pack ./src/BlazorRealm/BlazorRealm.csproj -o ./nupkgs/",
     "prepack-blazor-realm": "rimraf ./src/BlazorRealm/nupkgs/*",
@@ -31,6 +32,7 @@
   "homepage": "https://github.com/dworthen/BlazorRealm#readme",
   "devDependencies": {
     "cross-env": "^5.1.6",
+    "gitbook-cli": "^2.3.2",
     "replace": "^1.0.0",
     "rimraf": "^2.6.2",
     "standard-version": "^4.4.0"
