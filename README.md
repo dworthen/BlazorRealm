@@ -306,10 +306,10 @@ public class Program
         });
 
         // using Microsoft.Extensions.DependencyInjection;
-        IRealmStoreBuilder<AppState> RealmStoreBuilder = 
-            ServiceProvider.GetService<IRealmStoreBuilder<AppState>>();
+        IStoreBuilder<AppState> storeBuilder = 
+            ServiceProvider.GetService<IStoreBuilder<AppState>>();
 
-        RealmStoreBuilder.Use((Store<AppState> localStore, Dispatcher<AppState> next) =>
+        storeBuilder.Use((Store<AppState> localStore, Dispatcher<AppState> next) =>
         {
             return (IRealmAction action) =>
             {
@@ -382,7 +382,7 @@ public class Logger<TState>
 // Optional
 public static class Extensions
 {
-    public static IRealmStoreBuilder UseLogger<TState>(this IRealmStoreBuilder<TState> builder)
+    public static IStoreBuilder UseLogger<TState>(this IStoreBuilder<TState> builder)
     {
         return builder.UseMiddleware<TState, Logger<TState>>();
     }
@@ -393,12 +393,12 @@ public static class Extensions
 ...
 
 // using Microsoft.Extensions.DependencyInjection;
-IRealmStoreBuilder<AppState> RealmStoreBuilder = 
-    ServiceProvider.GetService<IRealmStoreBuilder<AppState>>();
+IStoreBuilder<AppState> storeBuilder = 
+    ServiceProvider.GetService<IStoreBuilder<AppState>>();
 
-RealmStoreBuilder.UseLogger<AppState>();
+storeBuilder.UseLogger<AppState>();
 // Or without using an extension
-// RealmStoreBuilder.UseMiddleware<AppState, Logger<AppState>>();
+// storeBuilder.UseMiddleware<AppState, Logger<AppState>>();
 
 new BrowserRenderer(serviceProvider).AddComponent<App>("app");
 
@@ -455,10 +455,10 @@ var serviceProvider = new BrowserServiceProvider(services =>
 });
 
 // using Microsoft.Extensions.DependencyInjection;
-IRealmStoreBuilder<AppState> RealmStoreBuilder = 
-    ServiceProvider.GetService<IRealmStoreBuilder<AppState>>();
+IStoreBuilder<AppState> storeBuilder = 
+    ServiceProvider.GetService<IStoreBuilder<AppState>>();
 
-RealmStoreBuilder.UseRealmAsync<AppState>();
+storeBuilder.UseRealmAsync<AppState>();
 
 new BrowserRenderer(serviceProvider).AddComponent<App>("app");
 
@@ -511,12 +511,12 @@ var serviceProvider = new BrowserServiceProvider(services =>
 });
 
 // using Microsoft.Extensions.DependencyInjection;
-IRealmStoreBuilder<AppState> RealmStoreBuilder = 
-    ServiceProvider.GetService<IRealmStoreBuilder<AppState>>();
+IStoreBuilder<AppState> storeBuilder = 
+    ServiceProvider.GetService<IStoreBuilder<AppState>>();
 
-RealmStoreBuilder.UseRealmAsync<AppState>();
+storeBuilder.UseRealmAsync<AppState>();
 
-RealmStoreBuilder.UseRealmReduxDevTools<AppState>();
+storeBuilder.UseRealmReduxDevTools<AppState>();
 
 new BrowserRenderer(serviceProvider).AddComponent<App>("app");
 ```
@@ -530,7 +530,7 @@ new BrowserRenderer(serviceProvider).AddComponent<App>("app");
 ```C#
 // program.cs
 
-RealmStoreBuilder.UseRealmReduxDevTools<AppState>(new Type[] {
+storeBuilder.UseRealmReduxDevTools<AppState>(new Type[] {
     // ResetCount actions will not show up in the Redux DevTools 
     // browser extension
     typeof(ResetCount)
