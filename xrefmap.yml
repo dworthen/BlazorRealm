@@ -1,0 +1,1004 @@
+### YamlMime:XRefMap
+sorted: true
+references:
+- uid: Blazor.Realm
+  name: Blazor.Realm
+  href: api/Blazor.Realm.html
+  commentId: N:Blazor.Realm
+  fullName: Blazor.Realm
+  nameWithType: Blazor.Realm
+- uid: Blazor.Realm.AddRealmStoreExtensions
+  name: AddRealmStoreExtensions
+  href: api/Blazor.Realm.AddRealmStoreExtensions.html
+  commentId: T:Blazor.Realm.AddRealmStoreExtensions
+  fullName: Blazor.Realm.AddRealmStoreExtensions
+  nameWithType: AddRealmStoreExtensions
+- uid: Blazor.Realm.AddRealmStoreExtensions.AddRealmStore*
+  name: AddRealmStore
+  href: api/Blazor.Realm.AddRealmStoreExtensions.html#Blazor_Realm_AddRealmStoreExtensions_AddRealmStore_
+  commentId: Overload:Blazor.Realm.AddRealmStoreExtensions.AddRealmStore
+  isSpec: "True"
+  fullName: Blazor.Realm.AddRealmStoreExtensions.AddRealmStore
+  nameWithType: AddRealmStoreExtensions.AddRealmStore
+- uid: Blazor.Realm.AddRealmStoreExtensions.AddRealmStore``1(Microsoft.Extensions.DependencyInjection.IServiceCollection,``0,Blazor.Realm.Reducer{``0})
+  name: AddRealmStore<TState>(IServiceCollection, TState, Reducer<TState>)
+  href: api/Blazor.Realm.AddRealmStoreExtensions.html#Blazor_Realm_AddRealmStoreExtensions_AddRealmStore__1_Microsoft_Extensions_DependencyInjection_IServiceCollection___0_Blazor_Realm_Reducer___0__
+  commentId: M:Blazor.Realm.AddRealmStoreExtensions.AddRealmStore``1(Microsoft.Extensions.DependencyInjection.IServiceCollection,``0,Blazor.Realm.Reducer{``0})
+  name.vb: AddRealmStore(Of TState)(IServiceCollection, TState, Reducer(Of TState))
+  fullName: Blazor.Realm.AddRealmStoreExtensions.AddRealmStore<TState>(Microsoft.Extensions.DependencyInjection.IServiceCollection, TState, Blazor.Realm.Reducer<TState>)
+  fullName.vb: Blazor.Realm.AddRealmStoreExtensions.AddRealmStore(Of TState)(Microsoft.Extensions.DependencyInjection.IServiceCollection, TState, Blazor.Realm.Reducer(Of TState))
+  nameWithType: AddRealmStoreExtensions.AddRealmStore<TState>(IServiceCollection, TState, Reducer<TState>)
+  nameWithType.vb: AddRealmStoreExtensions.AddRealmStore(Of TState)(IServiceCollection, TState, Reducer(Of TState))
+- uid: Blazor.Realm.Async
+  name: Blazor.Realm.Async
+  href: api/Blazor.Realm.Async.html
+  commentId: N:Blazor.Realm.Async
+  fullName: Blazor.Realm.Async
+  nameWithType: Blazor.Realm.Async
+- uid: Blazor.Realm.Async.Extensions
+  name: Extensions
+  href: api/Blazor.Realm.Async.Extensions.html
+  commentId: T:Blazor.Realm.Async.Extensions
+  fullName: Blazor.Realm.Async.Extensions
+  nameWithType: Extensions
+- uid: Blazor.Realm.Async.Extensions.UseRealmAsync*
+  name: UseRealmAsync
+  href: api/Blazor.Realm.Async.Extensions.html#Blazor_Realm_Async_Extensions_UseRealmAsync_
+  commentId: Overload:Blazor.Realm.Async.Extensions.UseRealmAsync
+  isSpec: "True"
+  fullName: Blazor.Realm.Async.Extensions.UseRealmAsync
+  nameWithType: Extensions.UseRealmAsync
+- uid: Blazor.Realm.Async.Extensions.UseRealmAsync``1(IStoreBuilder{``0})
+  name: UseRealmAsync<TState>(IStoreBuilder<TState>)
+  href: api/Blazor.Realm.Async.Extensions.html#Blazor_Realm_Async_Extensions_UseRealmAsync__1_IStoreBuilder___0__
+  commentId: M:Blazor.Realm.Async.Extensions.UseRealmAsync``1(IStoreBuilder{``0})
+  name.vb: UseRealmAsync(Of TState)(IStoreBuilder(Of TState))
+  fullName: Blazor.Realm.Async.Extensions.UseRealmAsync<TState>(IStoreBuilder<TState>)
+  fullName.vb: Blazor.Realm.Async.Extensions.UseRealmAsync(Of TState)(IStoreBuilder(Of TState))
+  nameWithType: Extensions.UseRealmAsync<TState>(IStoreBuilder<TState>)
+  nameWithType.vb: Extensions.UseRealmAsync(Of TState)(IStoreBuilder(Of TState))
+- uid: Blazor.Realm.Async.HandleAsyncActions`1
+  name: HandleAsyncActions<TState>
+  href: api/Blazor.Realm.Async.HandleAsyncActions-1.html
+  commentId: T:Blazor.Realm.Async.HandleAsyncActions`1
+  name.vb: HandleAsyncActions(Of TState)
+  fullName: Blazor.Realm.Async.HandleAsyncActions<TState>
+  fullName.vb: Blazor.Realm.Async.HandleAsyncActions(Of TState)
+  nameWithType: HandleAsyncActions<TState>
+  nameWithType.vb: HandleAsyncActions(Of TState)
+- uid: Blazor.Realm.Async.HandleAsyncActions`1.#ctor(Store{`0},Dispatcher{`0})
+  name: HandleAsyncActions(Store<TState>, Dispatcher<TState>)
+  href: api/Blazor.Realm.Async.HandleAsyncActions-1.html#Blazor_Realm_Async_HandleAsyncActions_1__ctor_Store__0__Dispatcher__0__
+  commentId: M:Blazor.Realm.Async.HandleAsyncActions`1.#ctor(Store{`0},Dispatcher{`0})
+  name.vb: HandleAsyncActions(Store(Of TState), Dispatcher(Of TState))
+  fullName: Blazor.Realm.Async.HandleAsyncActions<TState>.HandleAsyncActions(Store<TState>, Dispatcher<TState>)
+  fullName.vb: Blazor.Realm.Async.HandleAsyncActions(Of TState).HandleAsyncActions(Store(Of TState), Dispatcher(Of TState))
+  nameWithType: HandleAsyncActions<TState>.HandleAsyncActions(Store<TState>, Dispatcher<TState>)
+  nameWithType.vb: HandleAsyncActions(Of TState).HandleAsyncActions(Store(Of TState), Dispatcher(Of TState))
+- uid: Blazor.Realm.Async.HandleAsyncActions`1.#ctor*
+  name: HandleAsyncActions
+  href: api/Blazor.Realm.Async.HandleAsyncActions-1.html#Blazor_Realm_Async_HandleAsyncActions_1__ctor_
+  commentId: Overload:Blazor.Realm.Async.HandleAsyncActions`1.#ctor
+  isSpec: "True"
+  fullName: Blazor.Realm.Async.HandleAsyncActions<TState>.HandleAsyncActions
+  fullName.vb: Blazor.Realm.Async.HandleAsyncActions(Of TState).HandleAsyncActions
+  nameWithType: HandleAsyncActions<TState>.HandleAsyncActions
+  nameWithType.vb: HandleAsyncActions(Of TState).HandleAsyncActions
+- uid: Blazor.Realm.Async.HandleAsyncActions`1.Invoke(IRealmAction)
+  name: Invoke(IRealmAction)
+  href: api/Blazor.Realm.Async.HandleAsyncActions-1.html#Blazor_Realm_Async_HandleAsyncActions_1_Invoke_IRealmAction_
+  commentId: M:Blazor.Realm.Async.HandleAsyncActions`1.Invoke(IRealmAction)
+  fullName: Blazor.Realm.Async.HandleAsyncActions<TState>.Invoke(IRealmAction)
+  fullName.vb: Blazor.Realm.Async.HandleAsyncActions(Of TState).Invoke(IRealmAction)
+  nameWithType: HandleAsyncActions<TState>.Invoke(IRealmAction)
+  nameWithType.vb: HandleAsyncActions(Of TState).Invoke(IRealmAction)
+- uid: Blazor.Realm.Async.HandleAsyncActions`1.Invoke*
+  name: Invoke
+  href: api/Blazor.Realm.Async.HandleAsyncActions-1.html#Blazor_Realm_Async_HandleAsyncActions_1_Invoke_
+  commentId: Overload:Blazor.Realm.Async.HandleAsyncActions`1.Invoke
+  isSpec: "True"
+  fullName: Blazor.Realm.Async.HandleAsyncActions<TState>.Invoke
+  fullName.vb: Blazor.Realm.Async.HandleAsyncActions(Of TState).Invoke
+  nameWithType: HandleAsyncActions<TState>.Invoke
+  nameWithType.vb: HandleAsyncActions(Of TState).Invoke
+- uid: Blazor.Realm.Async.IAsyncRealmAction
+  name: IAsyncRealmAction
+  href: api/Blazor.Realm.Async.IAsyncRealmAction.html
+  commentId: T:Blazor.Realm.Async.IAsyncRealmAction
+  fullName: Blazor.Realm.Async.IAsyncRealmAction
+  nameWithType: IAsyncRealmAction
+- uid: Blazor.Realm.Async.IAsyncRealmAction.Invoke
+  name: Invoke()
+  href: api/Blazor.Realm.Async.IAsyncRealmAction.html#Blazor_Realm_Async_IAsyncRealmAction_Invoke
+  commentId: M:Blazor.Realm.Async.IAsyncRealmAction.Invoke
+  fullName: Blazor.Realm.Async.IAsyncRealmAction.Invoke()
+  nameWithType: IAsyncRealmAction.Invoke()
+- uid: Blazor.Realm.Async.IAsyncRealmAction.Invoke*
+  name: Invoke
+  href: api/Blazor.Realm.Async.IAsyncRealmAction.html#Blazor_Realm_Async_IAsyncRealmAction_Invoke_
+  commentId: Overload:Blazor.Realm.Async.IAsyncRealmAction.Invoke
+  isSpec: "True"
+  fullName: Blazor.Realm.Async.IAsyncRealmAction.Invoke
+  nameWithType: IAsyncRealmAction.Invoke
+- uid: Blazor.Realm.Dispatcher`1
+  name: Dispatcher<TState>
+  href: api/Blazor.Realm.Dispatcher-1.html
+  commentId: T:Blazor.Realm.Dispatcher`1
+  name.vb: Dispatcher(Of TState)
+  fullName: Blazor.Realm.Dispatcher<TState>
+  fullName.vb: Blazor.Realm.Dispatcher(Of TState)
+  nameWithType: Dispatcher<TState>
+  nameWithType.vb: Dispatcher(Of TState)
+- uid: Blazor.Realm.IRealmAction
+  name: IRealmAction
+  href: api/Blazor.Realm.IRealmAction.html
+  commentId: T:Blazor.Realm.IRealmAction
+  fullName: Blazor.Realm.IRealmAction
+  nameWithType: IRealmAction
+- uid: Blazor.Realm.IStoreBuilder`1
+  name: IStoreBuilder<TState>
+  href: api/Blazor.Realm.IStoreBuilder-1.html
+  commentId: T:Blazor.Realm.IStoreBuilder`1
+  name.vb: IStoreBuilder(Of TState)
+  fullName: Blazor.Realm.IStoreBuilder<TState>
+  fullName.vb: Blazor.Realm.IStoreBuilder(Of TState)
+  nameWithType: IStoreBuilder<TState>
+  nameWithType.vb: IStoreBuilder(Of TState)
+- uid: Blazor.Realm.IStoreBuilder`1.Build
+  name: Build()
+  href: api/Blazor.Realm.IStoreBuilder-1.html#Blazor_Realm_IStoreBuilder_1_Build
+  commentId: M:Blazor.Realm.IStoreBuilder`1.Build
+  fullName: Blazor.Realm.IStoreBuilder<TState>.Build()
+  fullName.vb: Blazor.Realm.IStoreBuilder(Of TState).Build()
+  nameWithType: IStoreBuilder<TState>.Build()
+  nameWithType.vb: IStoreBuilder(Of TState).Build()
+- uid: Blazor.Realm.IStoreBuilder`1.Build*
+  name: Build
+  href: api/Blazor.Realm.IStoreBuilder-1.html#Blazor_Realm_IStoreBuilder_1_Build_
+  commentId: Overload:Blazor.Realm.IStoreBuilder`1.Build
+  isSpec: "True"
+  fullName: Blazor.Realm.IStoreBuilder<TState>.Build
+  fullName.vb: Blazor.Realm.IStoreBuilder(Of TState).Build
+  nameWithType: IStoreBuilder<TState>.Build
+  nameWithType.vb: IStoreBuilder(Of TState).Build
+- uid: Blazor.Realm.IStoreBuilder`1.Middleware
+  name: Middleware
+  href: api/Blazor.Realm.IStoreBuilder-1.html#Blazor_Realm_IStoreBuilder_1_Middleware
+  commentId: P:Blazor.Realm.IStoreBuilder`1.Middleware
+  fullName: Blazor.Realm.IStoreBuilder<TState>.Middleware
+  fullName.vb: Blazor.Realm.IStoreBuilder(Of TState).Middleware
+  nameWithType: IStoreBuilder<TState>.Middleware
+  nameWithType.vb: IStoreBuilder(Of TState).Middleware
+- uid: Blazor.Realm.IStoreBuilder`1.Middleware*
+  name: Middleware
+  href: api/Blazor.Realm.IStoreBuilder-1.html#Blazor_Realm_IStoreBuilder_1_Middleware_
+  commentId: Overload:Blazor.Realm.IStoreBuilder`1.Middleware
+  isSpec: "True"
+  fullName: Blazor.Realm.IStoreBuilder<TState>.Middleware
+  fullName.vb: Blazor.Realm.IStoreBuilder(Of TState).Middleware
+  nameWithType: IStoreBuilder<TState>.Middleware
+  nameWithType.vb: IStoreBuilder(Of TState).Middleware
+- uid: Blazor.Realm.IStoreBuilder`1.ServiceProvider
+  name: ServiceProvider
+  href: api/Blazor.Realm.IStoreBuilder-1.html#Blazor_Realm_IStoreBuilder_1_ServiceProvider
+  commentId: P:Blazor.Realm.IStoreBuilder`1.ServiceProvider
+  fullName: Blazor.Realm.IStoreBuilder<TState>.ServiceProvider
+  fullName.vb: Blazor.Realm.IStoreBuilder(Of TState).ServiceProvider
+  nameWithType: IStoreBuilder<TState>.ServiceProvider
+  nameWithType.vb: IStoreBuilder(Of TState).ServiceProvider
+- uid: Blazor.Realm.IStoreBuilder`1.ServiceProvider*
+  name: ServiceProvider
+  href: api/Blazor.Realm.IStoreBuilder-1.html#Blazor_Realm_IStoreBuilder_1_ServiceProvider_
+  commentId: Overload:Blazor.Realm.IStoreBuilder`1.ServiceProvider
+  isSpec: "True"
+  fullName: Blazor.Realm.IStoreBuilder<TState>.ServiceProvider
+  fullName.vb: Blazor.Realm.IStoreBuilder(Of TState).ServiceProvider
+  nameWithType: IStoreBuilder<TState>.ServiceProvider
+  nameWithType.vb: IStoreBuilder(Of TState).ServiceProvider
+- uid: Blazor.Realm.RealmComponent`1
+  name: RealmComponent<TState>
+  href: api/Blazor.Realm.RealmComponent-1.html
+  commentId: T:Blazor.Realm.RealmComponent`1
+  name.vb: RealmComponent(Of TState)
+  fullName: Blazor.Realm.RealmComponent<TState>
+  fullName.vb: Blazor.Realm.RealmComponent(Of TState)
+  nameWithType: RealmComponent<TState>
+  nameWithType.vb: RealmComponent(Of TState)
+- uid: Blazor.Realm.RealmComponent`1.Dispatch
+  name: Dispatch
+  href: api/Blazor.Realm.RealmComponent-1.html#Blazor_Realm_RealmComponent_1_Dispatch
+  commentId: P:Blazor.Realm.RealmComponent`1.Dispatch
+  fullName: Blazor.Realm.RealmComponent<TState>.Dispatch
+  fullName.vb: Blazor.Realm.RealmComponent(Of TState).Dispatch
+  nameWithType: RealmComponent<TState>.Dispatch
+  nameWithType.vb: RealmComponent(Of TState).Dispatch
+- uid: Blazor.Realm.RealmComponent`1.Dispatch*
+  name: Dispatch
+  href: api/Blazor.Realm.RealmComponent-1.html#Blazor_Realm_RealmComponent_1_Dispatch_
+  commentId: Overload:Blazor.Realm.RealmComponent`1.Dispatch
+  isSpec: "True"
+  fullName: Blazor.Realm.RealmComponent<TState>.Dispatch
+  fullName.vb: Blazor.Realm.RealmComponent(Of TState).Dispatch
+  nameWithType: RealmComponent<TState>.Dispatch
+  nameWithType.vb: RealmComponent(Of TState).Dispatch
+- uid: Blazor.Realm.RealmComponent`1.Dispose
+  name: Dispose()
+  href: api/Blazor.Realm.RealmComponent-1.html#Blazor_Realm_RealmComponent_1_Dispose
+  commentId: M:Blazor.Realm.RealmComponent`1.Dispose
+  fullName: Blazor.Realm.RealmComponent<TState>.Dispose()
+  fullName.vb: Blazor.Realm.RealmComponent(Of TState).Dispose()
+  nameWithType: RealmComponent<TState>.Dispose()
+  nameWithType.vb: RealmComponent(Of TState).Dispose()
+- uid: Blazor.Realm.RealmComponent`1.Dispose*
+  name: Dispose
+  href: api/Blazor.Realm.RealmComponent-1.html#Blazor_Realm_RealmComponent_1_Dispose_
+  commentId: Overload:Blazor.Realm.RealmComponent`1.Dispose
+  isSpec: "True"
+  fullName: Blazor.Realm.RealmComponent<TState>.Dispose
+  fullName.vb: Blazor.Realm.RealmComponent(Of TState).Dispose
+  nameWithType: RealmComponent<TState>.Dispose
+  nameWithType.vb: RealmComponent(Of TState).Dispose
+- uid: Blazor.Realm.RealmComponent`1.OnChangeHandler(System.Object,System.EventArgs)
+  name: OnChangeHandler(Object, EventArgs)
+  href: api/Blazor.Realm.RealmComponent-1.html#Blazor_Realm_RealmComponent_1_OnChangeHandler_System_Object_System_EventArgs_
+  commentId: M:Blazor.Realm.RealmComponent`1.OnChangeHandler(System.Object,System.EventArgs)
+  fullName: Blazor.Realm.RealmComponent<TState>.OnChangeHandler(System.Object, System.EventArgs)
+  fullName.vb: Blazor.Realm.RealmComponent(Of TState).OnChangeHandler(System.Object, System.EventArgs)
+  nameWithType: RealmComponent<TState>.OnChangeHandler(Object, EventArgs)
+  nameWithType.vb: RealmComponent(Of TState).OnChangeHandler(Object, EventArgs)
+- uid: Blazor.Realm.RealmComponent`1.OnChangeHandler*
+  name: OnChangeHandler
+  href: api/Blazor.Realm.RealmComponent-1.html#Blazor_Realm_RealmComponent_1_OnChangeHandler_
+  commentId: Overload:Blazor.Realm.RealmComponent`1.OnChangeHandler
+  isSpec: "True"
+  fullName: Blazor.Realm.RealmComponent<TState>.OnChangeHandler
+  fullName.vb: Blazor.Realm.RealmComponent(Of TState).OnChangeHandler
+  nameWithType: RealmComponent<TState>.OnChangeHandler
+  nameWithType.vb: RealmComponent(Of TState).OnChangeHandler
+- uid: Blazor.Realm.RealmComponent`1.OnInit
+  name: OnInit()
+  href: api/Blazor.Realm.RealmComponent-1.html#Blazor_Realm_RealmComponent_1_OnInit
+  commentId: M:Blazor.Realm.RealmComponent`1.OnInit
+  fullName: Blazor.Realm.RealmComponent<TState>.OnInit()
+  fullName.vb: Blazor.Realm.RealmComponent(Of TState).OnInit()
+  nameWithType: RealmComponent<TState>.OnInit()
+  nameWithType.vb: RealmComponent(Of TState).OnInit()
+- uid: Blazor.Realm.RealmComponent`1.OnInit*
+  name: OnInit
+  href: api/Blazor.Realm.RealmComponent-1.html#Blazor_Realm_RealmComponent_1_OnInit_
+  commentId: Overload:Blazor.Realm.RealmComponent`1.OnInit
+  isSpec: "True"
+  fullName: Blazor.Realm.RealmComponent<TState>.OnInit
+  fullName.vb: Blazor.Realm.RealmComponent(Of TState).OnInit
+  nameWithType: RealmComponent<TState>.OnInit
+  nameWithType.vb: RealmComponent(Of TState).OnInit
+- uid: Blazor.Realm.RealmComponent`1.State
+  name: State
+  href: api/Blazor.Realm.RealmComponent-1.html#Blazor_Realm_RealmComponent_1_State
+  commentId: P:Blazor.Realm.RealmComponent`1.State
+  fullName: Blazor.Realm.RealmComponent<TState>.State
+  fullName.vb: Blazor.Realm.RealmComponent(Of TState).State
+  nameWithType: RealmComponent<TState>.State
+  nameWithType.vb: RealmComponent(Of TState).State
+- uid: Blazor.Realm.RealmComponent`1.State*
+  name: State
+  href: api/Blazor.Realm.RealmComponent-1.html#Blazor_Realm_RealmComponent_1_State_
+  commentId: Overload:Blazor.Realm.RealmComponent`1.State
+  isSpec: "True"
+  fullName: Blazor.Realm.RealmComponent<TState>.State
+  fullName.vb: Blazor.Realm.RealmComponent(Of TState).State
+  nameWithType: RealmComponent<TState>.State
+  nameWithType.vb: RealmComponent(Of TState).State
+- uid: Blazor.Realm.RealmComponent`1.Store
+  name: Store
+  href: api/Blazor.Realm.RealmComponent-1.html#Blazor_Realm_RealmComponent_1_Store
+  commentId: P:Blazor.Realm.RealmComponent`1.Store
+  fullName: Blazor.Realm.RealmComponent<TState>.Store
+  fullName.vb: Blazor.Realm.RealmComponent(Of TState).Store
+  nameWithType: RealmComponent<TState>.Store
+  nameWithType.vb: RealmComponent(Of TState).Store
+- uid: Blazor.Realm.RealmComponent`1.Store*
+  name: Store
+  href: api/Blazor.Realm.RealmComponent-1.html#Blazor_Realm_RealmComponent_1_Store_
+  commentId: Overload:Blazor.Realm.RealmComponent`1.Store
+  isSpec: "True"
+  fullName: Blazor.Realm.RealmComponent<TState>.Store
+  fullName.vb: Blazor.Realm.RealmComponent(Of TState).Store
+  nameWithType: RealmComponent<TState>.Store
+  nameWithType.vb: RealmComponent(Of TState).Store
+- uid: Blazor.Realm.Reducer`1
+  name: Reducer<TState>
+  href: api/Blazor.Realm.Reducer-1.html
+  commentId: T:Blazor.Realm.Reducer`1
+  name.vb: Reducer(Of TState)
+  fullName: Blazor.Realm.Reducer<TState>
+  fullName.vb: Blazor.Realm.Reducer(Of TState)
+  nameWithType: Reducer<TState>
+  nameWithType.vb: Reducer(Of TState)
+- uid: Blazor.Realm.ReduxDevTools
+  name: Blazor.Realm.ReduxDevTools
+  href: api/Blazor.Realm.ReduxDevTools.html
+  commentId: N:Blazor.Realm.ReduxDevTools
+  fullName: Blazor.Realm.ReduxDevTools
+  nameWithType: Blazor.Realm.ReduxDevTools
+- uid: Blazor.Realm.ReduxDevTools.Extensions
+  name: Extensions
+  href: api/Blazor.Realm.ReduxDevTools.Extensions.html
+  commentId: T:Blazor.Realm.ReduxDevTools.Extensions
+  fullName: Blazor.Realm.ReduxDevTools.Extensions
+  nameWithType: Extensions
+- uid: Blazor.Realm.ReduxDevTools.Extensions.UseRealmReduxDevTools*
+  name: UseRealmReduxDevTools
+  href: api/Blazor.Realm.ReduxDevTools.Extensions.html#Blazor_Realm_ReduxDevTools_Extensions_UseRealmReduxDevTools_
+  commentId: Overload:Blazor.Realm.ReduxDevTools.Extensions.UseRealmReduxDevTools
+  isSpec: "True"
+  fullName: Blazor.Realm.ReduxDevTools.Extensions.UseRealmReduxDevTools
+  nameWithType: Extensions.UseRealmReduxDevTools
+- uid: Blazor.Realm.ReduxDevTools.Extensions.UseRealmReduxDevTools``1(IStoreBuilder{``0})
+  name: UseRealmReduxDevTools<TState>(IStoreBuilder<TState>)
+  href: api/Blazor.Realm.ReduxDevTools.Extensions.html#Blazor_Realm_ReduxDevTools_Extensions_UseRealmReduxDevTools__1_IStoreBuilder___0__
+  commentId: M:Blazor.Realm.ReduxDevTools.Extensions.UseRealmReduxDevTools``1(IStoreBuilder{``0})
+  name.vb: UseRealmReduxDevTools(Of TState)(IStoreBuilder(Of TState))
+  fullName: Blazor.Realm.ReduxDevTools.Extensions.UseRealmReduxDevTools<TState>(IStoreBuilder<TState>)
+  fullName.vb: Blazor.Realm.ReduxDevTools.Extensions.UseRealmReduxDevTools(Of TState)(IStoreBuilder(Of TState))
+  nameWithType: Extensions.UseRealmReduxDevTools<TState>(IStoreBuilder<TState>)
+  nameWithType.vb: Extensions.UseRealmReduxDevTools(Of TState)(IStoreBuilder(Of TState))
+- uid: Blazor.Realm.ReduxDevTools.Extensions.UseRealmReduxDevTools``1(IStoreBuilder{``0},System.Type[])
+  name: UseRealmReduxDevTools<TState>(IStoreBuilder<TState>, Type[])
+  href: api/Blazor.Realm.ReduxDevTools.Extensions.html#Blazor_Realm_ReduxDevTools_Extensions_UseRealmReduxDevTools__1_IStoreBuilder___0__System_Type___
+  commentId: M:Blazor.Realm.ReduxDevTools.Extensions.UseRealmReduxDevTools``1(IStoreBuilder{``0},System.Type[])
+  name.vb: UseRealmReduxDevTools(Of TState)(IStoreBuilder(Of TState), Type())
+  fullName: Blazor.Realm.ReduxDevTools.Extensions.UseRealmReduxDevTools<TState>(IStoreBuilder<TState>, System.Type[])
+  fullName.vb: Blazor.Realm.ReduxDevTools.Extensions.UseRealmReduxDevTools(Of TState)(IStoreBuilder(Of TState), System.Type())
+  nameWithType: Extensions.UseRealmReduxDevTools<TState>(IStoreBuilder<TState>, Type[])
+  nameWithType.vb: Extensions.UseRealmReduxDevTools(Of TState)(IStoreBuilder(Of TState), Type())
+- uid: Blazor.Realm.ReduxDevTools.HandleReduxDevTools`1
+  name: HandleReduxDevTools<TState>
+  href: api/Blazor.Realm.ReduxDevTools.HandleReduxDevTools-1.html
+  commentId: T:Blazor.Realm.ReduxDevTools.HandleReduxDevTools`1
+  name.vb: HandleReduxDevTools(Of TState)
+  fullName: Blazor.Realm.ReduxDevTools.HandleReduxDevTools<TState>
+  fullName.vb: Blazor.Realm.ReduxDevTools.HandleReduxDevTools(Of TState)
+  nameWithType: HandleReduxDevTools<TState>
+  nameWithType.vb: HandleReduxDevTools(Of TState)
+- uid: Blazor.Realm.ReduxDevTools.HandleReduxDevTools`1.#ctor(Store{`0},Dispatcher{`0},System.IServiceProvider)
+  name: HandleReduxDevTools(Store<TState>, Dispatcher<TState>, IServiceProvider)
+  href: api/Blazor.Realm.ReduxDevTools.HandleReduxDevTools-1.html#Blazor_Realm_ReduxDevTools_HandleReduxDevTools_1__ctor_Store__0__Dispatcher__0__System_IServiceProvider_
+  commentId: M:Blazor.Realm.ReduxDevTools.HandleReduxDevTools`1.#ctor(Store{`0},Dispatcher{`0},System.IServiceProvider)
+  name.vb: HandleReduxDevTools(Store(Of TState), Dispatcher(Of TState), IServiceProvider)
+  fullName: Blazor.Realm.ReduxDevTools.HandleReduxDevTools<TState>.HandleReduxDevTools(Store<TState>, Dispatcher<TState>, System.IServiceProvider)
+  fullName.vb: Blazor.Realm.ReduxDevTools.HandleReduxDevTools(Of TState).HandleReduxDevTools(Store(Of TState), Dispatcher(Of TState), System.IServiceProvider)
+  nameWithType: HandleReduxDevTools<TState>.HandleReduxDevTools(Store<TState>, Dispatcher<TState>, IServiceProvider)
+  nameWithType.vb: HandleReduxDevTools(Of TState).HandleReduxDevTools(Store(Of TState), Dispatcher(Of TState), IServiceProvider)
+- uid: Blazor.Realm.ReduxDevTools.HandleReduxDevTools`1.#ctor(Store{`0},Dispatcher{`0},System.IServiceProvider,System.Type[])
+  name: HandleReduxDevTools(Store<TState>, Dispatcher<TState>, IServiceProvider, Type[])
+  href: api/Blazor.Realm.ReduxDevTools.HandleReduxDevTools-1.html#Blazor_Realm_ReduxDevTools_HandleReduxDevTools_1__ctor_Store__0__Dispatcher__0__System_IServiceProvider_System_Type___
+  commentId: M:Blazor.Realm.ReduxDevTools.HandleReduxDevTools`1.#ctor(Store{`0},Dispatcher{`0},System.IServiceProvider,System.Type[])
+  name.vb: HandleReduxDevTools(Store(Of TState), Dispatcher(Of TState), IServiceProvider, Type())
+  fullName: Blazor.Realm.ReduxDevTools.HandleReduxDevTools<TState>.HandleReduxDevTools(Store<TState>, Dispatcher<TState>, System.IServiceProvider, System.Type[])
+  fullName.vb: Blazor.Realm.ReduxDevTools.HandleReduxDevTools(Of TState).HandleReduxDevTools(Store(Of TState), Dispatcher(Of TState), System.IServiceProvider, System.Type())
+  nameWithType: HandleReduxDevTools<TState>.HandleReduxDevTools(Store<TState>, Dispatcher<TState>, IServiceProvider, Type[])
+  nameWithType.vb: HandleReduxDevTools(Of TState).HandleReduxDevTools(Store(Of TState), Dispatcher(Of TState), IServiceProvider, Type())
+- uid: Blazor.Realm.ReduxDevTools.HandleReduxDevTools`1.#ctor*
+  name: HandleReduxDevTools
+  href: api/Blazor.Realm.ReduxDevTools.HandleReduxDevTools-1.html#Blazor_Realm_ReduxDevTools_HandleReduxDevTools_1__ctor_
+  commentId: Overload:Blazor.Realm.ReduxDevTools.HandleReduxDevTools`1.#ctor
+  isSpec: "True"
+  fullName: Blazor.Realm.ReduxDevTools.HandleReduxDevTools<TState>.HandleReduxDevTools
+  fullName.vb: Blazor.Realm.ReduxDevTools.HandleReduxDevTools(Of TState).HandleReduxDevTools
+  nameWithType: HandleReduxDevTools<TState>.HandleReduxDevTools
+  nameWithType.vb: HandleReduxDevTools(Of TState).HandleReduxDevTools
+- uid: Blazor.Realm.ReduxDevTools.HandleReduxDevTools`1.Invoke(IRealmAction)
+  name: Invoke(IRealmAction)
+  href: api/Blazor.Realm.ReduxDevTools.HandleReduxDevTools-1.html#Blazor_Realm_ReduxDevTools_HandleReduxDevTools_1_Invoke_IRealmAction_
+  commentId: M:Blazor.Realm.ReduxDevTools.HandleReduxDevTools`1.Invoke(IRealmAction)
+  fullName: Blazor.Realm.ReduxDevTools.HandleReduxDevTools<TState>.Invoke(IRealmAction)
+  fullName.vb: Blazor.Realm.ReduxDevTools.HandleReduxDevTools(Of TState).Invoke(IRealmAction)
+  nameWithType: HandleReduxDevTools<TState>.Invoke(IRealmAction)
+  nameWithType.vb: HandleReduxDevTools(Of TState).Invoke(IRealmAction)
+- uid: Blazor.Realm.ReduxDevTools.HandleReduxDevTools`1.Invoke*
+  name: Invoke
+  href: api/Blazor.Realm.ReduxDevTools.HandleReduxDevTools-1.html#Blazor_Realm_ReduxDevTools_HandleReduxDevTools_1_Invoke_
+  commentId: Overload:Blazor.Realm.ReduxDevTools.HandleReduxDevTools`1.Invoke
+  isSpec: "True"
+  fullName: Blazor.Realm.ReduxDevTools.HandleReduxDevTools<TState>.Invoke
+  fullName.vb: Blazor.Realm.ReduxDevTools.HandleReduxDevTools(Of TState).Invoke
+  nameWithType: HandleReduxDevTools<TState>.Invoke
+  nameWithType.vb: HandleReduxDevTools(Of TState).Invoke
+- uid: Blazor.Realm.ReduxDevTools.Message
+  name: Message
+  href: api/Blazor.Realm.ReduxDevTools.Message.html
+  commentId: T:Blazor.Realm.ReduxDevTools.Message
+  fullName: Blazor.Realm.ReduxDevTools.Message
+  nameWithType: Message
+- uid: Blazor.Realm.ReduxDevTools.Message.#ctor
+  name: Message()
+  href: api/Blazor.Realm.ReduxDevTools.Message.html#Blazor_Realm_ReduxDevTools_Message__ctor
+  commentId: M:Blazor.Realm.ReduxDevTools.Message.#ctor
+  fullName: Blazor.Realm.ReduxDevTools.Message.Message()
+  nameWithType: Message.Message()
+- uid: Blazor.Realm.ReduxDevTools.Message.#ctor*
+  name: Message
+  href: api/Blazor.Realm.ReduxDevTools.Message.html#Blazor_Realm_ReduxDevTools_Message__ctor_
+  commentId: Overload:Blazor.Realm.ReduxDevTools.Message.#ctor
+  isSpec: "True"
+  fullName: Blazor.Realm.ReduxDevTools.Message.Message
+  nameWithType: Message.Message
+- uid: Blazor.Realm.ReduxDevTools.Message.Id
+  name: Id
+  href: api/Blazor.Realm.ReduxDevTools.Message.html#Blazor_Realm_ReduxDevTools_Message_Id
+  commentId: P:Blazor.Realm.ReduxDevTools.Message.Id
+  fullName: Blazor.Realm.ReduxDevTools.Message.Id
+  nameWithType: Message.Id
+- uid: Blazor.Realm.ReduxDevTools.Message.Id*
+  name: Id
+  href: api/Blazor.Realm.ReduxDevTools.Message.html#Blazor_Realm_ReduxDevTools_Message_Id_
+  commentId: Overload:Blazor.Realm.ReduxDevTools.Message.Id
+  isSpec: "True"
+  fullName: Blazor.Realm.ReduxDevTools.Message.Id
+  nameWithType: Message.Id
+- uid: Blazor.Realm.ReduxDevTools.Message.Payload
+  name: Payload
+  href: api/Blazor.Realm.ReduxDevTools.Message.html#Blazor_Realm_ReduxDevTools_Message_Payload
+  commentId: P:Blazor.Realm.ReduxDevTools.Message.Payload
+  fullName: Blazor.Realm.ReduxDevTools.Message.Payload
+  nameWithType: Message.Payload
+- uid: Blazor.Realm.ReduxDevTools.Message.Payload*
+  name: Payload
+  href: api/Blazor.Realm.ReduxDevTools.Message.html#Blazor_Realm_ReduxDevTools_Message_Payload_
+  commentId: Overload:Blazor.Realm.ReduxDevTools.Message.Payload
+  isSpec: "True"
+  fullName: Blazor.Realm.ReduxDevTools.Message.Payload
+  nameWithType: Message.Payload
+- uid: Blazor.Realm.ReduxDevTools.Message.Source
+  name: Source
+  href: api/Blazor.Realm.ReduxDevTools.Message.html#Blazor_Realm_ReduxDevTools_Message_Source
+  commentId: P:Blazor.Realm.ReduxDevTools.Message.Source
+  fullName: Blazor.Realm.ReduxDevTools.Message.Source
+  nameWithType: Message.Source
+- uid: Blazor.Realm.ReduxDevTools.Message.Source*
+  name: Source
+  href: api/Blazor.Realm.ReduxDevTools.Message.html#Blazor_Realm_ReduxDevTools_Message_Source_
+  commentId: Overload:Blazor.Realm.ReduxDevTools.Message.Source
+  isSpec: "True"
+  fullName: Blazor.Realm.ReduxDevTools.Message.Source
+  nameWithType: Message.Source
+- uid: Blazor.Realm.ReduxDevTools.Message.State
+  name: State
+  href: api/Blazor.Realm.ReduxDevTools.Message.html#Blazor_Realm_ReduxDevTools_Message_State
+  commentId: P:Blazor.Realm.ReduxDevTools.Message.State
+  fullName: Blazor.Realm.ReduxDevTools.Message.State
+  nameWithType: Message.State
+- uid: Blazor.Realm.ReduxDevTools.Message.State*
+  name: State
+  href: api/Blazor.Realm.ReduxDevTools.Message.html#Blazor_Realm_ReduxDevTools_Message_State_
+  commentId: Overload:Blazor.Realm.ReduxDevTools.Message.State
+  isSpec: "True"
+  fullName: Blazor.Realm.ReduxDevTools.Message.State
+  nameWithType: Message.State
+- uid: Blazor.Realm.ReduxDevTools.Message.Type
+  name: Type
+  href: api/Blazor.Realm.ReduxDevTools.Message.html#Blazor_Realm_ReduxDevTools_Message_Type
+  commentId: P:Blazor.Realm.ReduxDevTools.Message.Type
+  fullName: Blazor.Realm.ReduxDevTools.Message.Type
+  nameWithType: Message.Type
+- uid: Blazor.Realm.ReduxDevTools.Message.Type*
+  name: Type
+  href: api/Blazor.Realm.ReduxDevTools.Message.html#Blazor_Realm_ReduxDevTools_Message_Type_
+  commentId: Overload:Blazor.Realm.ReduxDevTools.Message.Type
+  isSpec: "True"
+  fullName: Blazor.Realm.ReduxDevTools.Message.Type
+  nameWithType: Message.Type
+- uid: Blazor.Realm.ReduxDevTools.MessageEventArgs
+  name: MessageEventArgs
+  href: api/Blazor.Realm.ReduxDevTools.MessageEventArgs.html
+  commentId: T:Blazor.Realm.ReduxDevTools.MessageEventArgs
+  fullName: Blazor.Realm.ReduxDevTools.MessageEventArgs
+  nameWithType: MessageEventArgs
+- uid: Blazor.Realm.ReduxDevTools.MessageEventArgs.#ctor(System.String)
+  name: MessageEventArgs(String)
+  href: api/Blazor.Realm.ReduxDevTools.MessageEventArgs.html#Blazor_Realm_ReduxDevTools_MessageEventArgs__ctor_System_String_
+  commentId: M:Blazor.Realm.ReduxDevTools.MessageEventArgs.#ctor(System.String)
+  fullName: Blazor.Realm.ReduxDevTools.MessageEventArgs.MessageEventArgs(System.String)
+  nameWithType: MessageEventArgs.MessageEventArgs(String)
+- uid: Blazor.Realm.ReduxDevTools.MessageEventArgs.#ctor*
+  name: MessageEventArgs
+  href: api/Blazor.Realm.ReduxDevTools.MessageEventArgs.html#Blazor_Realm_ReduxDevTools_MessageEventArgs__ctor_
+  commentId: Overload:Blazor.Realm.ReduxDevTools.MessageEventArgs.#ctor
+  isSpec: "True"
+  fullName: Blazor.Realm.ReduxDevTools.MessageEventArgs.MessageEventArgs
+  nameWithType: MessageEventArgs.MessageEventArgs
+- uid: Blazor.Realm.ReduxDevTools.MessageEventArgs.Message
+  name: Message
+  href: api/Blazor.Realm.ReduxDevTools.MessageEventArgs.html#Blazor_Realm_ReduxDevTools_MessageEventArgs_Message
+  commentId: P:Blazor.Realm.ReduxDevTools.MessageEventArgs.Message
+  fullName: Blazor.Realm.ReduxDevTools.MessageEventArgs.Message
+  nameWithType: MessageEventArgs.Message
+- uid: Blazor.Realm.ReduxDevTools.MessageEventArgs.Message*
+  name: Message
+  href: api/Blazor.Realm.ReduxDevTools.MessageEventArgs.html#Blazor_Realm_ReduxDevTools_MessageEventArgs_Message_
+  commentId: Overload:Blazor.Realm.ReduxDevTools.MessageEventArgs.Message
+  isSpec: "True"
+  fullName: Blazor.Realm.ReduxDevTools.MessageEventArgs.Message
+  nameWithType: MessageEventArgs.Message
+- uid: Blazor.Realm.ReduxDevTools.Payload
+  name: Payload
+  href: api/Blazor.Realm.ReduxDevTools.Payload.html
+  commentId: T:Blazor.Realm.ReduxDevTools.Payload
+  fullName: Blazor.Realm.ReduxDevTools.Payload
+  nameWithType: Payload
+- uid: Blazor.Realm.ReduxDevTools.Payload.#ctor
+  name: Payload()
+  href: api/Blazor.Realm.ReduxDevTools.Payload.html#Blazor_Realm_ReduxDevTools_Payload__ctor
+  commentId: M:Blazor.Realm.ReduxDevTools.Payload.#ctor
+  fullName: Blazor.Realm.ReduxDevTools.Payload.Payload()
+  nameWithType: Payload.Payload()
+- uid: Blazor.Realm.ReduxDevTools.Payload.#ctor*
+  name: Payload
+  href: api/Blazor.Realm.ReduxDevTools.Payload.html#Blazor_Realm_ReduxDevTools_Payload__ctor_
+  commentId: Overload:Blazor.Realm.ReduxDevTools.Payload.#ctor
+  isSpec: "True"
+  fullName: Blazor.Realm.ReduxDevTools.Payload.Payload
+  nameWithType: Payload.Payload
+- uid: Blazor.Realm.ReduxDevTools.Payload.ActionId
+  name: ActionId
+  href: api/Blazor.Realm.ReduxDevTools.Payload.html#Blazor_Realm_ReduxDevTools_Payload_ActionId
+  commentId: P:Blazor.Realm.ReduxDevTools.Payload.ActionId
+  fullName: Blazor.Realm.ReduxDevTools.Payload.ActionId
+  nameWithType: Payload.ActionId
+- uid: Blazor.Realm.ReduxDevTools.Payload.ActionId*
+  name: ActionId
+  href: api/Blazor.Realm.ReduxDevTools.Payload.html#Blazor_Realm_ReduxDevTools_Payload_ActionId_
+  commentId: Overload:Blazor.Realm.ReduxDevTools.Payload.ActionId
+  isSpec: "True"
+  fullName: Blazor.Realm.ReduxDevTools.Payload.ActionId
+  nameWithType: Payload.ActionId
+- uid: Blazor.Realm.ReduxDevTools.Payload.Index
+  name: Index
+  href: api/Blazor.Realm.ReduxDevTools.Payload.html#Blazor_Realm_ReduxDevTools_Payload_Index
+  commentId: P:Blazor.Realm.ReduxDevTools.Payload.Index
+  fullName: Blazor.Realm.ReduxDevTools.Payload.Index
+  nameWithType: Payload.Index
+- uid: Blazor.Realm.ReduxDevTools.Payload.Index*
+  name: Index
+  href: api/Blazor.Realm.ReduxDevTools.Payload.html#Blazor_Realm_ReduxDevTools_Payload_Index_
+  commentId: Overload:Blazor.Realm.ReduxDevTools.Payload.Index
+  isSpec: "True"
+  fullName: Blazor.Realm.ReduxDevTools.Payload.Index
+  nameWithType: Payload.Index
+- uid: Blazor.Realm.ReduxDevTools.Payload.Type
+  name: Type
+  href: api/Blazor.Realm.ReduxDevTools.Payload.html#Blazor_Realm_ReduxDevTools_Payload_Type
+  commentId: P:Blazor.Realm.ReduxDevTools.Payload.Type
+  fullName: Blazor.Realm.ReduxDevTools.Payload.Type
+  nameWithType: Payload.Type
+- uid: Blazor.Realm.ReduxDevTools.Payload.Type*
+  name: Type
+  href: api/Blazor.Realm.ReduxDevTools.Payload.html#Blazor_Realm_ReduxDevTools_Payload_Type_
+  commentId: Overload:Blazor.Realm.ReduxDevTools.Payload.Type
+  isSpec: "True"
+  fullName: Blazor.Realm.ReduxDevTools.Payload.Type
+  nameWithType: Payload.Type
+- uid: Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop
+  name: ReduxDevToolsInterop
+  href: api/Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.html
+  commentId: T:Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop
+  fullName: Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop
+  nameWithType: ReduxDevToolsInterop
+- uid: Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.Connect
+  name: Connect()
+  href: api/Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.html#Blazor_Realm_ReduxDevTools_ReduxDevToolsInterop_Connect
+  commentId: M:Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.Connect
+  fullName: Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.Connect()
+  nameWithType: ReduxDevToolsInterop.Connect()
+- uid: Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.Connect*
+  name: Connect
+  href: api/Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.html#Blazor_Realm_ReduxDevTools_ReduxDevToolsInterop_Connect_
+  commentId: Overload:Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.Connect
+  isSpec: "True"
+  fullName: Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.Connect
+  nameWithType: ReduxDevToolsInterop.Connect
+- uid: Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.Disconnect
+  name: Disconnect()
+  href: api/Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.html#Blazor_Realm_ReduxDevTools_ReduxDevToolsInterop_Disconnect
+  commentId: M:Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.Disconnect
+  fullName: Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.Disconnect()
+  nameWithType: ReduxDevToolsInterop.Disconnect()
+- uid: Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.Disconnect*
+  name: Disconnect
+  href: api/Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.html#Blazor_Realm_ReduxDevTools_ReduxDevToolsInterop_Disconnect_
+  commentId: Overload:Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.Disconnect
+  isSpec: "True"
+  fullName: Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.Disconnect
+  nameWithType: ReduxDevToolsInterop.Disconnect
+- uid: Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.Init(System.Object)
+  name: Init(Object)
+  href: api/Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.html#Blazor_Realm_ReduxDevTools_ReduxDevToolsInterop_Init_System_Object_
+  commentId: M:Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.Init(System.Object)
+  fullName: Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.Init(System.Object)
+  nameWithType: ReduxDevToolsInterop.Init(Object)
+- uid: Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.Init*
+  name: Init
+  href: api/Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.html#Blazor_Realm_ReduxDevTools_ReduxDevToolsInterop_Init_
+  commentId: Overload:Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.Init
+  isSpec: "True"
+  fullName: Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.Init
+  nameWithType: ReduxDevToolsInterop.Init
+- uid: Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.IsAvailable
+  name: IsAvailable()
+  href: api/Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.html#Blazor_Realm_ReduxDevTools_ReduxDevToolsInterop_IsAvailable
+  commentId: M:Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.IsAvailable
+  fullName: Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.IsAvailable()
+  nameWithType: ReduxDevToolsInterop.IsAvailable()
+- uid: Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.IsAvailable*
+  name: IsAvailable
+  href: api/Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.html#Blazor_Realm_ReduxDevTools_ReduxDevToolsInterop_IsAvailable_
+  commentId: Overload:Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.IsAvailable
+  isSpec: "True"
+  fullName: Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.IsAvailable
+  nameWithType: ReduxDevToolsInterop.IsAvailable
+- uid: Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.MessageReceived
+  name: MessageReceived
+  href: api/Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.html#Blazor_Realm_ReduxDevTools_ReduxDevToolsInterop_MessageReceived
+  commentId: E:Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.MessageReceived
+  fullName: Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.MessageReceived
+  nameWithType: ReduxDevToolsInterop.MessageReceived
+- uid: Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.OnMessageReceived(System.String)
+  name: OnMessageReceived(String)
+  href: api/Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.html#Blazor_Realm_ReduxDevTools_ReduxDevToolsInterop_OnMessageReceived_System_String_
+  commentId: M:Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.OnMessageReceived(System.String)
+  fullName: Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.OnMessageReceived(System.String)
+  nameWithType: ReduxDevToolsInterop.OnMessageReceived(String)
+- uid: Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.OnMessageReceived*
+  name: OnMessageReceived
+  href: api/Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.html#Blazor_Realm_ReduxDevTools_ReduxDevToolsInterop_OnMessageReceived_
+  commentId: Overload:Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.OnMessageReceived
+  isSpec: "True"
+  fullName: Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.OnMessageReceived
+  nameWithType: ReduxDevToolsInterop.OnMessageReceived
+- uid: Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.Send(System.Object,System.Object)
+  name: Send(Object, Object)
+  href: api/Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.html#Blazor_Realm_ReduxDevTools_ReduxDevToolsInterop_Send_System_Object_System_Object_
+  commentId: M:Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.Send(System.Object,System.Object)
+  fullName: Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.Send(System.Object, System.Object)
+  nameWithType: ReduxDevToolsInterop.Send(Object, Object)
+- uid: Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.Send*
+  name: Send
+  href: api/Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.html#Blazor_Realm_ReduxDevTools_ReduxDevToolsInterop_Send_
+  commentId: Overload:Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.Send
+  isSpec: "True"
+  fullName: Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.Send
+  nameWithType: ReduxDevToolsInterop.Send
+- uid: Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.Subscribe
+  name: Subscribe()
+  href: api/Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.html#Blazor_Realm_ReduxDevTools_ReduxDevToolsInterop_Subscribe
+  commentId: M:Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.Subscribe
+  fullName: Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.Subscribe()
+  nameWithType: ReduxDevToolsInterop.Subscribe()
+- uid: Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.Subscribe*
+  name: Subscribe
+  href: api/Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.html#Blazor_Realm_ReduxDevTools_ReduxDevToolsInterop_Subscribe_
+  commentId: Overload:Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.Subscribe
+  isSpec: "True"
+  fullName: Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.Subscribe
+  nameWithType: ReduxDevToolsInterop.Subscribe
+- uid: Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.UnSubscribe
+  name: UnSubscribe()
+  href: api/Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.html#Blazor_Realm_ReduxDevTools_ReduxDevToolsInterop_UnSubscribe
+  commentId: M:Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.UnSubscribe
+  fullName: Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.UnSubscribe()
+  nameWithType: ReduxDevToolsInterop.UnSubscribe()
+- uid: Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.UnSubscribe*
+  name: UnSubscribe
+  href: api/Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.html#Blazor_Realm_ReduxDevTools_ReduxDevToolsInterop_UnSubscribe_
+  commentId: Overload:Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.UnSubscribe
+  isSpec: "True"
+  fullName: Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.UnSubscribe
+  nameWithType: ReduxDevToolsInterop.UnSubscribe
+- uid: Blazor.Realm.Store`1
+  name: Store<TState>
+  href: api/Blazor.Realm.Store-1.html
+  commentId: T:Blazor.Realm.Store`1
+  name.vb: Store(Of TState)
+  fullName: Blazor.Realm.Store<TState>
+  fullName.vb: Blazor.Realm.Store(Of TState)
+  nameWithType: Store<TState>
+  nameWithType.vb: Store(Of TState)
+- uid: Blazor.Realm.Store`1.#ctor(`0,Blazor.Realm.Reducer{`0})
+  name: Store(TState, Reducer<TState>)
+  href: api/Blazor.Realm.Store-1.html#Blazor_Realm_Store_1__ctor__0_Blazor_Realm_Reducer__0__
+  commentId: M:Blazor.Realm.Store`1.#ctor(`0,Blazor.Realm.Reducer{`0})
+  name.vb: Store(TState, Reducer(Of TState))
+  fullName: Blazor.Realm.Store<TState>.Store(TState, Blazor.Realm.Reducer<TState>)
+  fullName.vb: Blazor.Realm.Store(Of TState).Store(TState, Blazor.Realm.Reducer(Of TState))
+  nameWithType: Store<TState>.Store(TState, Reducer<TState>)
+  nameWithType.vb: Store(Of TState).Store(TState, Reducer(Of TState))
+- uid: Blazor.Realm.Store`1.#ctor*
+  name: Store
+  href: api/Blazor.Realm.Store-1.html#Blazor_Realm_Store_1__ctor_
+  commentId: Overload:Blazor.Realm.Store`1.#ctor
+  isSpec: "True"
+  fullName: Blazor.Realm.Store<TState>.Store
+  fullName.vb: Blazor.Realm.Store(Of TState).Store
+  nameWithType: Store<TState>.Store
+  nameWithType.vb: Store(Of TState).Store
+- uid: Blazor.Realm.Store`1.Change
+  name: Change
+  href: api/Blazor.Realm.Store-1.html#Blazor_Realm_Store_1_Change
+  commentId: E:Blazor.Realm.Store`1.Change
+  fullName: Blazor.Realm.Store<TState>.Change
+  fullName.vb: Blazor.Realm.Store(Of TState).Change
+  nameWithType: Store<TState>.Change
+  nameWithType.vb: Store(Of TState).Change
+- uid: Blazor.Realm.Store`1.Dispatch(Blazor.Realm.IRealmAction)
+  name: Dispatch(IRealmAction)
+  href: api/Blazor.Realm.Store-1.html#Blazor_Realm_Store_1_Dispatch_Blazor_Realm_IRealmAction_
+  commentId: M:Blazor.Realm.Store`1.Dispatch(Blazor.Realm.IRealmAction)
+  fullName: Blazor.Realm.Store<TState>.Dispatch(Blazor.Realm.IRealmAction)
+  fullName.vb: Blazor.Realm.Store(Of TState).Dispatch(Blazor.Realm.IRealmAction)
+  nameWithType: Store<TState>.Dispatch(IRealmAction)
+  nameWithType.vb: Store(Of TState).Dispatch(IRealmAction)
+- uid: Blazor.Realm.Store`1.Dispatch*
+  name: Dispatch
+  href: api/Blazor.Realm.Store-1.html#Blazor_Realm_Store_1_Dispatch_
+  commentId: Overload:Blazor.Realm.Store`1.Dispatch
+  isSpec: "True"
+  fullName: Blazor.Realm.Store<TState>.Dispatch
+  fullName.vb: Blazor.Realm.Store(Of TState).Dispatch
+  nameWithType: Store<TState>.Dispatch
+  nameWithType.vb: Store(Of TState).Dispatch
+- uid: Blazor.Realm.Store`1.GetState
+  name: GetState()
+  href: api/Blazor.Realm.Store-1.html#Blazor_Realm_Store_1_GetState
+  commentId: M:Blazor.Realm.Store`1.GetState
+  fullName: Blazor.Realm.Store<TState>.GetState()
+  fullName.vb: Blazor.Realm.Store(Of TState).GetState()
+  nameWithType: Store<TState>.GetState()
+  nameWithType.vb: Store(Of TState).GetState()
+- uid: Blazor.Realm.Store`1.GetState*
+  name: GetState
+  href: api/Blazor.Realm.Store-1.html#Blazor_Realm_Store_1_GetState_
+  commentId: Overload:Blazor.Realm.Store`1.GetState
+  isSpec: "True"
+  fullName: Blazor.Realm.Store<TState>.GetState
+  fullName.vb: Blazor.Realm.Store(Of TState).GetState
+  nameWithType: Store<TState>.GetState
+  nameWithType.vb: Store(Of TState).GetState
+- uid: Blazor.Realm.Store`1.OnChange(System.EventArgs)
+  name: OnChange(EventArgs)
+  href: api/Blazor.Realm.Store-1.html#Blazor_Realm_Store_1_OnChange_System_EventArgs_
+  commentId: M:Blazor.Realm.Store`1.OnChange(System.EventArgs)
+  fullName: Blazor.Realm.Store<TState>.OnChange(System.EventArgs)
+  fullName.vb: Blazor.Realm.Store(Of TState).OnChange(System.EventArgs)
+  nameWithType: Store<TState>.OnChange(EventArgs)
+  nameWithType.vb: Store(Of TState).OnChange(EventArgs)
+- uid: Blazor.Realm.Store`1.OnChange*
+  name: OnChange
+  href: api/Blazor.Realm.Store-1.html#Blazor_Realm_Store_1_OnChange_
+  commentId: Overload:Blazor.Realm.Store`1.OnChange
+  isSpec: "True"
+  fullName: Blazor.Realm.Store<TState>.OnChange
+  fullName.vb: Blazor.Realm.Store(Of TState).OnChange
+  nameWithType: Store<TState>.OnChange
+  nameWithType.vb: Store(Of TState).OnChange
+- uid: Blazor.Realm.StoreBuilder`1
+  name: StoreBuilder<TState>
+  href: api/Blazor.Realm.StoreBuilder-1.html
+  commentId: T:Blazor.Realm.StoreBuilder`1
+  name.vb: StoreBuilder(Of TState)
+  fullName: Blazor.Realm.StoreBuilder<TState>
+  fullName.vb: Blazor.Realm.StoreBuilder(Of TState)
+  nameWithType: StoreBuilder<TState>
+  nameWithType.vb: StoreBuilder(Of TState)
+- uid: Blazor.Realm.StoreBuilder`1.#ctor(System.IServiceProvider)
+  name: StoreBuilder(IServiceProvider)
+  href: api/Blazor.Realm.StoreBuilder-1.html#Blazor_Realm_StoreBuilder_1__ctor_System_IServiceProvider_
+  commentId: M:Blazor.Realm.StoreBuilder`1.#ctor(System.IServiceProvider)
+  fullName: Blazor.Realm.StoreBuilder<TState>.StoreBuilder(System.IServiceProvider)
+  fullName.vb: Blazor.Realm.StoreBuilder(Of TState).StoreBuilder(System.IServiceProvider)
+  nameWithType: StoreBuilder<TState>.StoreBuilder(IServiceProvider)
+  nameWithType.vb: StoreBuilder(Of TState).StoreBuilder(IServiceProvider)
+- uid: Blazor.Realm.StoreBuilder`1.#ctor*
+  name: StoreBuilder
+  href: api/Blazor.Realm.StoreBuilder-1.html#Blazor_Realm_StoreBuilder_1__ctor_
+  commentId: Overload:Blazor.Realm.StoreBuilder`1.#ctor
+  isSpec: "True"
+  fullName: Blazor.Realm.StoreBuilder<TState>.StoreBuilder
+  fullName.vb: Blazor.Realm.StoreBuilder(Of TState).StoreBuilder
+  nameWithType: StoreBuilder<TState>.StoreBuilder
+  nameWithType.vb: StoreBuilder(Of TState).StoreBuilder
+- uid: Blazor.Realm.StoreBuilder`1.Build
+  name: Build()
+  href: api/Blazor.Realm.StoreBuilder-1.html#Blazor_Realm_StoreBuilder_1_Build
+  commentId: M:Blazor.Realm.StoreBuilder`1.Build
+  fullName: Blazor.Realm.StoreBuilder<TState>.Build()
+  fullName.vb: Blazor.Realm.StoreBuilder(Of TState).Build()
+  nameWithType: StoreBuilder<TState>.Build()
+  nameWithType.vb: StoreBuilder(Of TState).Build()
+- uid: Blazor.Realm.StoreBuilder`1.Build*
+  name: Build
+  href: api/Blazor.Realm.StoreBuilder-1.html#Blazor_Realm_StoreBuilder_1_Build_
+  commentId: Overload:Blazor.Realm.StoreBuilder`1.Build
+  isSpec: "True"
+  fullName: Blazor.Realm.StoreBuilder<TState>.Build
+  fullName.vb: Blazor.Realm.StoreBuilder(Of TState).Build
+  nameWithType: StoreBuilder<TState>.Build
+  nameWithType.vb: StoreBuilder(Of TState).Build
+- uid: Blazor.Realm.StoreBuilder`1.Middleware
+  name: Middleware
+  href: api/Blazor.Realm.StoreBuilder-1.html#Blazor_Realm_StoreBuilder_1_Middleware
+  commentId: P:Blazor.Realm.StoreBuilder`1.Middleware
+  fullName: Blazor.Realm.StoreBuilder<TState>.Middleware
+  fullName.vb: Blazor.Realm.StoreBuilder(Of TState).Middleware
+  nameWithType: StoreBuilder<TState>.Middleware
+  nameWithType.vb: StoreBuilder(Of TState).Middleware
+- uid: Blazor.Realm.StoreBuilder`1.Middleware*
+  name: Middleware
+  href: api/Blazor.Realm.StoreBuilder-1.html#Blazor_Realm_StoreBuilder_1_Middleware_
+  commentId: Overload:Blazor.Realm.StoreBuilder`1.Middleware
+  isSpec: "True"
+  fullName: Blazor.Realm.StoreBuilder<TState>.Middleware
+  fullName.vb: Blazor.Realm.StoreBuilder(Of TState).Middleware
+  nameWithType: StoreBuilder<TState>.Middleware
+  nameWithType.vb: StoreBuilder(Of TState).Middleware
+- uid: Blazor.Realm.StoreBuilder`1.ServiceProvider
+  name: ServiceProvider
+  href: api/Blazor.Realm.StoreBuilder-1.html#Blazor_Realm_StoreBuilder_1_ServiceProvider
+  commentId: P:Blazor.Realm.StoreBuilder`1.ServiceProvider
+  fullName: Blazor.Realm.StoreBuilder<TState>.ServiceProvider
+  fullName.vb: Blazor.Realm.StoreBuilder(Of TState).ServiceProvider
+  nameWithType: StoreBuilder<TState>.ServiceProvider
+  nameWithType.vb: StoreBuilder(Of TState).ServiceProvider
+- uid: Blazor.Realm.StoreBuilder`1.ServiceProvider*
+  name: ServiceProvider
+  href: api/Blazor.Realm.StoreBuilder-1.html#Blazor_Realm_StoreBuilder_1_ServiceProvider_
+  commentId: Overload:Blazor.Realm.StoreBuilder`1.ServiceProvider
+  isSpec: "True"
+  fullName: Blazor.Realm.StoreBuilder<TState>.ServiceProvider
+  fullName.vb: Blazor.Realm.StoreBuilder(Of TState).ServiceProvider
+  nameWithType: StoreBuilder<TState>.ServiceProvider
+  nameWithType.vb: StoreBuilder(Of TState).ServiceProvider
+- uid: Blazor.Realm.StoreBuilderStoreExtensions
+  name: StoreBuilderStoreExtensions
+  href: api/Blazor.Realm.StoreBuilderStoreExtensions.html
+  commentId: T:Blazor.Realm.StoreBuilderStoreExtensions
+  fullName: Blazor.Realm.StoreBuilderStoreExtensions
+  nameWithType: StoreBuilderStoreExtensions
+- uid: Blazor.Realm.StoreBuilderStoreExtensions.GetInitialStoreDispatch*
+  name: GetInitialStoreDispatch
+  href: api/Blazor.Realm.StoreBuilderStoreExtensions.html#Blazor_Realm_StoreBuilderStoreExtensions_GetInitialStoreDispatch_
+  commentId: Overload:Blazor.Realm.StoreBuilderStoreExtensions.GetInitialStoreDispatch
+  isSpec: "True"
+  fullName: Blazor.Realm.StoreBuilderStoreExtensions.GetInitialStoreDispatch
+  nameWithType: StoreBuilderStoreExtensions.GetInitialStoreDispatch
+- uid: Blazor.Realm.StoreBuilderStoreExtensions.GetInitialStoreDispatch``1(Blazor.Realm.IStoreBuilder{``0})
+  name: GetInitialStoreDispatch<TState>(IStoreBuilder<TState>)
+  href: api/Blazor.Realm.StoreBuilderStoreExtensions.html#Blazor_Realm_StoreBuilderStoreExtensions_GetInitialStoreDispatch__1_Blazor_Realm_IStoreBuilder___0__
+  commentId: M:Blazor.Realm.StoreBuilderStoreExtensions.GetInitialStoreDispatch``1(Blazor.Realm.IStoreBuilder{``0})
+  name.vb: GetInitialStoreDispatch(Of TState)(IStoreBuilder(Of TState))
+  fullName: Blazor.Realm.StoreBuilderStoreExtensions.GetInitialStoreDispatch<TState>(Blazor.Realm.IStoreBuilder<TState>)
+  fullName.vb: Blazor.Realm.StoreBuilderStoreExtensions.GetInitialStoreDispatch(Of TState)(Blazor.Realm.IStoreBuilder(Of TState))
+  nameWithType: StoreBuilderStoreExtensions.GetInitialStoreDispatch<TState>(IStoreBuilder<TState>)
+  nameWithType.vb: StoreBuilderStoreExtensions.GetInitialStoreDispatch(Of TState)(IStoreBuilder(Of TState))
+- uid: Blazor.Realm.StoreBuilderStoreExtensions.SetStoreDispatch*
+  name: SetStoreDispatch
+  href: api/Blazor.Realm.StoreBuilderStoreExtensions.html#Blazor_Realm_StoreBuilderStoreExtensions_SetStoreDispatch_
+  commentId: Overload:Blazor.Realm.StoreBuilderStoreExtensions.SetStoreDispatch
+  isSpec: "True"
+  fullName: Blazor.Realm.StoreBuilderStoreExtensions.SetStoreDispatch
+  nameWithType: StoreBuilderStoreExtensions.SetStoreDispatch
+- uid: Blazor.Realm.StoreBuilderStoreExtensions.SetStoreDispatch``1(Blazor.Realm.IStoreBuilder{``0},Blazor.Realm.Dispatcher{``0})
+  name: SetStoreDispatch<TState>(IStoreBuilder<TState>, Dispatcher<TState>)
+  href: api/Blazor.Realm.StoreBuilderStoreExtensions.html#Blazor_Realm_StoreBuilderStoreExtensions_SetStoreDispatch__1_Blazor_Realm_IStoreBuilder___0__Blazor_Realm_Dispatcher___0__
+  commentId: M:Blazor.Realm.StoreBuilderStoreExtensions.SetStoreDispatch``1(Blazor.Realm.IStoreBuilder{``0},Blazor.Realm.Dispatcher{``0})
+  name.vb: SetStoreDispatch(Of TState)(IStoreBuilder(Of TState), Dispatcher(Of TState))
+  fullName: Blazor.Realm.StoreBuilderStoreExtensions.SetStoreDispatch<TState>(Blazor.Realm.IStoreBuilder<TState>, Blazor.Realm.Dispatcher<TState>)
+  fullName.vb: Blazor.Realm.StoreBuilderStoreExtensions.SetStoreDispatch(Of TState)(Blazor.Realm.IStoreBuilder(Of TState), Blazor.Realm.Dispatcher(Of TState))
+  nameWithType: StoreBuilderStoreExtensions.SetStoreDispatch<TState>(IStoreBuilder<TState>, Dispatcher<TState>)
+  nameWithType.vb: StoreBuilderStoreExtensions.SetStoreDispatch(Of TState)(IStoreBuilder(Of TState), Dispatcher(Of TState))
+- uid: Blazor.Realm.UseExtensions
+  name: UseExtensions
+  href: api/Blazor.Realm.UseExtensions.html
+  commentId: T:Blazor.Realm.UseExtensions
+  fullName: Blazor.Realm.UseExtensions
+  nameWithType: UseExtensions
+- uid: Blazor.Realm.UseExtensions.Use*
+  name: Use
+  href: api/Blazor.Realm.UseExtensions.html#Blazor_Realm_UseExtensions_Use_
+  commentId: Overload:Blazor.Realm.UseExtensions.Use
+  isSpec: "True"
+  fullName: Blazor.Realm.UseExtensions.Use
+  nameWithType: UseExtensions.Use
+- uid: Blazor.Realm.UseExtensions.Use``1(Blazor.Realm.IStoreBuilder{``0},System.Func{Blazor.Realm.Dispatcher{``0},Blazor.Realm.Dispatcher{``0}})
+  name: Use<TState>(IStoreBuilder<TState>, Func<Dispatcher<TState>, Dispatcher<TState>>)
+  href: api/Blazor.Realm.UseExtensions.html#Blazor_Realm_UseExtensions_Use__1_Blazor_Realm_IStoreBuilder___0__System_Func_Blazor_Realm_Dispatcher___0__Blazor_Realm_Dispatcher___0___
+  commentId: M:Blazor.Realm.UseExtensions.Use``1(Blazor.Realm.IStoreBuilder{``0},System.Func{Blazor.Realm.Dispatcher{``0},Blazor.Realm.Dispatcher{``0}})
+  name.vb: Use(Of TState)(IStoreBuilder(Of TState), Func(Of Dispatcher(Of TState), Dispatcher(Of TState)))
+  fullName: Blazor.Realm.UseExtensions.Use<TState>(Blazor.Realm.IStoreBuilder<TState>, System.Func<Blazor.Realm.Dispatcher<TState>, Blazor.Realm.Dispatcher<TState>>)
+  fullName.vb: Blazor.Realm.UseExtensions.Use(Of TState)(Blazor.Realm.IStoreBuilder(Of TState), System.Func(Of Blazor.Realm.Dispatcher(Of TState), Blazor.Realm.Dispatcher(Of TState)))
+  nameWithType: UseExtensions.Use<TState>(IStoreBuilder<TState>, Func<Dispatcher<TState>, Dispatcher<TState>>)
+  nameWithType.vb: UseExtensions.Use(Of TState)(IStoreBuilder(Of TState), Func(Of Dispatcher(Of TState), Dispatcher(Of TState)))
+- uid: Blazor.Realm.UseExtensions.Use``1(Blazor.Realm.IStoreBuilder{``0},System.Func{Blazor.Realm.Store{``0},Blazor.Realm.Dispatcher{``0},Blazor.Realm.Dispatcher{``0}})
+  name: Use<TState>(IStoreBuilder<TState>, Func<Store<TState>, Dispatcher<TState>, Dispatcher<TState>>)
+  href: api/Blazor.Realm.UseExtensions.html#Blazor_Realm_UseExtensions_Use__1_Blazor_Realm_IStoreBuilder___0__System_Func_Blazor_Realm_Store___0__Blazor_Realm_Dispatcher___0__Blazor_Realm_Dispatcher___0___
+  commentId: M:Blazor.Realm.UseExtensions.Use``1(Blazor.Realm.IStoreBuilder{``0},System.Func{Blazor.Realm.Store{``0},Blazor.Realm.Dispatcher{``0},Blazor.Realm.Dispatcher{``0}})
+  name.vb: Use(Of TState)(IStoreBuilder(Of TState), Func(Of Store(Of TState), Dispatcher(Of TState), Dispatcher(Of TState)))
+  fullName: Blazor.Realm.UseExtensions.Use<TState>(Blazor.Realm.IStoreBuilder<TState>, System.Func<Blazor.Realm.Store<TState>, Blazor.Realm.Dispatcher<TState>, Blazor.Realm.Dispatcher<TState>>)
+  fullName.vb: Blazor.Realm.UseExtensions.Use(Of TState)(Blazor.Realm.IStoreBuilder(Of TState), System.Func(Of Blazor.Realm.Store(Of TState), Blazor.Realm.Dispatcher(Of TState), Blazor.Realm.Dispatcher(Of TState)))
+  nameWithType: UseExtensions.Use<TState>(IStoreBuilder<TState>, Func<Store<TState>, Dispatcher<TState>, Dispatcher<TState>>)
+  nameWithType.vb: UseExtensions.Use(Of TState)(IStoreBuilder(Of TState), Func(Of Store(Of TState), Dispatcher(Of TState), Dispatcher(Of TState)))
+- uid: Blazor.Realm.UseMiddlewareExtensions
+  name: UseMiddlewareExtensions
+  href: api/Blazor.Realm.UseMiddlewareExtensions.html
+  commentId: T:Blazor.Realm.UseMiddlewareExtensions
+  fullName: Blazor.Realm.UseMiddlewareExtensions
+  nameWithType: UseMiddlewareExtensions
+- uid: Blazor.Realm.UseMiddlewareExtensions.UseMiddleware*
+  name: UseMiddleware
+  href: api/Blazor.Realm.UseMiddlewareExtensions.html#Blazor_Realm_UseMiddlewareExtensions_UseMiddleware_
+  commentId: Overload:Blazor.Realm.UseMiddlewareExtensions.UseMiddleware
+  isSpec: "True"
+  fullName: Blazor.Realm.UseMiddlewareExtensions.UseMiddleware
+  nameWithType: UseMiddlewareExtensions.UseMiddleware
+- uid: Blazor.Realm.UseMiddlewareExtensions.UseMiddleware``1(Blazor.Realm.IStoreBuilder{``0},System.Type,System.Object[])
+  name: UseMiddleware<TState>(IStoreBuilder<TState>, Type, Object[])
+  href: api/Blazor.Realm.UseMiddlewareExtensions.html#Blazor_Realm_UseMiddlewareExtensions_UseMiddleware__1_Blazor_Realm_IStoreBuilder___0__System_Type_System_Object___
+  commentId: M:Blazor.Realm.UseMiddlewareExtensions.UseMiddleware``1(Blazor.Realm.IStoreBuilder{``0},System.Type,System.Object[])
+  name.vb: UseMiddleware(Of TState)(IStoreBuilder(Of TState), Type, Object())
+  fullName: Blazor.Realm.UseMiddlewareExtensions.UseMiddleware<TState>(Blazor.Realm.IStoreBuilder<TState>, System.Type, System.Object[])
+  fullName.vb: Blazor.Realm.UseMiddlewareExtensions.UseMiddleware(Of TState)(Blazor.Realm.IStoreBuilder(Of TState), System.Type, System.Object())
+  nameWithType: UseMiddlewareExtensions.UseMiddleware<TState>(IStoreBuilder<TState>, Type, Object[])
+  nameWithType.vb: UseMiddlewareExtensions.UseMiddleware(Of TState)(IStoreBuilder(Of TState), Type, Object())
+- uid: Blazor.Realm.UseMiddlewareExtensions.UseMiddleware``2(Blazor.Realm.IStoreBuilder{``0},System.Object[])
+  name: UseMiddleware<TState, TMiddleware>(IStoreBuilder<TState>, Object[])
+  href: api/Blazor.Realm.UseMiddlewareExtensions.html#Blazor_Realm_UseMiddlewareExtensions_UseMiddleware__2_Blazor_Realm_IStoreBuilder___0__System_Object___
+  commentId: M:Blazor.Realm.UseMiddlewareExtensions.UseMiddleware``2(Blazor.Realm.IStoreBuilder{``0},System.Object[])
+  name.vb: UseMiddleware(Of TState, TMiddleware)(IStoreBuilder(Of TState), Object())
+  fullName: Blazor.Realm.UseMiddlewareExtensions.UseMiddleware<TState, TMiddleware>(Blazor.Realm.IStoreBuilder<TState>, System.Object[])
+  fullName.vb: Blazor.Realm.UseMiddlewareExtensions.UseMiddleware(Of TState, TMiddleware)(Blazor.Realm.IStoreBuilder(Of TState), System.Object())
+  nameWithType: UseMiddlewareExtensions.UseMiddleware<TState, TMiddleware>(IStoreBuilder<TState>, Object[])
+  nameWithType.vb: UseMiddlewareExtensions.UseMiddleware(Of TState, TMiddleware)(IStoreBuilder(Of TState), Object())
+- uid: BlazorRealmReduxDevTools
+  name: BlazorRealmReduxDevTools
+  href: api/BlazorRealmReduxDevTools.html
+  commentId: N:BlazorRealmReduxDevTools
+  fullName: BlazorRealmReduxDevTools
+  nameWithType: BlazorRealmReduxDevTools
+- uid: BlazorRealmReduxDevTools._ViewImports
+  name: _ViewImports
+  href: api/BlazorRealmReduxDevTools._ViewImports.html
+  commentId: T:BlazorRealmReduxDevTools._ViewImports
+  fullName: BlazorRealmReduxDevTools._ViewImports
+  nameWithType: _ViewImports
+- uid: BlazorRealmReduxDevTools._ViewImports.BuildRenderTree(Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder)
+  name: BuildRenderTree(RenderTreeBuilder)
+  href: api/BlazorRealmReduxDevTools._ViewImports.html#BlazorRealmReduxDevTools__ViewImports_BuildRenderTree_Microsoft_AspNetCore_Blazor_RenderTree_RenderTreeBuilder_
+  commentId: M:BlazorRealmReduxDevTools._ViewImports.BuildRenderTree(Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder)
+  fullName: BlazorRealmReduxDevTools._ViewImports.BuildRenderTree(Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder)
+  nameWithType: _ViewImports.BuildRenderTree(RenderTreeBuilder)
+- uid: BlazorRealmReduxDevTools._ViewImports.BuildRenderTree*
+  name: BuildRenderTree
+  href: api/BlazorRealmReduxDevTools._ViewImports.html#BlazorRealmReduxDevTools__ViewImports_BuildRenderTree_
+  commentId: Overload:BlazorRealmReduxDevTools._ViewImports.BuildRenderTree
+  isSpec: "True"
+  fullName: BlazorRealmReduxDevTools._ViewImports.BuildRenderTree
+  nameWithType: _ViewImports.BuildRenderTree
+- uid: BlazorRealmReduxDevTools.Component1
+  name: Component1
+  href: api/BlazorRealmReduxDevTools.Component1.html
+  commentId: T:BlazorRealmReduxDevTools.Component1
+  fullName: BlazorRealmReduxDevTools.Component1
+  nameWithType: Component1
+- uid: BlazorRealmReduxDevTools.Component1.BuildRenderTree(Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder)
+  name: BuildRenderTree(RenderTreeBuilder)
+  href: api/BlazorRealmReduxDevTools.Component1.html#BlazorRealmReduxDevTools_Component1_BuildRenderTree_Microsoft_AspNetCore_Blazor_RenderTree_RenderTreeBuilder_
+  commentId: M:BlazorRealmReduxDevTools.Component1.BuildRenderTree(Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder)
+  fullName: BlazorRealmReduxDevTools.Component1.BuildRenderTree(Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder)
+  nameWithType: Component1.BuildRenderTree(RenderTreeBuilder)
+- uid: BlazorRealmReduxDevTools.Component1.BuildRenderTree*
+  name: BuildRenderTree
+  href: api/BlazorRealmReduxDevTools.Component1.html#BlazorRealmReduxDevTools_Component1_BuildRenderTree_
+  commentId: Overload:BlazorRealmReduxDevTools.Component1.BuildRenderTree
+  isSpec: "True"
+  fullName: BlazorRealmReduxDevTools.Component1.BuildRenderTree
+  nameWithType: Component1.BuildRenderTree

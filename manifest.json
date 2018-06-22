@@ -1,0 +1,432 @@
+{
+  "homepages": [],
+  "source_base_path": "C:/Users/dworthen/Source/Repos/dotnet/Blazor0.3.0/BlazorRealm/docs",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/README.html",
+          "hash": "hbrAIT7h9ygtzYJaQXhHtg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "docs/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/toc.html",
+          "hash": "Pw8oiW5R2Dxh1NKvcbj2Fw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/redux-devtools.GIF",
+      "output": {
+        "resource": {
+          "relative_path": "images/redux-devtools.GIF"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "eaqgaSVS/1BEpvv1IVYdBQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docfx/api/Blazor.Realm.AddRealmStoreExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Blazor.Realm.AddRealmStoreExtensions.html",
+          "hash": "GTrJ/vu1ZYgvRbJkFQ0JLA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docfx/api/Blazor.Realm.Async.Extensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Blazor.Realm.Async.Extensions.html",
+          "hash": "tdyGvRgG1NAAGykFHAJHeA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docfx/api/Blazor.Realm.Async.HandleAsyncActions-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Blazor.Realm.Async.HandleAsyncActions-1.html",
+          "hash": "LKkIJF+Iiwp937GQGyl/7Q=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docfx/api/Blazor.Realm.Async.IAsyncRealmAction.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Blazor.Realm.Async.IAsyncRealmAction.html",
+          "hash": "Bfa6FESVqpCu4jzqmKkymg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docfx/api/Blazor.Realm.Async.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Blazor.Realm.Async.html",
+          "hash": "gkP4C1Yl47BNNloD7nEArw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docfx/api/Blazor.Realm.Dispatcher-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Blazor.Realm.Dispatcher-1.html",
+          "hash": "uCRlpeyUtgQIFpe6lme7ZQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docfx/api/Blazor.Realm.IRealmAction.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Blazor.Realm.IRealmAction.html",
+          "hash": "2qHTxdZnXh10cCOmo2XWEg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docfx/api/Blazor.Realm.IStoreBuilder-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Blazor.Realm.IStoreBuilder-1.html",
+          "hash": "JTHVwCnO5YfCvb7q/QsLwA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docfx/api/Blazor.Realm.RealmComponent-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Blazor.Realm.RealmComponent-1.html",
+          "hash": "0tz5+fHwyFhu8tbv7DVBfQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docfx/api/Blazor.Realm.Reducer-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Blazor.Realm.Reducer-1.html",
+          "hash": "fjq0K3/rUJpfmPomCb1tqQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docfx/api/Blazor.Realm.ReduxDevTools.Extensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Blazor.Realm.ReduxDevTools.Extensions.html",
+          "hash": "R1fDWm9RjkjtTyjkwc88eA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docfx/api/Blazor.Realm.ReduxDevTools.HandleReduxDevTools-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Blazor.Realm.ReduxDevTools.HandleReduxDevTools-1.html",
+          "hash": "8d2vGkbtLQhcvB81kWOaig=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docfx/api/Blazor.Realm.ReduxDevTools.Message.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Blazor.Realm.ReduxDevTools.Message.html",
+          "hash": "q4++x2Ye+p7ubSQXFeI5Gg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docfx/api/Blazor.Realm.ReduxDevTools.MessageEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Blazor.Realm.ReduxDevTools.MessageEventArgs.html",
+          "hash": "FpopLPNif0DNo4pPerNuwg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docfx/api/Blazor.Realm.ReduxDevTools.Payload.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Blazor.Realm.ReduxDevTools.Payload.html",
+          "hash": "mwsGb1mWPzRq9XiC30Gj5A=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docfx/api/Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.html",
+          "hash": "3lRACO99UOcOttMJYsnK9A=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docfx/api/Blazor.Realm.ReduxDevTools.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Blazor.Realm.ReduxDevTools.html",
+          "hash": "lw7KlnJIbYhW0B//eHy0WQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docfx/api/Blazor.Realm.Store-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Blazor.Realm.Store-1.html",
+          "hash": "qzDBJyZKvtigKE1R3li+YA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docfx/api/Blazor.Realm.StoreBuilder-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Blazor.Realm.StoreBuilder-1.html",
+          "hash": "pUv+4b0ZoYHv5VK7HDjggQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docfx/api/Blazor.Realm.StoreBuilderStoreExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Blazor.Realm.StoreBuilderStoreExtensions.html",
+          "hash": "HSXXBJCG0yOzwSnluxmDwg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docfx/api/Blazor.Realm.UseExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Blazor.Realm.UseExtensions.html",
+          "hash": "6pvZe7Z2VsFm1rWlkBV7DA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docfx/api/Blazor.Realm.UseMiddlewareExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Blazor.Realm.UseMiddlewareExtensions.html",
+          "hash": "svJB3hmMMUnqIxxZ0Qi1Mw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docfx/api/Blazor.Realm.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Blazor.Realm.html",
+          "hash": "o0q7vjsz6dFob4Ej2AzdMQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docfx/api/BlazorRealmReduxDevTools.Component1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BlazorRealmReduxDevTools.Component1.html",
+          "hash": "hgyuRc699A6YwzSG1aAQPA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docfx/api/BlazorRealmReduxDevTools._ViewImports.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BlazorRealmReduxDevTools._ViewImports.html",
+          "hash": "UCOUtJUw+/tQqHRKNTP+Eg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docfx/api/BlazorRealmReduxDevTools.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BlazorRealmReduxDevTools.html",
+          "hash": "XTuJrJQQ1Yll3461fmmuVg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "obj/docfx/api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html",
+          "hash": "6/Pm/ZKC4p3SQ2urYdTvPg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html",
+          "hash": "xEfxxKu0FklTTMcd+k4q+w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": true,
+        "incrementalPhase": "build"
+      },
+      "processors": {
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build"
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build"
+        },
+        "ConceptualDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build"
+        },
+        "ResourceDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build"
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": true,
+        "details": "Can support incremental post processing.",
+        "incrementalPhase": "postProcessing"
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}
