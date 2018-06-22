@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "install:docfx": "nuget install docfx.console -OutputDirectory docfx && copyfiles docfx/docfx.console*/**/* docfx -u 2 && rimraf docfx/docfx.console*",
+    "install:docfx": "nuget install docfx.console -Version 2.36.2 -OutputDirectory docfx && copyfiles docfx/docfx.console*/**/* docfx -u 2 && rimraf docfx/docfx.console*",
     "build:docs": "docfx\\tools\\docfx.exe build docfx.json",
-    "prebuild:docs": "rimraf obj/docfx && copyfiles ../README.md docs/docs && replace \"docs/\" \"../\" docs/README.md && docfx\\tools\\docfx.exe metadata docfx.json",
+    "prebuild:docs": "copyfiles ../README.md docs/docs && replace \"docs/\" \"../\" docs/README.md && docfx\\tools\\docfx.exe metadata docfx.json",
     "postbuild:docs": "copyfiles _site/**/* ../gh-pages -u 1",
     "serve:docs": "docfx\\tools\\docfx.exe serve _site\\ -p 9000"
   },

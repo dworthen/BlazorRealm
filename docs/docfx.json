@@ -8,7 +8,8 @@
             "src": "../src"
           }
         ],
-        "dest": "obj/docfx/api"
+        "dest": "obj/docfx/api",
+        "force": true
       }
     ],
     "build": {
@@ -24,13 +25,21 @@
       ],
       "resource": [
         {
-          "files": [ "images/**"]
+          "files": [ "images/**", "realm.svg"]
         }
       ],
       "overwrite": [],
+      "globalMetaDataFiles": [],
+      "fileMetaDataFiles": [],
       "globalMetadata": {
+        "_disableContribution": true,
         "_appTitle": "Blazor Realm",
-        "_enableSearch": false
+        "_appLogoPath": "realm.svg",
+        "_enableNewTab": true,
+        "_enableSearch": false,
+        "_gitContribute": {
+            "branch": "master"
+        }
       },
       "dest": "_site"
     }
