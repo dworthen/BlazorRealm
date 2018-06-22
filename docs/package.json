@@ -7,14 +7,15 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "install:docfx": "nuget install docfx.console -Version 2.36.2 -OutputDirectory docfx && copyfiles docfx/docfx.console*/**/* docfx -u 2 && rimraf docfx/docfx.console*",
     "build:docs": "docfx\\tools\\docfx.exe build docfx.json",
-    "prebuild:docs": "copyfiles ../README.md docs/docs && replace \"docs/\" \"../\" docs/README.md && docfx\\tools\\docfx.exe metadata docfx.json",
-    "postbuild:docs": "copyfiles _site/**/* ../gh-pages -u 1",
+    "prebuild:docs": "copyfiles ../README.md docs/docs && replace \"docs/\" \"../\" docs/README.md && renamer -f README.md -r quickstart.md docs/* && docfx\\tools\\docfx.exe metadata docfx.json",
+    "postbuild:docs": "rimraf ../gh-pages/* && copyfiles _site/**/* ../gh-pages -u 1",
     "serve:docs": "docfx\\tools\\docfx.exe serve _site\\ -p 9000"
   },
   "author": "",
   "license": "MIT",
   "devDependencies": {
     "copyfiles": "^2.0.0",
+    "renamer": "^0.7.3",
     "replace": "^1.0.0",
     "rimraf": "^2.6.2"
   },

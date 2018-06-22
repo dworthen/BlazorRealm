@@ -28,17 +28,18 @@
           "files": [ "images/**", "realm.svg"]
         }
       ],
-      "overwrite": [],
+      "keepFileLink": false,
+      "overwrite": [ "api/*.md" ],
       "globalMetaDataFiles": [],
       "fileMetaDataFiles": [],
       "globalMetadata": {
-        "_disableContribution": true,
         "_appTitle": "Blazor Realm",
         "_appLogoPath": "realm.svg",
         "_enableNewTab": true,
         "_enableSearch": false,
         "_gitContribute": {
-            "branch": "master"
+            "branch": "master",
+            "apiSpecFolder": "api"
         }
       },
       "dest": "_site"
