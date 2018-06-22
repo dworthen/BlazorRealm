@@ -1,0 +1,6 @@
+- name: Docs
+  href: docs/
+  homepage: docs/README.md
+- name: Realm API
+  href: obj/docfx/api/
+  homepage: obj/docfx/api/Blazor.Realm.yml

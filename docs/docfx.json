@@ -1,0 +1,38 @@
+{
+    "metadata": [
+      {
+        "src": [
+          {
+            "files": [ "BlazorRealm*/*.csproj" ],
+            "exclude": [ "**/bin/**", "**/obj/**" ],
+            "src": "../src"
+          }
+        ],
+        "dest": "obj/docfx/api"
+      }
+    ],
+    "build": {
+      "content": [
+        {
+          "files": [ "**/*.yml" ],
+          "src": "obj/docfx/api",
+          "dest": "api"
+        },
+        {
+          "files": [ "docs/**/*.md", "docs/toc.yml", "*.md", "toc.yml" ]
+        }
+      ],
+      "resource": [
+        {
+          "files": [ "images/**"]
+        }
+      ],
+      "overwrite": [],
+      "globalMetadata": {
+        "_appTitle": "Blazor Realm",
+        "_enableSearch": false
+      },
+      "dest": "_site"
+    }
+  }
+  
