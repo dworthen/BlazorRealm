@@ -5,11 +5,11 @@
   "files": [
     {
       "type": "Conceptual",
-      "source_relative_path": "docs/README.md",
+      "source_relative_path": "docs/quickstart.md",
       "output": {
         ".html": {
-          "relative_path": "docs/README.html",
-          "hash": "dv5Z/BAetrKSw8hoibWUsg=="
+          "relative_path": "docs/quickstart.html",
+          "hash": "Bnczbekn1qzsoGAqwX8IKw=="
         }
       },
       "is_incremental": false,
@@ -21,7 +21,7 @@
       "output": {
         ".html": {
           "relative_path": "docs/toc.html",
-          "hash": "Pw8oiW5R2Dxh1NKvcbj2Fw=="
+          "hash": "Pmz25oFo6a26k7nfSKWoyg=="
         }
       },
       "is_incremental": false,
@@ -44,7 +44,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "Y4PHFvtavE7OTe/f1x6wlg=="
+          "hash": "9pDJTmgF5puxhPwLfmzSZg=="
         }
       },
       "is_incremental": false,
@@ -56,10 +56,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Blazor.Realm.AddRealmStoreExtensions.html",
-          "hash": "nCTC9zzzZB0Kup/GRYj9qQ=="
+          "hash": "KGo9xbzToQY0d8SUDs4uKQ=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -68,10 +68,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Blazor.Realm.Async.Extensions.html",
-          "hash": "ndw4T5PANRANJtvnydB4KQ=="
+          "hash": "SDvRJTZkDKZBNABZodk3wQ=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -80,10 +80,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Blazor.Realm.Async.HandleAsyncActions-1.html",
-          "hash": "UcE24ozaxMGrphSVAH6FNQ=="
+          "hash": "pN78qX4NVD1eTCas0oIxqw=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -92,10 +92,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Blazor.Realm.Async.IAsyncRealmAction.html",
-          "hash": "DCLJlLlPiYkAxMwTunEsrA=="
+          "hash": "XB6ghIWWNi8bKi3LvdOl/g=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -104,10 +104,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Blazor.Realm.Async.html",
-          "hash": "oeeQGwoOpzR9Jk/IlqvlMw=="
+          "hash": "0MqeuBStrQHqJTQxBEvi4g=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -116,10 +116,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Blazor.Realm.Dispatcher-1.html",
-          "hash": "hdAXxmiFfjo/dQzyF25h2g=="
+          "hash": "JNZU5jp05fim7Vid835Y5g=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -128,10 +128,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Blazor.Realm.IRealmAction.html",
-          "hash": "TJn1KyoUqXWmVEDwt7FyFA=="
+          "hash": "ogUbmqA+l8A/L9Q92CLBFg=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -140,10 +140,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Blazor.Realm.IStoreBuilder-1.html",
-          "hash": "BNsm6rAxPPxbwSGCiAHhNA=="
+          "hash": "2oYCym38unFLphS9QvJgiQ=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -152,10 +152,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Blazor.Realm.RealmComponent-1.html",
-          "hash": "L8VWEMh/e97iW/sZqv66Tg=="
+          "hash": "2L+LUxe0B+r3VKSh+wCT7w=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -164,10 +164,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Blazor.Realm.Reducer-1.html",
-          "hash": "IWmeKXlPsX7mJ20xjba/1w=="
+          "hash": "c6Oqb8DEvp84icdblidSlA=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -176,10 +176,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Blazor.Realm.ReduxDevTools.Extensions.html",
-          "hash": "hzRFKe69W849/5ztEXuZSg=="
+          "hash": "zy6G1XGXwxUIrprwSytkOQ=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -188,10 +188,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Blazor.Realm.ReduxDevTools.HandleReduxDevTools-1.html",
-          "hash": "6DvzwzmIahF44u6wZD6LAg=="
+          "hash": "dbKOa0/hoDhv4+dW5iCRGQ=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -200,10 +200,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Blazor.Realm.ReduxDevTools.Message.html",
-          "hash": "VkZ90ev9fq/pHjfhWBkWrg=="
+          "hash": "xGAfIGWxVvYz7zuVjYtsgw=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -212,10 +212,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Blazor.Realm.ReduxDevTools.MessageEventArgs.html",
-          "hash": "VLMDxPieOV2626vM779/jQ=="
+          "hash": "eKp6P3L3NZtEXg/ItOS4tA=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -224,10 +224,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Blazor.Realm.ReduxDevTools.Payload.html",
-          "hash": "FQqDh8eJSdslgc9ynSRFjA=="
+          "hash": "jv/g3kUbTVwcv81vsA85Kg=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -236,10 +236,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.html",
-          "hash": "fmi//tkrxN9o3NTPCiXZvw=="
+          "hash": "Bnz5u1aOoIUcvaGg+GP5AQ=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -248,10 +248,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Blazor.Realm.ReduxDevTools.html",
-          "hash": "iSC1SPUadceb44jjq9ZaKA=="
+          "hash": "W5+E6wLU4VKlGMVVAFyzgA=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -260,10 +260,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Blazor.Realm.Store-1.html",
-          "hash": "gBrHL71wIAmCm4eiZH8p5Q=="
+          "hash": "DlLppknXO+qKcMtq1e+ucA=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -272,10 +272,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Blazor.Realm.StoreBuilder-1.html",
-          "hash": "DSmWIZ3jVoSTsvQJDUFKjA=="
+          "hash": "Uph8S17sjSLs0/eVDKUvwQ=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -284,10 +284,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Blazor.Realm.StoreBuilderStoreExtensions.html",
-          "hash": "PxkwyuMnq26j8atMTQZbRQ=="
+          "hash": "rfg+h1bgOtAJg9VDR+maGg=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -296,10 +296,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Blazor.Realm.UseExtensions.html",
-          "hash": "1H3PS5kmkEV4sxD38SM4eQ=="
+          "hash": "MAeiUCGRx4Gerb+XUaLQoA=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -308,10 +308,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Blazor.Realm.UseMiddlewareExtensions.html",
-          "hash": "NJWzJCKcT61dGfuFDl6DOQ=="
+          "hash": "fqILROGrx/42bA/eSxpFPA=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -320,10 +320,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Blazor.Realm.html",
-          "hash": "yyYaHYpZWzxRg8VxbM/qyA=="
+          "hash": "Cis9EQpnMINhC25FXoJRAQ=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -332,10 +332,10 @@
       "output": {
         ".html": {
           "relative_path": "api/BlazorRealmReduxDevTools.Component1.html",
-          "hash": "U6ESvMlVfEGOcP8o39CxUA=="
+          "hash": "GsGgoqpEOTVqdBs0xl1NOQ=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -344,10 +344,10 @@
       "output": {
         ".html": {
           "relative_path": "api/BlazorRealmReduxDevTools._ViewImports.html",
-          "hash": "mKVVHLDPZ8R6I/8M/8yO6Q=="
+          "hash": "DTsEsX2fa2ptintG4oPlfg=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -356,10 +356,10 @@
       "output": {
         ".html": {
           "relative_path": "api/BlazorRealmReduxDevTools.html",
-          "hash": "9Z8YDkSCAax/2OGU8yn76w=="
+          "hash": "IPM+oM70TdtDg3DBBB1/qg=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -391,7 +391,7 @@
       "output": {
         ".html": {
           "relative_path": "toc.html",
-          "hash": "xEfxxKu0FklTTMcd+k4q+w=="
+          "hash": "9HyTMBzVroM+lkUtKtDtEg=="
         }
       },
       "is_incremental": false,
@@ -401,27 +401,26 @@
   "incremental_info": [
     {
       "status": {
-        "can_incremental": false,
-        "details": "Cannot build incrementally because config changed.",
+        "can_incremental": true,
         "incrementalPhase": "build"
       },
       "processors": {
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build"
+        },
         "ResourceDocumentProcessor": {
           "can_incremental": false,
           "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build"
         },
         "ConceptualDocumentProcessor": {
-          "can_incremental": false,
+          "can_incremental": true,
           "incrementalPhase": "build"
         },
         "ManagedReferenceDocumentProcessor": {
-          "can_incremental": false,
-          "incrementalPhase": "build"
-        },
-        "TocDocumentProcessor": {
-          "can_incremental": false,
-          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "can_incremental": true,
           "incrementalPhase": "build"
         }
       }
