@@ -13,14 +13,14 @@ Redux state management for [blazor.net](https://blazor.net).
 - [Reducer](#reducer)
 - [Register the App Store as a Service](#register-the-app-store-as-a-service)
 - [Blazor Components](#blazor-components)
-    - [Component Pattern (boilerplate)](#component-pattern-boilerplate)
+  - [Component Pattern (boilerplate)](#component-pattern-boilerplate)
 - [Middleware](#middleware)
-    - [Middleware as Extension Methods](#middleware-as-extension-methods)
+  - [Middleware as Extension Methods](#middleware-as-extension-methods)
 - [Async Actions](#async-actions)
-    - [Adding Async Middleware](#adding-async-middleware)
-    - [Dispatching Async Actions](#dispatching-async-actions)
+  - [Adding Async Middleware](#adding-async-middleware)
+  - [Dispatching Async Actions](#dispatching-async-actions)
 - [Redux Dev Tools](#redux-dev-tools)
-    - [Ignoring Specific Actions in Redux Dev Tools](#ignoring-specific-actions-in-redux-dev-tools)
+  - [Ignoring Specific Actions in Redux Dev Tools](#ignoring-specific-actions-in-redux-dev-tools)
 
 # Getting Started
 
