@@ -34,6 +34,7 @@
       "fileMetaDataFiles": [],
       "globalMetadata": {
         "_appTitle": "Blazor Realm",
+        "_appName": "Realm",
         "_appLogoPath": "realm.svg",
         "_enableNewTab": true,
         "_enableSearch": false,
@@ -42,6 +43,10 @@
             "apiSpecFolder": "api"
         }
       },
+      "template": [
+        "default",
+        "templates/custom"
+      ],
       "dest": "_site"
     }
   }
