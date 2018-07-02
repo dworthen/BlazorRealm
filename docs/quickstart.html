@@ -67,6 +67,7 @@
 <h1 id="blazor-realm">Blazor Realm</h1>
 
 <p>Redux state management for <a href="https://blazor.net">blazor.net</a>.</p>
+<p><a href="https://dworthen.github.io/BlazorRealm/../quickstart.html">Documentation</a></p>
 <blockquote><p><strong>NOTE FROM BLAZOR</strong></p>
 <p>Blazor is an unsupported experimental web framework that shouldn&#39;t be used for production workloads at this time.</p>
 </blockquote>
@@ -271,7 +272,7 @@ Change By: &lt;input type=&quot;text&quot; name=&quot;IncementAmount&quot; bind=
     protected void OnChangeHandler(object sender, EventArgs e)
     {
         // Retreive new state on changes
-        // and inform Blazor that state has changed 
+        // and inform Blazor that state has changed
         // for rerender.
         State = Store.GetState();
         StateHasChanged();
@@ -348,7 +349,7 @@ public class Program
         });
 
         // using Microsoft.Extensions.DependencyInjection;
-        IStoreBuilder&lt;AppState&gt; storeBuilder = 
+        IStoreBuilder&lt;AppState&gt; storeBuilder =
             ServiceProvider.GetService&lt;IStoreBuilder&lt;AppState&gt;&gt;();
 
         storeBuilder.Use((Store&lt;AppState&gt; localStore, Dispatcher&lt;AppState&gt; next) =&gt;
@@ -365,7 +366,7 @@ public class Program
                 * next = next middleware in the pipeline.  next(action) will continue
                 * sending the current action down the middleware pipeline.
                 *
-                * action = current action dispatched. 
+                * action = current action dispatched.
                 *
                 * returns TState = Application State.
                 */
@@ -403,7 +404,7 @@ public class Logger&lt;TState&gt;
     private readonly Store&lt;TState&gt; _store;
     private readonly Dispatcher&lt;TState&gt; _next;
 
-    public Logger(Store&lt;TState&gt; store, Dispatcher&lt;TSate&gt; next) 
+    public Logger(Store&lt;TState&gt; store, Dispatcher&lt;TSate&gt; next)
     {
         _store = store;
         _next = next;
@@ -431,7 +432,7 @@ public static class Extensions
 ...
 
 // using Microsoft.Extensions.DependencyInjection;
-IStoreBuilder&lt;AppState&gt; storeBuilder = 
+IStoreBuilder&lt;AppState&gt; storeBuilder =
     ServiceProvider.GetService&lt;IStoreBuilder&lt;AppState&gt;&gt;();
 
 storeBuilder.UseLogger&lt;AppState&gt;();
@@ -481,13 +482,12 @@ var serviceProvider = new BrowserServiceProvider(services =&gt;
 });
 
 // using Microsoft.Extensions.DependencyInjection;
-IStoreBuilder&lt;AppState&gt; storeBuilder = 
+IStoreBuilder&lt;AppState&gt; storeBuilder =
     ServiceProvider.GetService&lt;IStoreBuilder&lt;AppState&gt;&gt;();
 
 storeBuilder.UseRealmAsync&lt;AppState&gt;();
 
 new BrowserRenderer(serviceProvider).AddComponent&lt;App&gt;(&quot;app&quot;);
-
 </code></pre><h2 id="dispatching-async-actions">Dispatching Async Actions</h2>
 <p>In <em>Counter.cshtml</em></p>
 <pre><code class="lang-csharp">@page &quot;/counter&quot;
@@ -524,7 +524,7 @@ var serviceProvider = new BrowserServiceProvider(services =&gt;
 });
 
 // using Microsoft.Extensions.DependencyInjection;
-IStoreBuilder&lt;AppState&gt; storeBuilder = 
+IStoreBuilder&lt;AppState&gt; storeBuilder =
     ServiceProvider.GetService&lt;IStoreBuilder&lt;AppState&gt;&gt;();
 
 storeBuilder.UseRealmAsync&lt;AppState&gt;();
@@ -539,7 +539,7 @@ new BrowserRenderer(serviceProvider).AddComponent&lt;App&gt;(&quot;app&quot;);
 <pre><code class="lang-csharp">// program.cs
 
 storeBuilder.UseRealmReduxDevTools&lt;AppState&gt;(new Type[] {
-    // ResetCount actions will not show up in the Redux DevTools 
+    // ResetCount actions will not show up in the Redux DevTools
     // browser extension
     typeof(ResetCount)
 });
