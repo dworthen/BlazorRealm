@@ -13,14 +13,14 @@ Redux state management for [blazor.net](https://blazor.net).
 - [Reducer](#reducer)
 - [Register the App Store as a Service](#register-the-app-store-as-a-service)
 - [Blazor Components](#blazor-components)
-    - [Component Pattern (boilerplate)](#component-pattern-boilerplate)
+  - [Component Pattern (boilerplate)](#component-pattern-boilerplate)
 - [Middleware](#middleware)
-    - [Middleware as Extension Methods](#middleware-as-extension-methods)
+  - [Middleware as Extension Methods](#middleware-as-extension-methods)
 - [Async Actions](#async-actions)
-    - [Adding Async Middleware](#adding-async-middleware)
-    - [Dispatching Async Actions](#dispatching-async-actions)
+  - [Adding Async Middleware](#adding-async-middleware)
+  - [Dispatching Async Actions](#dispatching-async-actions)
 - [Redux Dev Tools](#redux-dev-tools)
-    - [Ignoring Specific Actions in Redux Dev Tools](#ignoring-specific-actions-in-redux-dev-tools)
+  - [Ignoring Specific Actions in Redux Dev Tools](#ignoring-specific-actions-in-redux-dev-tools)
 
 # Getting Started
 
@@ -33,7 +33,7 @@ Redux state management for [blazor.net](https://blazor.net).
 
 # Application State
 
-```C#
+```csharp
 // AppState.cs
 public class AppState
 {
@@ -44,7 +44,7 @@ public class AppState
 
 # Actions
 
-```C#
+```csharp
 //Actions.cs
 
 // Counter Actions
@@ -89,7 +89,7 @@ Actions must implement `IRealmAction`. Don't forget to add `using Blazor.Realm;`
 
 # Reducer
 
-```C#
+```csharp
 // Reducer.cs
 
 public static class Reducers
@@ -150,7 +150,7 @@ Don't forget to add `using Blazor.Realm;`.
 
 # Register the App Store as a Service
 
-```C#
+```csharp
 static void Main(string[] args)
 {
     var serviceProvider = new BrowserServiceProvider(services =>
@@ -170,7 +170,7 @@ Don't forget to add `using Blazor.Realm;`.
 Don't forget to add `using Blazor.Realm;` to each component. Alternatively, add `using Blazor.Realm;`
 to _\_ViewImports.cshtml_
 
-```C#
+```csharp
 @page "/counter"
 @inject Store<AppState> store
 @implements IDisposable
@@ -245,7 +245,7 @@ Change By: <input type="text" name="IncementAmount" bind="@ChangeAmount" /><br /
 
 The first 4 items are repeated in all components connecting to a Realm store. Instead of repeating this pattern, components may inherit from `Blazor.Realm.RealmComponent`.
 
-```C#
+```csharp
 @page "/counter"
 @inherits RealmComponent<AppState>
 @* Or add to _ViewImports.cshtml *@
@@ -292,7 +292,7 @@ Change By: <input type="text" name="IncementAmount" bind="@ChangeAmount"/><br />
 
 # Middleware
 
-```C#
+```csharp
 // Program.cs
 
 public class Program
@@ -358,7 +358,7 @@ public class Program
 
 ## Middleware as Extension Methods
 
-```C#
+```csharp
 // Logger.cs
 public class Logger<TState>
 {
@@ -412,7 +412,7 @@ As with Redux, Async actions in Realm are handled by middleware. Download the [B
 
 Following a [ducks](https://medium.freecodecamp.org/scaling-your-redux-app-with-ducks-6115955638be) organizational structure, I place async actions in a seperate _Operations.cs_ file.
 
-```C#
+```csharp
 // Operations.cs
 
 public class AsyncIncrementCounter : IAsyncRealmAction
@@ -445,7 +445,7 @@ Async actions must implement the `IAsyncRealmAction` interface and, in turn, imp
 
 ## Adding Async Middleware
 
-```C#
+```csharp
 // program.cs
 
 var serviceProvider = new BrowserServiceProvider(services =>
@@ -469,7 +469,7 @@ new BrowserRenderer(serviceProvider).AddComponent<App>("app");
 
 In _Counter.cshtml_
 
-```C#
+```csharp
 @page "/counter"
 @inherits RealmComponent<AppState>
 
@@ -502,7 +502,7 @@ Steps for connecting to Redux Dev Tools:
 
 Using the middleware
 
-```C#
+```csharp
 // program.cs
 var serviceProvider = new BrowserServiceProvider(services =>
 {
@@ -527,7 +527,7 @@ new BrowserRenderer(serviceProvider).AddComponent<App>("app");
 
 ## Ignoring Specific Actions in Redux Dev Tools
 
-```C#
+```csharp
 // program.cs
 
 storeBuilder.UseRealmReduxDevTools<AppState>(new Type[] {

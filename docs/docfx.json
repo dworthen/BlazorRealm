@@ -38,6 +38,7 @@
         "_appLogoPath": "realm.svg",
         "_enableNewTab": true,
         "_enableSearch": false,
+        "_fluid": true,
         "_gitContribute": {
             "branch": "master",
             "apiSpecFolder": "api"
