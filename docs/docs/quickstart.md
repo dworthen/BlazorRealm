@@ -40,8 +40,6 @@ public class AppState
     public int Count { get; set; }
     public IEnumerable<WeatherForecast> WeatherForecasts { get; set; } = new WeatherForecast[] { };
 }
-
-
 ```
 
 # Actions
