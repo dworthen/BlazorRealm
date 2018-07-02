@@ -81,6 +81,13 @@ $(function () {
 
   // Enable highlight.js
   function highlight() {
+    // require(["vs/editor/editor.main"], function () {
+    //   $('pre code').each(function (i, block) {
+    //     // console.log(this);
+    //     monaco.editor.colorizeElement(this);
+    //     // hljs.highlightBlock(block);
+    //   });
+    // });
     $('pre code').each(function (i, block) {
       hljs.highlightBlock(block);
     });
@@ -544,7 +551,7 @@ $(function () {
       if ($('footer').is(':visible')) {
         $(".sideaffix").css("bottom", "70px");
       }
-      $('#affix a').click(function() {
+      $('#affix a').click(function () {
         var scrollspy = $('[data-spy="scroll"]').data()['bs.scrollspy'];
         var target = e.target.hash;
         if (scrollspy && target) {

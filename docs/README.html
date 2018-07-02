@@ -8,21 +8,24 @@
     <title>Blazor Realm | Blazor Realm </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Blazor Realm | Blazor Realm ">
-    <meta name="generator" content="docfx 2.36.2.0"> 
+    <meta name="generator" content="docfx 2.36.2.0">
+    
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
     <link rel="stylesheet" href="../styles/docfx.css">
-    <link rel="stylesheet" href="../styles/hljs-vs.css"> 
     <link rel="stylesheet" href="../styles/main.css">
     <meta property="docfx:navrel" content="../toc.html">
-    <meta property="docfx:tocrel" content="toc.html">   
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
     <meta property="docfx:newtab" content="true">
-  </head>  <body data-spy="scroll" data-target="#affix" data-offset="120">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
     <div id="wrapper">
       <header>
         
         <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
-          <div class="container-fluid">
+          <div class="container">
             <div class="navbar-header">
               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
                 <span class="sr-only">Toggle navigation</span>
@@ -31,9 +34,9 @@
                 <span class="icon-bar"></span>
               </button>
               
-        <a class="navbar-brand" href="../index.html">
-            Realm
-        </a>
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../realm.svg" alt="">
+              </a>
             </div>
             <div class="collapse navbar-collapse" id="navbar">
               <form class="navbar-form navbar-right" role="search" id="search">
@@ -46,14 +49,14 @@
         </nav>
         
         <div class="subnav navbar navbar-default">
-          <div class="container-fluid hide-when-search" id="breadcrumb">
+          <div class="container hide-when-search" id="breadcrumb">
             <ul class="breadcrumb">
               <li></li>
             </ul>
           </div>
         </div>
       </header>
-      <div role="main" class="container-fluid body-content hide-when-search">
+      <div role="main" class="container body-content hide-when-search">
         
         <div class="sidenav hide-when-search">
           <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
@@ -104,14 +107,14 @@
 <p>Blazor Realm is compatible with Blazor 0.4.0.</p>
 </blockquote>
 <h1 id="application-state">Application State</h1>
-<pre><code class="lang-csharp">// AppState.cs
+<pre><code class="lang-C#">// AppState.cs
 public class AppState
 {
     public int Count { get; set; }
     public IEnumerable&lt;WeatherForecast&gt; WeatherForecasts { get; set; } = new WeatherForecast[] { };
 }
 </code></pre><h1 id="actions">Actions</h1>
-<pre><code class="lang-csharp">//Actions.cs
+<pre><code class="lang-C#">//Actions.cs
 
 // Counter Actions
 public class IncrementByOne : IRealmAction { }
@@ -151,7 +154,7 @@ public class SetWeatherForecasts : IRealmAction
 }
 </code></pre><p>Actions must implement <code>IRealmAction</code>. Don&#39;t forget to add <code>using Blazor.Realm;</code>.</p>
 <h1 id="reducer">Reducer</h1>
-<pre><code class="lang-csharp">// Reducer.cs
+<pre><code class="lang-C#">// Reducer.cs
 
 public static class Reducers
 {
@@ -207,7 +210,7 @@ public static class Reducers
 }
 </code></pre><p>Don&#39;t forget to add <code>using Blazor.Realm;</code>.</p>
 <h1 id="register-the-app-store-as-a-service">Register the App Store as a Service</h1>
-<pre><code class="lang-csharp">static void Main(string[] args)
+<pre><code class="lang-C#">static void Main(string[] args)
 {
     var serviceProvider = new BrowserServiceProvider(services =&gt;
     {
@@ -221,7 +224,7 @@ public static class Reducers
 <h1 id="blazor-components">Blazor Components</h1>
 <p>Don&#39;t forget to add <code>using Blazor.Realm;</code> to each component. Alternatively, add <code>using Blazor.Realm;</code>
 to <em>_ViewImports.cshtml</em></p>
-<pre><code class="lang-csharp">@page &quot;/counter&quot;
+<pre><code class="lang-C#">@page &quot;/counter&quot;
 @inject Store&lt;AppState&gt; store
 @implements IDisposable
 
@@ -292,7 +295,7 @@ Change By: &lt;input type=&quot;text&quot; name=&quot;IncementAmount&quot; bind=
 <li><code>Dispatch</code> actions and read state from <code>State</code>.</li>
 </ol>
 <p>The first 4 items are repeated in all components connecting to a Realm store. Instead of repeating this pattern, components may inherit from <code>Blazor.Realm.RealmComponent</code>.</p>
-<pre><code class="lang-csharp">@page &quot;/counter&quot;
+<pre><code class="lang-C#">@page &quot;/counter&quot;
 @inherits RealmComponent&lt;AppState&gt;
 @* Or add to _ViewImports.cshtml *@
 @using Blazor.Realm;
@@ -335,7 +338,7 @@ Change By: &lt;input type=&quot;text&quot; name=&quot;IncementAmount&quot; bind=
     }
 }
 </code></pre><h1 id="middleware">Middleware</h1>
-<pre><code class="lang-csharp">// Program.cs
+<pre><code class="lang-C#">// Program.cs
 
 public class Program
 {
@@ -397,7 +400,7 @@ public class Program
     }
 }
 </code></pre><h2 id="middleware-as-extension-methods">Middleware as Extension Methods</h2>
-<pre><code class="lang-csharp">// Logger.cs
+<pre><code class="lang-C#">// Logger.cs
 public class Logger&lt;TState&gt;
 {
     private readonly Store&lt;TState&gt; _store;
@@ -444,7 +447,7 @@ new BrowserRenderer(serviceProvider).AddComponent&lt;App&gt;(&quot;app&quot;);
 </code></pre><h1 id="async-actions">Async Actions</h1>
 <p>As with Redux, Async actions in Realm are handled by middleware. Download the <a href="https://www.nuget.org/packages/Blazor.Realm.Async/">Blazor.Realm.Async nuget package</a>.</p>
 <p>Following a <a href="https://medium.freecodecamp.org/scaling-your-redux-app-with-ducks-6115955638be">ducks</a> organizational structure, I place async actions in a seperate <em>Operations.cs</em> file.</p>
-<pre><code class="lang-csharp">// Operations.cs
+<pre><code class="lang-C#">// Operations.cs
 
 public class AsyncIncrementCounter : IAsyncRealmAction
 {
@@ -472,7 +475,7 @@ public class AsyncIncrementCounter : IAsyncRealmAction
 }
 </code></pre><p>Async actions must implement the <code>IAsyncRealmAction</code> interface and, in turn, implement <code>Task Invoke</code> method.</p>
 <h2 id="adding-async-middleware">Adding Async Middleware</h2>
-<pre><code class="lang-csharp">// program.cs
+<pre><code class="lang-C#">// program.cs
 
 var serviceProvider = new BrowserServiceProvider(services =&gt;
 {
@@ -490,7 +493,7 @@ new BrowserRenderer(serviceProvider).AddComponent&lt;App&gt;(&quot;app&quot;);
 
 </code></pre><h2 id="dispatching-async-actions">Dispatching Async Actions</h2>
 <p>In <em>Counter.cshtml</em></p>
-<pre><code class="lang-csharp">@page &quot;/counter&quot;
+<pre><code class="lang-C#">@page &quot;/counter&quot;
 @inherits RealmComponent&lt;AppState&gt;
 
 ...
@@ -516,7 +519,7 @@ new BrowserRenderer(serviceProvider).AddComponent&lt;App&gt;(&quot;app&quot;);
 <li>Install the middleware, <a href="https://www.nuget.org/packages/Blazor.Realm.ReduxDevTools/">https://www.nuget.org/packages/Blazor.Realm.ReduxDevTools/</a></li>
 </ol>
 <p>Using the middleware</p>
-<pre><code class="lang-csharp">// program.cs
+<pre><code class="lang-C#">// program.cs
 var serviceProvider = new BrowserServiceProvider(services =&gt;
 {
     // Add any custom services here
@@ -536,7 +539,7 @@ new BrowserRenderer(serviceProvider).AddComponent&lt;App&gt;(&quot;app&quot;);
 <p>The order in which middleware is registred matters. Add <code>UseRealmReduxDevTools</code> after <code>UseRealmAsync</code>.</p>
 </blockquote>
 <h2 id="ignoring-specific-actions-in-redux-dev-tools">Ignoring Specific Actions in Redux Dev Tools</h2>
-<pre><code class="lang-csharp">// program.cs
+<pre><code class="lang-C#">// program.cs
 
 storeBuilder.UseRealmReduxDevTools&lt;AppState&gt;(new Type[] {
     // ResetCount actions will not show up in the Redux DevTools 
@@ -551,7 +554,7 @@ storeBuilder.UseRealmReduxDevTools&lt;AppState&gt;(new Type[] {
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/dworthen/BlazorRealm/blob/master/docs/docs/quickstart.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/dworthen/BlazorRealm/blob/master/docs/docs/README.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>
@@ -578,27 +581,7 @@ storeBuilder.UseRealmReduxDevTools&lt;AppState&gt;(new Type[] {
     </div>
     
     <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
-    <script type="text/javascript" src="../styles/docfx.js"></script> {{!--
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.13.1/min/vs/loader.js"></script>
-    <script>
-      require.config({ paths: { 'vs': 'https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.13.1/min/vs' } });
-    
-      // Before loading vs/editor/editor.main, define a global MonacoEnvironment that overwrites
-      // the default worker url location (used when creating WebWorkers). The problem here is that
-      // HTML5 does not allow cross-domain web workers, so we need to proxy the instantiation of
-      // a web worker through a same-domain script
-      window.MonacoEnvironment = {
-        getWorkerUrl: function (workerId, label) {
-          return `data:text/javascript;charset=utf-8,${encodeURIComponent(`
-            self.MonacoEnvironment = {
-              baseUrl: 'https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.13.1/min/vs'
-            };
-            importScripts('https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.13.1/min/vs/base/worker/workerMain.js');`
-          )}`;
-        }
-      };
-    
-    
-    </script> --}}
-    <script type="text/javascript" src="../styles/main.js"></script>  </body>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
 </html>
