@@ -1,10 +1,10 @@
 ﻿using Blazor.Realm;
-using Blazor.Realm.Async;
-using Microsoft.AspNetCore.Blazor;
-using Blazor.Realm.ReduxDevTools;
 using Microsoft.AspNetCore.Blazor.Browser.Rendering;
 using Microsoft.AspNetCore.Blazor.Browser.Services;
 using Microsoft.Extensions.DependencyInjection;
+using Blazor.Realm.Extensions;
+using Blazor.Realm.Async.Extensions;
+using Blazor.Realm.ReduxDevTools.Extensions;
 
 namespace BlazorStandAlone
 {

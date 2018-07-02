@@ -2,6 +2,8 @@
 
 Redux state management for [blazor.net](https://blazor.net).
 
+[Documentation](https://dworthen.github.io/BlazorRealm/../quickstart.html)
+
 > **NOTE FROM BLAZOR**
 >
 > Blazor is an unsupported experimental web framework that shouldn't be used for production workloads at this time.
@@ -221,7 +223,7 @@ Change By: <input type="text" name="IncementAmount" bind="@ChangeAmount" /><br /
     protected void OnChangeHandler(object sender, EventArgs e)
     {
         // Retreive new state on changes
-        // and inform Blazor that state has changed 
+        // and inform Blazor that state has changed
         // for rerender.
         State = Store.GetState();
         StateHasChanged();
@@ -306,7 +308,7 @@ public class Program
         });
 
         // using Microsoft.Extensions.DependencyInjection;
-        IStoreBuilder<AppState> storeBuilder = 
+        IStoreBuilder<AppState> storeBuilder =
             ServiceProvider.GetService<IStoreBuilder<AppState>>();
 
         storeBuilder.Use((Store<AppState> localStore, Dispatcher<AppState> next) =>
@@ -323,7 +325,7 @@ public class Program
                 * next = next middleware in the pipeline.  next(action) will continue
                 * sending the current action down the middleware pipeline.
                 *
-                * action = current action dispatched. 
+                * action = current action dispatched.
                 *
                 * returns TState = Application State.
                 */
@@ -365,7 +367,7 @@ public class Logger<TState>
     private readonly Store<TState> _store;
     private readonly Dispatcher<TState> _next;
 
-    public Logger(Store<TState> store, Dispatcher<TSate> next) 
+    public Logger(Store<TState> store, Dispatcher<TSate> next)
     {
         _store = store;
         _next = next;
@@ -393,7 +395,7 @@ public static class Extensions
 ...
 
 // using Microsoft.Extensions.DependencyInjection;
-IStoreBuilder<AppState> storeBuilder = 
+IStoreBuilder<AppState> storeBuilder =
     ServiceProvider.GetService<IStoreBuilder<AppState>>();
 
 storeBuilder.UseLogger<AppState>();
@@ -403,7 +405,6 @@ storeBuilder.UseLogger<AppState>();
 new BrowserRenderer(serviceProvider).AddComponent<App>("app");
 
 ...
-
 ```
 
 # Async Actions
@@ -455,14 +456,12 @@ var serviceProvider = new BrowserServiceProvider(services =>
 });
 
 // using Microsoft.Extensions.DependencyInjection;
-IStoreBuilder<AppState> storeBuilder = 
+IStoreBuilder<AppState> storeBuilder =
     ServiceProvider.GetService<IStoreBuilder<AppState>>();
 
 storeBuilder.UseRealmAsync<AppState>();
 
 new BrowserRenderer(serviceProvider).AddComponent<App>("app");
-
-
 ```
 
 ## Dispatching Async Actions
@@ -497,8 +496,8 @@ Connecting to the [Redux DevTools](http://extension.remotedev.io/) browser exten
 
 Steps for connecting to Redux Dev Tools:
 
-1. [Install the browser extension](http://extension.remotedev.io/#installation).
-2. Install the middleware, https://www.nuget.org/packages/Blazor.Realm.ReduxDevTools/
+1.  [Install the browser extension](http://extension.remotedev.io/#installation).
+2.  Install the middleware, https://www.nuget.org/packages/Blazor.Realm.ReduxDevTools/
 
 Using the middleware
 
@@ -511,7 +510,7 @@ var serviceProvider = new BrowserServiceProvider(services =>
 });
 
 // using Microsoft.Extensions.DependencyInjection;
-IStoreBuilder<AppState> storeBuilder = 
+IStoreBuilder<AppState> storeBuilder =
     ServiceProvider.GetService<IStoreBuilder<AppState>>();
 
 storeBuilder.UseRealmAsync<AppState>();
@@ -531,9 +530,8 @@ new BrowserRenderer(serviceProvider).AddComponent<App>("app");
 // program.cs
 
 storeBuilder.UseRealmReduxDevTools<AppState>(new Type[] {
-    // ResetCount actions will not show up in the Redux DevTools 
+    // ResetCount actions will not show up in the Redux DevTools
     // browser extension
     typeof(ResetCount)
 });
-
 ```
