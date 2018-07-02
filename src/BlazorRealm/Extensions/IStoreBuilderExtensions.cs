@@ -4,10 +4,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Blazor.Realm
+namespace Blazor.Realm.Extensions
 {
-    public static class UseExtensions
+    public static class IStoreBuilderExtensions
     {
+        public static Dispatcher<TState> GetInitialStoreDispatch<TState>(this IStoreBuilder<TState> builder)
+        {
+            Store<TState> store = builder.ServiceProvider.GetService(typeof(Store<TState>)) as Store<TState>;
+            return store.InitialDispatch;
+        }
+
+        public static void SetStoreDispatch<TState>(this IStoreBuilder<TState> builder, Dispatcher<TState> dispatcher)
+        {
+            Store<TState> store = builder.ServiceProvider.GetService(typeof(Store<TState>)) as Store<TState>;
+            store._dispatch = dispatcher;
+        }
+
         public static IStoreBuilder<TState> Use<TState>(this IStoreBuilder<TState> builder, Func<Dispatcher<TState>, Dispatcher<TState>> middleware)
         {
             builder.Middleware?.Add(middleware);

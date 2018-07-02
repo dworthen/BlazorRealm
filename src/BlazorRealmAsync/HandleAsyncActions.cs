@@ -1,6 +1,4 @@
-﻿using Blazor.Realm;
-
-namespace Blazor.Realm.Async
+﻿namespace Blazor.Realm.Async
 {
     public class HandleAsyncActions<TState>
     {

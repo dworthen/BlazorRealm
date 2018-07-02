@@ -1,9 +1,9 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using System;
 
-namespace Blazor.Realm
+namespace Blazor.Realm.Extensions
 {
-    public static class AddRealmStoreExtensions
+    public static class IServiceCollectionExtensions
     {
         public static Store<TState> AddRealmStore<TState>(this IServiceCollection services, TState initialState, Reducer<TState> rootReducer)
         {

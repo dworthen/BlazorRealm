@@ -3,9 +3,9 @@ using System;
 using System.Linq;
 using System.Reflection;
 
-namespace Blazor.Realm
+namespace Blazor.Realm.Extensions
 {
-    public static class UseMiddlewareExtensions
+    public static class IStoreBuilderUseMiddlewareExtensions
     {
         internal const string InvokeMethodName = "Invoke";
 

@@ -1,9 +1,9 @@
-﻿using Microsoft.AspNetCore.Blazor.Browser.Services;
+﻿using Blazor.Realm.Extensions;
 using System;
 
-namespace Blazor.Realm.ReduxDevTools
+namespace Blazor.Realm.ReduxDevTools.Extensions
 {
-    public static class Extensions
+    public static class IStoreBuilderExtensions
     {
         public static void UseRealmReduxDevTools<TState>(this IStoreBuilder<TState> builder)
         {

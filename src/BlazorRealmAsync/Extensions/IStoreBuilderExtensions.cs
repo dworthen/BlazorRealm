@@ -1,13 +1,8 @@
-﻿using Blazor.Realm;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Blazor.Realm.Extensions;
 
-namespace Blazor.Realm.Async
+namespace Blazor.Realm.Async.Extensions
 {
-    public static class Extensions
+    public static class IStoreBuilderExtensions
     {
         public static IStoreBuilder<TState> UseRealmAsync<TState>(this IStoreBuilder<TState> builder)
         {
