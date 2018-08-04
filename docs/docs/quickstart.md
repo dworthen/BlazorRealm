@@ -13,16 +13,17 @@ Redux state management for [blazor.net](https://blazor.net).
 - [Application State](#application-state)
 - [Actions](#actions)
 - [Reducer](#reducer)
-- [Register the App Store as a Service](#register-the-app-store-as-a-service)
+- [Register Realm Store Service](#register-realm-store-service)
 - [Blazor Components](#blazor-components)
-  - [Component Pattern (boilerplate)](#component-pattern-boilerplate)
+    - [Component Pattern (boilerplate)](#component-pattern-boilerplate)
 - [Middleware](#middleware)
-  - [Middleware as Extension Methods](#middleware-as-extension-methods)
+    - [Middleware as Extension Methods](#middleware-as-extension-methods)
 - [Async Actions](#async-actions)
-  - [Adding Async Middleware](#adding-async-middleware)
-  - [Dispatching Async Actions](#dispatching-async-actions)
+    - [Register Async Middleware](#register-async-middleware)
+    - [Dispatching Async Actions](#dispatching-async-actions)
 - [Redux Dev Tools](#redux-dev-tools)
-  - [Ignoring Specific Actions in Redux Dev Tools](#ignoring-specific-actions-in-redux-dev-tools)
+    - [Register DevTools Middleware](#register-devtools-middleware)
+    - [Ignoring Specific Actions](#ignoring-specific-actions)
 
 # Getting Started
 
@@ -31,7 +32,7 @@ Redux state management for [blazor.net](https://blazor.net).
 
 > **NOTE**
 >
-> Blazor Realm is compatible with Blazor 0.4.0.
+> Blazor Realm >= 0.5.9 is compatible with Blazor 0.5.x.
 
 # Application State
 
@@ -87,7 +88,7 @@ public class SetWeatherForecasts : IRealmAction
 }
 ```
 
-Actions must implement `IRealmAction`. Don't forget to add `using Blazor.Realm;`.
+Actions must implement `IRealmAction`.
 
 # Reducer
 
@@ -148,24 +149,15 @@ public static class Reducers
 }
 ```
 
-Don't forget to add `using Blazor.Realm;`.
-
-# Register the App Store as a Service
+# Register Realm Store Service
 
 ```csharp
-static void Main(string[] args)
+// Startup.cs
+public void ConfigureServices(IServiceCollection services)
 {
-    var serviceProvider = new BrowserServiceProvider(services =>
-    {
-        // Add any custom services here
-        services.AddRealmStore<AppState>(new AppState(), RootReducer);
-    });
-
-    new BrowserRenderer(serviceProvider).AddComponent<App>("app");
+    services.AddRealmStore<AppState>(new AppState(), Reducers.RootReducer);
 }
 ```
-
-Don't forget to add `using Blazor.Realm;`.
 
 # Blazor Components
 
@@ -295,23 +287,20 @@ Change By: <input type="text" name="IncementAmount" bind="@ChangeAmount"/><br />
 # Middleware
 
 ```csharp
-// Program.cs
+// Startup.cs
 
-public class Program
+public class Startup
 {
-    static void Main(string[] args)
+
+    public void ConfigureServices(IServiceCollection services)
     {
-        var serviceProvider = new BrowserServiceProvider(services =>
-        {
-            // Add any custom services here
-            services.AddRealmStore<AppState>(new AppState(), RootReducer);
-        });
+        services.AddRealmStore<AppState>(new AppState(), Reducers.RootReducer);
+    }
 
-        // using Microsoft.Extensions.DependencyInjection;
-        IStoreBuilder<AppState> storeBuilder =
-            ServiceProvider.GetService<IStoreBuilder<AppState>>();
-
-        storeBuilder.Use((Store<AppState> localStore, Dispatcher<AppState> next) =>
+    public void Configure(IBlazorApplicationBuilder app, 
+        IStoreBuilder<AppState> RealmStoreBuilder)
+    {
+        RealmStoreBuilder.Use((Store<AppState> localStore, Dispatcher<AppState> next) =>
         {
             return (IRealmAction action) =>
             {
@@ -352,9 +341,9 @@ public class Program
             };
         });
 
-
-        new BrowserRenderer(serviceProvider).AddComponent<App>("app");
+        app.AddComponent<App>("app");
     }
+
 }
 ```
 
@@ -390,20 +379,17 @@ public static class Extensions
     }
 }
 
-// Program.cs
-
+// Startup.cs
 ...
-
-// using Microsoft.Extensions.DependencyInjection;
-IStoreBuilder<AppState> storeBuilder =
-    ServiceProvider.GetService<IStoreBuilder<AppState>>();
-
-storeBuilder.UseLogger<AppState>();
-// Or without using an extension
-// storeBuilder.UseMiddleware<AppState, Logger<AppState>>();
-
-new BrowserRenderer(serviceProvider).AddComponent<App>("app");
-
+public void Configure(IBlazorApplicationBuilder app, 
+    IStoreBuilder<AppState> RealmStoreBuilder)
+{
+    RealmStoreBuilder.UseLogger<AppState>();
+    // Or without using an extension
+    // RealmStoreBuilder.UseMiddleware<AppState, Logger<AppState>>();
+    
+    app.AddComponent<App>("app");
+}
 ...
 ```
 
@@ -411,7 +397,7 @@ new BrowserRenderer(serviceProvider).AddComponent<App>("app");
 
 As with Redux, Async actions in Realm are handled by middleware. Download the [Blazor.Realm.Async nuget package](https://www.nuget.org/packages/Blazor.Realm.Async/).
 
-Following a [ducks](https://medium.freecodecamp.org/scaling-your-redux-app-with-ducks-6115955638be) organizational structure, I place async actions in a seperate _Operations.cs_ file.
+I prefer placing async actions in a seperate _Operations.cs_ file.
 
 ```csharp
 // Operations.cs
@@ -444,24 +430,17 @@ public class AsyncIncrementCounter : IAsyncRealmAction
 
 Async actions must implement the `IAsyncRealmAction` interface and, in turn, implement `Task Invoke` method.
 
-## Adding Async Middleware
+## Register Async Middleware
 
 ```csharp
-// program.cs
-
-var serviceProvider = new BrowserServiceProvider(services =>
+// Startup.cs
+public void Configure(IBlazorApplicationBuilder app, 
+    IStoreBuilder<AppState> RealmStoreBuilder)
 {
-    // Add any custom services here
-    services.AddRealmStore<AppState>(new AppState(), RootReducer);
-});
+    RealmStoreBuilder.UseRealmAsync<AppState>();
 
-// using Microsoft.Extensions.DependencyInjection;
-IStoreBuilder<AppState> storeBuilder =
-    ServiceProvider.GetService<IStoreBuilder<AppState>>();
-
-storeBuilder.UseRealmAsync<AppState>();
-
-new BrowserRenderer(serviceProvider).AddComponent<App>("app");
+    app.AddComponent<App>("app");
+}
 ```
 
 ## Dispatching Async Actions
@@ -499,39 +478,39 @@ Steps for connecting to Redux Dev Tools:
 1.  [Install the browser extension](http://extension.remotedev.io/#installation).
 2.  Install the middleware, https://www.nuget.org/packages/Blazor.Realm.ReduxDevTools/
 
-Using the middleware
+## Register DevTools Middleware
 
 ```csharp
-// program.cs
-var serviceProvider = new BrowserServiceProvider(services =>
+// Startup.cs
+public void Configure(IBlazorApplicationBuilder app, 
+    IStoreBuilder<AppState> RealmStoreBuilder)
 {
-    // Add any custom services here
-    services.AddRealmStore<AppState>(new AppState(), RootReducer);
-});
+    RealmStoreBuilder.UseRealmAsync<AppState>();
 
-// using Microsoft.Extensions.DependencyInjection;
-IStoreBuilder<AppState> storeBuilder =
-    ServiceProvider.GetService<IStoreBuilder<AppState>>();
+    RealmStoreBuilder.UseRealmReduxDevTools<AppState>();
 
-storeBuilder.UseRealmAsync<AppState>();
-
-storeBuilder.UseRealmReduxDevTools<AppState>();
-
-new BrowserRenderer(serviceProvider).AddComponent<App>("app");
+    app.AddComponent<App>("app");
+}
 ```
 
 > **NOTE**
 >
 > The order in which middleware is registred matters. Add `UseRealmReduxDevTools` after `UseRealmAsync`.
 
-## Ignoring Specific Actions in Redux Dev Tools
+## Ignoring Specific Actions
 
 ```csharp
-// program.cs
+// Startup.cs
+public void Configure(IBlazorApplicationBuilder app, 
+    IStoreBuilder<AppState> RealmStoreBuilder)
+{
+    RealmStoreBuilder.UseRealmAsync<AppState>();
 
-storeBuilder.UseRealmReduxDevTools<AppState>(new Type[] {
-    // ResetCount actions will not show up in the Redux DevTools
-    // browser extension
-    typeof(ResetCount)
-});
+    RealmStoreBuilder.UseRealmReduxDevTools<AppState>(new System.Type[]
+    {
+        typeof(Actions.Counter.Dispose)
+    });
+
+    app.AddComponent<App>("app");
+}
 ```
