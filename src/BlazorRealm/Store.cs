@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Blazor;
+﻿using Microsoft.JSInterop;
 using System;
 
 namespace Blazor.Realm
@@ -29,7 +29,7 @@ namespace Blazor.Realm
         {
             try
             {
-                return JsonUtil.Deserialize<TState>(JsonUtil.Serialize(State));
+                return Json.Deserialize<TState>(Json.Serialize(State));
             } catch (Exception e)
             {
                 return State;

@@ -1,5 +1,5 @@
-﻿using Microsoft.AspNetCore.Blazor;
-using Microsoft.AspNetCore.Blazor.Services;
+﻿using Microsoft.AspNetCore.Blazor.Services;
+using Microsoft.JSInterop;
 using System;
 using System.Collections.Generic;
 
@@ -27,7 +27,7 @@ namespace Blazor.Realm.ReduxDevTools
             ActionsToIgnore = actionsToIgnore ?? new Type[] { };
             UriHelper = ServiceProvider.GetService(typeof(IUriHelper)) as IUriHelper;
             TState state = store.GetState();
-            History.Add(new Tuple<string, string>(UriHelper.GetAbsoluteUri(), JsonUtil.Serialize(state)));
+            History.Add(new Tuple<string, string>(UriHelper.GetAbsoluteUri(), Json.Serialize(state)));
 
             ReduxDevToolsInterop.Connect();
             ReduxDevToolsInterop.Init(state);
@@ -39,7 +39,7 @@ namespace Blazor.Realm.ReduxDevTools
                         ? eventArgs.Message.Payload.Index
                         : eventArgs.Message.Payload.ActionId;
                     Tuple<string, string> desiredState = History[index];
-                    store.Dispatch(new RealmReduxDevToolsAppState<TState>(JsonUtil.Deserialize<TState>(desiredState.Item2)));
+                    store.Dispatch(new RealmReduxDevToolsAppState<TState>(Json.Deserialize<TState>(desiredState.Item2)));
                     if(desiredState.Item1 != UriHelper.GetAbsoluteUri())
                     {
                         UriHelper.NavigateTo(desiredState.Item1);
@@ -59,7 +59,7 @@ namespace Blazor.Realm.ReduxDevTools
                     TState nextState = Next(action);
                     if (nextState != null && Array.IndexOf(ActionsToIgnore, action.GetType()) == -1)
                     {
-                        History.Add(new Tuple<string, string>(UriHelper.GetAbsoluteUri(), JsonUtil.Serialize(nextState)));
+                        History.Add(new Tuple<string, string>(UriHelper.GetAbsoluteUri(), Json.Serialize(nextState)));
                         ReduxDevToolsInterop.Send(action, nextState);
                     }
                     return nextState;

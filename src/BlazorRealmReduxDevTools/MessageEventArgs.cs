@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Blazor;
+﻿using Microsoft.JSInterop;
 using System;
 
 namespace Blazor.Realm.ReduxDevTools
@@ -9,7 +9,7 @@ namespace Blazor.Realm.ReduxDevTools
 
         public MessageEventArgs(string message)
         {
-            Message = JsonUtil.Deserialize<Message>(message);
+            Message = Json.Deserialize<Message>(message);
         }
 
     }
