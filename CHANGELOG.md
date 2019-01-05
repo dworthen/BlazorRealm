@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.6.0"></a>
+# [0.6.0](https://github.com/dworthen/BlazorRealm/compare/v0.5.8...v0.6.0) (2019-01-05)
+
+
+### Bug Fixes
+
+* support blazor 0.5.x ([45ff911](https://github.com/dworthen/BlazorRealm/commit/45ff911))
+
+
+### Features
+
+* Upgrade to Blazor 0.6.0 ([28a7db2](https://github.com/dworthen/BlazorRealm/commit/28a7db2))
+
+
+
 <a name="0.5.9"></a>
 ## 0.5.9 (2018-08-04)
 
