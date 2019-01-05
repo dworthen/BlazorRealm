@@ -55,7 +55,7 @@ namespace BlazorStandAlone
             }
         }
 
-        public static IEnumerable<WeatherForecast> WeatherForecastsReducer(IEnumerable<WeatherForecast> forecasts, IRealmAction action)
+        public static IEnumerable<WeatherForecast> WeatherForecastsReducer(IEnumerable<WeatherForecast> forecasts, Object action)
         {
             switch (action)
             {
