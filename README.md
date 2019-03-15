@@ -4,6 +4,7 @@ Redux state management for [blazor.net](https://blazor.net).
 
 [Documentation](https://dworthen.github.io/BlazorRealm/docs/quickstart.html)
 
+<!---
 > **NOTE FROM BLAZOR**
 >
 > Blazor is an unsupported experimental web framework that shouldn't be used for production workloads at this time.
@@ -15,15 +16,15 @@ Redux state management for [blazor.net](https://blazor.net).
 - [Reducer](#reducer)
 - [Register Realm Store Service](#register-realm-store-service)
 - [Blazor Components](#blazor-components)
-    - [Component Pattern (boilerplate)](#component-pattern-boilerplate)
+  - [Component Pattern (boilerplate)](#component-pattern-boilerplate)
 - [Middleware](#middleware)
-    - [Middleware as Extension Methods](#middleware-as-extension-methods)
+  - [Middleware as Extension Methods](#middleware-as-extension-methods)
 - [Async Actions](#async-actions)
-    - [Register Async Middleware](#register-async-middleware)
-    - [Dispatching Async Actions](#dispatching-async-actions)
+  - [Register Async Middleware](#register-async-middleware)
+  - [Dispatching Async Actions](#dispatching-async-actions)
 - [Redux Dev Tools](#redux-dev-tools)
-    - [Register DevTools Middleware](#register-devtools-middleware)
-    - [Ignoring Specific Actions](#ignoring-specific-actions)
+  - [Register DevTools Middleware](#register-devtools-middleware)
+  - [Ignoring Specific Actions](#ignoring-specific-actions)
 
 # Getting Started
 
@@ -297,7 +298,7 @@ public class Startup
         services.AddRealmStore<AppState>(new AppState(), Reducers.RootReducer);
     }
 
-    public void Configure(IBlazorApplicationBuilder app, 
+    public void Configure(IBlazorApplicationBuilder app,
         IStoreBuilder<AppState> RealmStoreBuilder)
     {
         RealmStoreBuilder.Use((Store<AppState> localStore, Dispatcher<AppState> next) =>
@@ -381,13 +382,13 @@ public static class Extensions
 
 // Startup.cs
 ...
-public void Configure(IBlazorApplicationBuilder app, 
+public void Configure(IBlazorApplicationBuilder app,
     IStoreBuilder<AppState> RealmStoreBuilder)
 {
     RealmStoreBuilder.UseLogger<AppState>();
     // Or without using an extension
     // RealmStoreBuilder.UseMiddleware<AppState, Logger<AppState>>();
-    
+
     app.AddComponent<App>("app");
 }
 ...
@@ -434,7 +435,7 @@ Async actions must implement the `IAsyncRealmAction` interface and, in turn, imp
 
 ```csharp
 // Startup.cs
-public void Configure(IBlazorApplicationBuilder app, 
+public void Configure(IBlazorApplicationBuilder app,
     IStoreBuilder<AppState> RealmStoreBuilder)
 {
     RealmStoreBuilder.UseRealmAsync<AppState>();
@@ -482,7 +483,7 @@ Steps for connecting to Redux Dev Tools:
 
 ```csharp
 // Startup.cs
-public void Configure(IBlazorApplicationBuilder app, 
+public void Configure(IBlazorApplicationBuilder app,
     IStoreBuilder<AppState> RealmStoreBuilder)
 {
     RealmStoreBuilder.UseRealmAsync<AppState>();
@@ -501,7 +502,7 @@ public void Configure(IBlazorApplicationBuilder app,
 
 ```csharp
 // Startup.cs
-public void Configure(IBlazorApplicationBuilder app, 
+public void Configure(IBlazorApplicationBuilder app,
     IStoreBuilder<AppState> RealmStoreBuilder)
 {
     RealmStoreBuilder.UseRealmAsync<AppState>();
@@ -514,3 +515,4 @@ public void Configure(IBlazorApplicationBuilder app,
     app.AddComponent<App>("app");
 }
 ```
+--->

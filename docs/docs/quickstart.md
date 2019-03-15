@@ -13,11 +13,8 @@ Redux state management for [blazor.net](https://blazor.net).
 - [Application State](#application-state)
 - [Actions](#actions)
 - [Reducer](#reducer)
-- [Register Realm Store Service](#register-realm-store-service)
-- [Blazor Components](#blazor-components)
-  - [Component Pattern (boilerplate)](#component-pattern-boilerplate)
-- [Middleware](#middleware)
-  - [Middleware as Extension Methods](#middleware-as-extension-methods)
+- [Add Realm Service](#add-realm-service)
+- [State Components](#state-components)
 - [Async Actions](#async-actions)
   - [Register Async Middleware](#register-async-middleware)
   - [Dispatching Async Actions](#dispatching-async-actions)
@@ -162,7 +159,7 @@ public static class Reducers
 }
 ```
 
-# Register Realm Store Service
+# Add Realm Service
 
 ```csharp
 // Startup.cs
@@ -172,238 +169,36 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
-# Blazor Components
-
-Don't forget to add `using Blazor.Realm;` to each component. Alternatively, add `using Blazor.Realm;`
-to _\_ViewImports.cshtml_
+# State Components
 
 ```csharp
 @page "/counter"
-@inject Store<AppState> store
-@implements IDisposable
-
-@* Or add to _ViewImports.cshtml *@
+@addTagHelper *, Blazor.Realm
 @using Blazor.Realm;
 
-<h1>Counter</h1>
+<RealmStateContainer TState="AppState" Context="store">
+    <ComponentTemplate>
+        @{
+            AppState State = store.GetState();
+            Action<IRealmAction> Dispatch = store.Dispatch;
 
-<p>Current count: @State.Count</p>
+            Action IncrementCount = () => Dispatch(new IncrementByValue(ChangeAmount));
+            Action DecrementCount = () => Dispatch(new DecrementByValue(ChangeAmount));
+        }
+        <h1>Counter</h1>
 
-Change By: <input type="text" name="IncementAmount" bind="@ChangeAmount" /><br />
+        <p>Current count: @State.Count</p>
 
-<button class="btn btn-primary" onclick="@IncrementCount">Increment</button><br />
-<button class="btn btn-primary" onclick="@DecrementCount">Decrement</button><br />
+        Change By: <input type="text" name="IncementAmount" bind="@ChangeAmount" /><br />
 
+        <button class="btn btn-primary" onclick="@IncrementCount">Increment</button><br />
+        <button class="btn btn-primary" onclick="@DecrementCount">Decrement</button><br />
+    </ComponentTemplate>
+</RealmStateContainer>
 
 @functions {
     private int ChangeAmount { get; set; } = 1;
-
-    // Handlers for Store and State from injected services
-    private Store<AppState> Store => store;
-    private AppState State;
-
-    void IncrementCount()
-    {
-        Store.Dispatch(new IncrementByValue(ChangeAmount));
-    }
-
-    void DecrementCount()
-    {
-        Store.Dispatch(new DecrementByValue(ChangeAmount));
-    }
-
-    protected override void OnInit()
-    {
-        // Retrieve State from the store
-        // Store.GetState returns a clone of State
-        // as long as State is serializable.
-        // This makes it ok to bind to @State in local
-        // components as it will not mutate central state.
-        // Only dispatching actions will update central state.
-        State = Store.GetState();
-        // Register handler for Realm Store Change event
-        Store.Change += OnChangeHandler;
-    }
-
-    protected void OnChangeHandler(object sender, EventArgs e)
-    {
-        // Retreive new state on changes
-        // and inform Blazor that state has changed
-        // for rerender.
-        State = Store.GetState();
-        StateHasChanged();
-    }
-
-    public virtual void Dispose()
-    {
-        // Remove event handlers when component is disposed
-        Store.Change -= OnChangeHandler;
-    }
 }
-```
-
-## Component Pattern (boilerplate)
-
-1.  Inject `Store<AppState>`.
-2.  Store a local copy of state, `State = Store.GetState()`.
-3.  Register event handler for the change event in `OnInit` and Update local state.
-4.  Remove event handlers in `Dispose`.
-5.  `Dispatch` actions and read state from `State`.
-
-The first 4 items are repeated in all components connecting to a Realm store. Instead of repeating this pattern, components may inherit from `Blazor.Realm.RealmComponent`.
-
-```csharp
-@page "/counter"
-@inherits RealmComponent<AppState>
-@* Or add to _ViewImports.cshtml *@
-@using Blazor.Realm;
-
-<h1>Counter</h1>
-
-<p>Current count: @State.Count</p>
-
-Change By: <input type="text" name="IncementAmount" bind="@ChangeAmount"/><br />
-
-<button class="btn btn-primary" onclick="@IncrementCount">Increment</button><br />
-<button class="btn btn-primary" onclick="@DecrementCount">Decrement</button><br />
-
-
-@functions {
-    private int ChangeAmount { get; set; } = 1;
-
-    /**
-    * Inheritiing from RealmComponent exposes Store, State and Dispatch.
-    */
-
-    void IncrementCount()
-    {
-        Dispatch(new IncrementByValue(ChangeAmount));
-    }
-
-    void DecrementCount()
-    {
-        Dispatch(new DecrementByValue(ChangeAmount));
-    }
-
-    // May still override OnInit, OnChangeHandler or Dispose
-    // Just need to call the base method
-    public override void Dispose()
-    {
-        base.Dispose();
-        // Example of resetting local state when
-        // app navigates away from page.
-        Dispatch(new ResetCount());
-    }
-}
-```
-
-# Middleware
-
-```csharp
-// Startup.cs
-
-public class Startup
-{
-
-    public void ConfigureServices(IServiceCollection services)
-    {
-        services.AddRealmStore<AppState>(new AppState(), Reducers.RootReducer);
-    }
-
-    public void Configure(IBlazorApplicationBuilder app, 
-        IStoreBuilder<AppState> RealmStoreBuilder)
-    {
-        RealmStoreBuilder.Use((Store<AppState> localStore, Dispatcher<AppState> next) =>
-        {
-            return (IRealmAction action) =>
-            {
-                /**
-                * localStore = Store singleton. This allows one to dispatch
-                * actions down the whole middleware pipeline. Example: error
-                * handling middleware. Try passing actions down pipeline but if exception
-                * is caught then dispatch a new ErrorAction down the pipeline for the
-                * application to handle.
-                *
-                * next = next middleware in the pipeline.  next(action) will continue
-                * sending the current action down the middleware pipeline.
-                *
-                * action = current action dispatched.
-                *
-                * returns TState = Application State.
-                */
-
-                // Do stuff, like logging
-                Console.WriteLine("Dispatching {0}", action.GetType().Name);
-                Console.WriteLine("Old state: {0}",
-                    JsonUtil.Serialize(localStore.State));
-
-                // May also dispatch new actions.
-                // This will send the action through the
-                // whole middleware pipeline,
-                // not just the next one in the pipeline.
-                localStore.Dispatch(new SomeAction());
-
-                // send current action to the next middleware
-                AppState nextState = next(action);
-                // do more stuff, like more logging
-                Console.WriteLine("Action {0} complete.", action.GetType().Name);
-                Console.WriteLine("New state: {0}",
-                    JsonUtil.Serialize(nextState));
-
-                return nextState;
-            };
-        });
-
-        app.AddComponent<App>("app");
-    }
-
-}
-```
-
-## Middleware as Extension Methods
-
-```csharp
-// Logger.cs
-public class Logger<TState>
-{
-    private readonly Store<TState> _store;
-    private readonly Dispatcher<TState> _next;
-
-    public Logger(Store<TState> store, Dispatcher<TSate> next)
-    {
-        _store = store;
-        _next = next;
-    }
-
-    public TState Invoke(IRealmAction action)
-    {
-        // Logger implementation...
-        return _next(action);
-    }
-}
-
-// Extensions.cs
-// Optional
-public static class Extensions
-{
-    public static IStoreBuilder UseLogger<TState>(this IStoreBuilder<TState> builder)
-    {
-        return builder.UseMiddleware<TState, Logger<TState>>();
-    }
-}
-
-// Startup.cs
-...
-public void Configure(IBlazorApplicationBuilder app, 
-    IStoreBuilder<AppState> RealmStoreBuilder)
-{
-    RealmStoreBuilder.UseLogger<AppState>();
-    // Or without using an extension
-    // RealmStoreBuilder.UseMiddleware<AppState, Logger<AppState>>();
-    
-    app.AddComponent<App>("app");
-}
-...
 ```
 
 # Async Actions
@@ -462,21 +257,31 @@ In _Counter.cshtml_
 
 ```csharp
 @page "/counter"
-@inherits RealmComponent<AppState>
+@addTagHelper *, Blazor.Realm
+@using Blazor.Realm;
 
-...
+<RealmStateContainer TState="AppState" Context="store">
+    <ComponentTemplate>
+        @{
+            AppState State = store.GetState();
+            Action<IRealmAction> Dispatch = store.Dispatch;
 
-<button class="btn btn-primary" onclick="@AsyncIncrement">Async Increment</button><br />
+            Action IncrementCountAsync = () => Dispatch(new AsyncIncrementCounter(store, ChangeAmount));
+            Action DecrementCount = () => Dispatch(new DecrementByValue(ChangeAmount));
+        }
+        <h1>Counter</h1>
+
+        <p>Current count: @State.Count</p>
+
+        Change By: <input type="text" name="IncementAmount" bind="@ChangeAmount" /><br />
+
+        <button class="btn btn-primary" onclick="@IncrementCountAsync">Increment Async</button><br />
+        <button class="btn btn-primary" onclick="@DecrementCount">Decrement</button><br />
+    </ComponentTemplate>
+</RealmStateContainer>
 
 @functions {
-    ...
-
-    void AsyncIncrement() // this method is not really async
-    {
-        Dispatch(new AsyncIncrementAction(Store, ChangeAmount));
-    }
-
-    ...
+    private int ChangeAmount { get; set; } = 1;
 }
 ```
 
