@@ -77,22 +77,16 @@
 <li><a href="#application-state">Application State</a></li>
 <li><a href="#actions">Actions</a></li>
 <li><a href="#reducer">Reducer</a></li>
-<li><a href="#register-the-app-store-as-a-service">Register the App Store as a Service</a></li>
-<li><a href="#blazor-components">Blazor Components</a><ul>
-<li><a href="#component-pattern-boilerplate">Component Pattern (boilerplate)</a></li>
-</ul>
-</li>
-<li><a href="#middleware">Middleware</a><ul>
-<li><a href="#middleware-as-extension-methods">Middleware as Extension Methods</a></li>
-</ul>
-</li>
+<li><a href="#add-realm-service">Add Realm Service</a></li>
+<li><a href="#state-components">State Components</a></li>
 <li><a href="#async-actions">Async Actions</a><ul>
-<li><a href="#adding-async-middleware">Adding Async Middleware</a></li>
+<li><a href="#register-async-middleware">Register Async Middleware</a></li>
 <li><a href="#dispatching-async-actions">Dispatching Async Actions</a></li>
 </ul>
 </li>
 <li><a href="#redux-dev-tools">Redux Dev Tools</a><ul>
-<li><a href="#ignoring-specific-actions-in-redux-dev-tools">Ignoring Specific Actions in Redux Dev Tools</a></li>
+<li><a href="#register-devtools-middleware">Register DevTools Middleware</a></li>
+<li><a href="#ignoring-specific-actions">Ignoring Specific Actions</a></li>
 </ul>
 </li>
 </ul>
@@ -101,15 +95,43 @@
 <li>For getting started with Blazor, visit <a href="https://blazor.net/../get-started.html">https://blazor.net/../get-started.html</a>.</li>
 <li>Install <a href="https://www.nuget.org/packages/Blazor.Realm/">https://www.nuget.org/packages/Blazor.Realm/</a>.</li>
 </ol>
-<blockquote><p><strong>NOTE</strong></p>
-<p>Blazor Realm is compatible with Blazor 0.4.0.</p>
-</blockquote>
+<p><strong>Compatibility</strong></p>
+<table>
+<thead>
+<tr>
+<th>Blazor Realm</th>
+<th>Blazor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0.5.9</td>
+<td>0.5.x</td>
+</tr>
+<tr>
+<td>0.6.x</td>
+<td>0.6.x</td>
+</tr>
+<tr>
+<td>0.7.x</td>
+<td>0.7.x</td>
+</tr>
+</tbody>
+</table>
 <h1 id="application-state">Application State</h1>
 <pre><code class="lang-csharp">// AppState.cs
 public class AppState
 {
     public int Count { get; set; }
     public IEnumerable&lt;WeatherForecast&gt; WeatherForecasts { get; set; } = new WeatherForecast[] { };
+}
+
+public class WeatherForecast
+{
+    public DateTime Date { get; set; }
+    public int TemperatureC { get; set; }
+    public int TemperatureF { get; set; }
+    public string Summary { get; set; }
 }
 </code></pre><h1 id="actions">Actions</h1>
 <pre><code class="lang-csharp">//Actions.cs
@@ -150,7 +172,7 @@ public class SetWeatherForecasts : IRealmAction
         WeatherForecasts = forecasts;
     }
 }
-</code></pre><p>Actions must implement <code>IRealmAction</code>. Don&#39;t forget to add <code>using Blazor.Realm;</code>.</p>
+</code></pre><p>Actions must implement <code>IRealmAction</code>.</p>
 <h1 id="reducer">Reducer</h1>
 <pre><code class="lang-csharp">// Reducer.cs
 
@@ -206,245 +228,43 @@ public static class Reducers
     }
 
 }
-</code></pre><p>Don&#39;t forget to add <code>using Blazor.Realm;</code>.</p>
-<h1 id="register-the-app-store-as-a-service">Register the App Store as a Service</h1>
-<pre><code class="lang-csharp">static void Main(string[] args)
+</code></pre><h1 id="add-realm-service">Add Realm Service</h1>
+<pre><code class="lang-csharp">// Startup.cs
+public void ConfigureServices(IServiceCollection services)
 {
-    var serviceProvider = new BrowserServiceProvider(services =&gt;
-    {
-        // Add any custom services here
-        services.AddRealmStore&lt;AppState&gt;(new AppState(), RootReducer);
-    });
-
-    new BrowserRenderer(serviceProvider).AddComponent&lt;App&gt;(&quot;app&quot;);
+    services.AddRealmStore&lt;AppState&gt;(new AppState(), Reducers.RootReducer);
 }
-</code></pre><p>Don&#39;t forget to add <code>using Blazor.Realm;</code>.</p>
-<h1 id="blazor-components">Blazor Components</h1>
-<p>Don&#39;t forget to add <code>using Blazor.Realm;</code> to each component. Alternatively, add <code>using Blazor.Realm;</code>
-to <em>_ViewImports.cshtml</em></p>
+</code></pre><h1 id="state-components">State Components</h1>
 <pre><code class="lang-csharp">@page &quot;/counter&quot;
-@inject Store&lt;AppState&gt; store
-@implements IDisposable
-
-@* Or add to _ViewImports.cshtml *@
+@addTagHelper *, Blazor.Realm
 @using Blazor.Realm;
 
-&lt;h1&gt;Counter&lt;/h1&gt;
+&lt;RealmStateContainer TState=&quot;AppState&quot; Context=&quot;store&quot;&gt;
+    &lt;ComponentTemplate&gt;
+        @{
+            AppState State = store.GetState();
+            Action&lt;IRealmAction&gt; Dispatch = store.Dispatch;
 
-&lt;p&gt;Current count: @State.Count&lt;/p&gt;
+            Action IncrementCount = () =&gt; Dispatch(new IncrementByValue(ChangeAmount));
+            Action DecrementCount = () =&gt; Dispatch(new DecrementByValue(ChangeAmount));
+        }
+        &lt;h1&gt;Counter&lt;/h1&gt;
 
-Change By: &lt;input type=&quot;text&quot; name=&quot;IncementAmount&quot; bind=&quot;@ChangeAmount&quot; /&gt;&lt;br /&gt;
+        &lt;p&gt;Current count: @State.Count&lt;/p&gt;
 
-&lt;button class=&quot;btn btn-primary&quot; onclick=&quot;@IncrementCount&quot;&gt;Increment&lt;/button&gt;&lt;br /&gt;
-&lt;button class=&quot;btn btn-primary&quot; onclick=&quot;@DecrementCount&quot;&gt;Decrement&lt;/button&gt;&lt;br /&gt;
+        Change By: &lt;input type=&quot;text&quot; name=&quot;IncementAmount&quot; bind=&quot;@ChangeAmount&quot; /&gt;&lt;br /&gt;
 
+        &lt;button class=&quot;btn btn-primary&quot; onclick=&quot;@IncrementCount&quot;&gt;Increment&lt;/button&gt;&lt;br /&gt;
+        &lt;button class=&quot;btn btn-primary&quot; onclick=&quot;@DecrementCount&quot;&gt;Decrement&lt;/button&gt;&lt;br /&gt;
+    &lt;/ComponentTemplate&gt;
+&lt;/RealmStateContainer&gt;
 
 @functions {
     private int ChangeAmount { get; set; } = 1;
-
-    // Handlers for Store and State from injected services
-    private Store&lt;AppState&gt; Store =&gt; store;
-    private AppState State;
-
-    void IncrementCount()
-    {
-        Store.Dispatch(new IncrementByValue(ChangeAmount));
-    }
-
-    void DecrementCount()
-    {
-        Store.Dispatch(new DecrementByValue(ChangeAmount));
-    }
-
-    protected override void OnInit()
-    {
-        // Retrieve State from the store
-        // Store.GetState returns a clone of State
-        // as long as State is serializable.
-        // This makes it ok to bind to @State in local
-        // components as it will not mutate central state.
-        // Only dispatching actions will update central state.
-        State = Store.GetState();
-        // Register handler for Realm Store Change event
-        Store.Change += OnChangeHandler;
-    }
-
-    protected void OnChangeHandler(object sender, EventArgs e)
-    {
-        // Retreive new state on changes
-        // and inform Blazor that state has changed
-        // for rerender.
-        State = Store.GetState();
-        StateHasChanged();
-    }
-
-    public virtual void Dispose()
-    {
-        // Remove event handlers when component is disposed
-        Store.Change -= OnChangeHandler;
-    }
 }
-</code></pre><h2 id="component-pattern-boilerplate">Component Pattern (boilerplate)</h2>
-<ol>
-<li>Inject <code>Store&lt;AppState&gt;</code>.</li>
-<li>Store a local copy of state, <code>State = Store.GetState()</code>.</li>
-<li>Register event handler for the change event in <code>OnInit</code> and Update local state.</li>
-<li>Remove event handlers in <code>Dispose</code>.</li>
-<li><code>Dispatch</code> actions and read state from <code>State</code>.</li>
-</ol>
-<p>The first 4 items are repeated in all components connecting to a Realm store. Instead of repeating this pattern, components may inherit from <code>Blazor.Realm.RealmComponent</code>.</p>
-<pre><code class="lang-csharp">@page &quot;/counter&quot;
-@inherits RealmComponent&lt;AppState&gt;
-@* Or add to _ViewImports.cshtml *@
-@using Blazor.Realm;
-
-&lt;h1&gt;Counter&lt;/h1&gt;
-
-&lt;p&gt;Current count: @State.Count&lt;/p&gt;
-
-Change By: &lt;input type=&quot;text&quot; name=&quot;IncementAmount&quot; bind=&quot;@ChangeAmount&quot;/&gt;&lt;br /&gt;
-
-&lt;button class=&quot;btn btn-primary&quot; onclick=&quot;@IncrementCount&quot;&gt;Increment&lt;/button&gt;&lt;br /&gt;
-&lt;button class=&quot;btn btn-primary&quot; onclick=&quot;@DecrementCount&quot;&gt;Decrement&lt;/button&gt;&lt;br /&gt;
-
-
-@functions {
-    private int ChangeAmount { get; set; } = 1;
-
-    /**
-    * Inheritiing from RealmComponent exposes Store, State and Dispatch.
-    */
-
-    void IncrementCount()
-    {
-        Dispatch(new IncrementByValue(ChangeAmount));
-    }
-
-    void DecrementCount()
-    {
-        Dispatch(new DecrementByValue(ChangeAmount));
-    }
-
-    // May still override OnInit, OnChangeHandler or Dispose
-    // Just need to call the base method
-    public override void Dispose()
-    {
-        base.Dispose();
-        // Example of resetting local state when
-        // app navigates away from page.
-        Dispatch(new ResetCount());
-    }
-}
-</code></pre><h1 id="middleware">Middleware</h1>
-<pre><code class="lang-csharp">// Program.cs
-
-public class Program
-{
-    static void Main(string[] args)
-    {
-        var serviceProvider = new BrowserServiceProvider(services =&gt;
-        {
-            // Add any custom services here
-            services.AddRealmStore&lt;AppState&gt;(new AppState(), RootReducer);
-        });
-
-        // using Microsoft.Extensions.DependencyInjection;
-        IStoreBuilder&lt;AppState&gt; storeBuilder =
-            ServiceProvider.GetService&lt;IStoreBuilder&lt;AppState&gt;&gt;();
-
-        storeBuilder.Use((Store&lt;AppState&gt; localStore, Dispatcher&lt;AppState&gt; next) =&gt;
-        {
-            return (IRealmAction action) =&gt;
-            {
-                /**
-                * localStore = Store singleton. This allows one to dispatch
-                * actions down the whole middleware pipeline. Example: error
-                * handling middleware. Try passing actions down pipeline but if exception
-                * is caught then dispatch a new ErrorAction down the pipeline for the
-                * application to handle.
-                *
-                * next = next middleware in the pipeline.  next(action) will continue
-                * sending the current action down the middleware pipeline.
-                *
-                * action = current action dispatched.
-                *
-                * returns TState = Application State.
-                */
-
-                // Do stuff, like logging
-                Console.WriteLine(&quot;Dispatching {0}&quot;, action.GetType().Name);
-                Console.WriteLine(&quot;Old state: {0}&quot;,
-                    JsonUtil.Serialize(localStore.State));
-
-                // May also dispatch new actions.
-                // This will send the action through the
-                // whole middleware pipeline,
-                // not just the next one in the pipeline.
-                localStore.Dispatch(new SomeAction());
-
-                // send current action to the next middleware
-                AppState nextState = next(action);
-                // do more stuff, like more logging
-                Console.WriteLine(&quot;Action {0} complete.&quot;, action.GetType().Name);
-                Console.WriteLine(&quot;New state: {0}&quot;,
-                    JsonUtil.Serialize(nextState));
-
-                return nextState;
-            };
-        });
-
-
-        new BrowserRenderer(serviceProvider).AddComponent&lt;App&gt;(&quot;app&quot;);
-    }
-}
-</code></pre><h2 id="middleware-as-extension-methods">Middleware as Extension Methods</h2>
-<pre><code class="lang-csharp">// Logger.cs
-public class Logger&lt;TState&gt;
-{
-    private readonly Store&lt;TState&gt; _store;
-    private readonly Dispatcher&lt;TState&gt; _next;
-
-    public Logger(Store&lt;TState&gt; store, Dispatcher&lt;TSate&gt; next)
-    {
-        _store = store;
-        _next = next;
-    }
-
-    public TState Invoke(IRealmAction action)
-    {
-        // Logger implementation...
-        return _next(action);
-    }
-}
-
-// Extensions.cs
-// Optional
-public static class Extensions
-{
-    public static IStoreBuilder UseLogger&lt;TState&gt;(this IStoreBuilder&lt;TState&gt; builder)
-    {
-        return builder.UseMiddleware&lt;TState, Logger&lt;TState&gt;&gt;();
-    }
-}
-
-// Program.cs
-
-...
-
-// using Microsoft.Extensions.DependencyInjection;
-IStoreBuilder&lt;AppState&gt; storeBuilder =
-    ServiceProvider.GetService&lt;IStoreBuilder&lt;AppState&gt;&gt;();
-
-storeBuilder.UseLogger&lt;AppState&gt;();
-// Or without using an extension
-// storeBuilder.UseMiddleware&lt;AppState, Logger&lt;AppState&gt;&gt;();
-
-new BrowserRenderer(serviceProvider).AddComponent&lt;App&gt;(&quot;app&quot;);
-
-...
 </code></pre><h1 id="async-actions">Async Actions</h1>
 <p>As with Redux, Async actions in Realm are handled by middleware. Download the <a href="https://www.nuget.org/packages/Blazor.Realm.Async/">Blazor.Realm.Async nuget package</a>.</p>
-<p>Following a <a href="https://medium.freecodecamp.org/scaling-your-redux-app-with-ducks-6115955638be">ducks</a> organizational structure, I place async actions in a seperate <em>Operations.cs</em> file.</p>
+<p>I prefer placing async actions in a seperate <em>Operations.cs</em> file.</p>
 <pre><code class="lang-csharp">// Operations.cs
 
 public class AsyncIncrementCounter : IAsyncRealmAction
@@ -472,40 +292,43 @@ public class AsyncIncrementCounter : IAsyncRealmAction
     }
 }
 </code></pre><p>Async actions must implement the <code>IAsyncRealmAction</code> interface and, in turn, implement <code>Task Invoke</code> method.</p>
-<h2 id="adding-async-middleware">Adding Async Middleware</h2>
-<pre><code class="lang-csharp">// program.cs
-
-var serviceProvider = new BrowserServiceProvider(services =&gt;
+<h2 id="register-async-middleware">Register Async Middleware</h2>
+<pre><code class="lang-csharp">// Startup.cs
+public void Configure(IBlazorApplicationBuilder app, 
+    IStoreBuilder&lt;AppState&gt; RealmStoreBuilder)
 {
-    // Add any custom services here
-    services.AddRealmStore&lt;AppState&gt;(new AppState(), RootReducer);
-});
+    RealmStoreBuilder.UseRealmAsync&lt;AppState&gt;();
 
-// using Microsoft.Extensions.DependencyInjection;
-IStoreBuilder&lt;AppState&gt; storeBuilder =
-    ServiceProvider.GetService&lt;IStoreBuilder&lt;AppState&gt;&gt;();
-
-storeBuilder.UseRealmAsync&lt;AppState&gt;();
-
-new BrowserRenderer(serviceProvider).AddComponent&lt;App&gt;(&quot;app&quot;);
+    app.AddComponent&lt;App&gt;(&quot;app&quot;);
+}
 </code></pre><h2 id="dispatching-async-actions">Dispatching Async Actions</h2>
 <p>In <em>Counter.cshtml</em></p>
 <pre><code class="lang-csharp">@page &quot;/counter&quot;
-@inherits RealmComponent&lt;AppState&gt;
+@addTagHelper *, Blazor.Realm
+@using Blazor.Realm;
 
-...
+&lt;RealmStateContainer TState=&quot;AppState&quot; Context=&quot;store&quot;&gt;
+    &lt;ComponentTemplate&gt;
+        @{
+            AppState State = store.GetState();
+            Action&lt;IRealmAction&gt; Dispatch = store.Dispatch;
 
-&lt;button class=&quot;btn btn-primary&quot; onclick=&quot;@AsyncIncrement&quot;&gt;Async Increment&lt;/button&gt;&lt;br /&gt;
+            Action IncrementCountAsync = () =&gt; Dispatch(new AsyncIncrementCounter(store, ChangeAmount));
+            Action DecrementCount = () =&gt; Dispatch(new DecrementByValue(ChangeAmount));
+        }
+        &lt;h1&gt;Counter&lt;/h1&gt;
+
+        &lt;p&gt;Current count: @State.Count&lt;/p&gt;
+
+        Change By: &lt;input type=&quot;text&quot; name=&quot;IncementAmount&quot; bind=&quot;@ChangeAmount&quot; /&gt;&lt;br /&gt;
+
+        &lt;button class=&quot;btn btn-primary&quot; onclick=&quot;@IncrementCountAsync&quot;&gt;Increment Async&lt;/button&gt;&lt;br /&gt;
+        &lt;button class=&quot;btn btn-primary&quot; onclick=&quot;@DecrementCount&quot;&gt;Decrement&lt;/button&gt;&lt;br /&gt;
+    &lt;/ComponentTemplate&gt;
+&lt;/RealmStateContainer&gt;
 
 @functions {
-    ...
-
-    void AsyncIncrement() // this method is not really async
-    {
-        Dispatch(new AsyncIncrementAction(Store, ChangeAmount));
-    }
-
-    ...
+    private int ChangeAmount { get; set; } = 1;
 }
 </code></pre><h1 id="redux-dev-tools">Redux Dev Tools</h1>
 <p><img src="../images/redux-devtools.GIF" alt="Redux DevTools"></p>
@@ -515,34 +338,34 @@ new BrowserRenderer(serviceProvider).AddComponent&lt;App&gt;(&quot;app&quot;);
 <li><a href="http://extension.remotedev.io/#installation">Install the browser extension</a>.</li>
 <li>Install the middleware, <a href="https://www.nuget.org/packages/Blazor.Realm.ReduxDevTools/">https://www.nuget.org/packages/Blazor.Realm.ReduxDevTools/</a></li>
 </ol>
-<p>Using the middleware</p>
-<pre><code class="lang-csharp">// program.cs
-var serviceProvider = new BrowserServiceProvider(services =&gt;
+<h2 id="register-devtools-middleware">Register DevTools Middleware</h2>
+<pre><code class="lang-csharp">// Startup.cs
+public void Configure(IBlazorApplicationBuilder app, 
+    IStoreBuilder&lt;AppState&gt; RealmStoreBuilder)
 {
-    // Add any custom services here
-    services.AddRealmStore&lt;AppState&gt;(new AppState(), RootReducer);
-});
+    RealmStoreBuilder.UseRealmAsync&lt;AppState&gt;();
 
-// using Microsoft.Extensions.DependencyInjection;
-IStoreBuilder&lt;AppState&gt; storeBuilder =
-    ServiceProvider.GetService&lt;IStoreBuilder&lt;AppState&gt;&gt;();
+    RealmStoreBuilder.UseRealmReduxDevTools&lt;AppState&gt;();
 
-storeBuilder.UseRealmAsync&lt;AppState&gt;();
-
-storeBuilder.UseRealmReduxDevTools&lt;AppState&gt;();
-
-new BrowserRenderer(serviceProvider).AddComponent&lt;App&gt;(&quot;app&quot;);
+    app.AddComponent&lt;App&gt;(&quot;app&quot;);
+}
 </code></pre><blockquote><p><strong>NOTE</strong></p>
 <p>The order in which middleware is registred matters. Add <code>UseRealmReduxDevTools</code> after <code>UseRealmAsync</code>.</p>
 </blockquote>
-<h2 id="ignoring-specific-actions-in-redux-dev-tools">Ignoring Specific Actions in Redux Dev Tools</h2>
-<pre><code class="lang-csharp">// program.cs
+<h2 id="ignoring-specific-actions">Ignoring Specific Actions</h2>
+<pre><code class="lang-csharp">// Startup.cs
+public void Configure(IBlazorApplicationBuilder app, 
+    IStoreBuilder&lt;AppState&gt; RealmStoreBuilder)
+{
+    RealmStoreBuilder.UseRealmAsync&lt;AppState&gt;();
 
-storeBuilder.UseRealmReduxDevTools&lt;AppState&gt;(new Type[] {
-    // ResetCount actions will not show up in the Redux DevTools
-    // browser extension
-    typeof(ResetCount)
-});
+    RealmStoreBuilder.UseRealmReduxDevTools&lt;AppState&gt;(new System.Type[]
+    {
+        typeof(Actions.Counter.Dispose)
+    });
+
+    app.AddComponent&lt;App&gt;(&quot;app&quot;);
+}
 </code></pre></article>
           </div>
           
