@@ -1,0 +1,34 @@
+﻿@typeparam TState
+@using Blazor.Realm
+
+@ComponentTemplate(Store)
+
+
+@functions {
+
+    [Inject]
+    private Store<TState> Store { get; set; }
+
+    private TState State { get; set; }
+    private Action<IRealmAction> Dispatch => Store.Dispatch;
+
+    [Parameter] protected RenderFragment<Store<TState>> ComponentTemplate { get; set; }
+
+    public virtual void Dispose()
+    {
+        Store.Change -= OnChangeHandler;
+    }
+
+    protected override void OnInit()
+    {
+        State = Store.GetState();
+        Store.Change += OnChangeHandler;
+    }
+
+    protected virtual void OnChangeHandler(object sender, EventArgs e)
+    {
+        State = Store.GetState();
+        StateHasChanged();
+    }
+
+}
