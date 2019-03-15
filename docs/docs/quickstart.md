@@ -15,24 +15,29 @@ Redux state management for [blazor.net](https://blazor.net).
 - [Reducer](#reducer)
 - [Register Realm Store Service](#register-realm-store-service)
 - [Blazor Components](#blazor-components)
-    - [Component Pattern (boilerplate)](#component-pattern-boilerplate)
+  - [Component Pattern (boilerplate)](#component-pattern-boilerplate)
 - [Middleware](#middleware)
-    - [Middleware as Extension Methods](#middleware-as-extension-methods)
+  - [Middleware as Extension Methods](#middleware-as-extension-methods)
 - [Async Actions](#async-actions)
-    - [Register Async Middleware](#register-async-middleware)
-    - [Dispatching Async Actions](#dispatching-async-actions)
+  - [Register Async Middleware](#register-async-middleware)
+  - [Dispatching Async Actions](#dispatching-async-actions)
 - [Redux Dev Tools](#redux-dev-tools)
-    - [Register DevTools Middleware](#register-devtools-middleware)
-    - [Ignoring Specific Actions](#ignoring-specific-actions)
+  - [Register DevTools Middleware](#register-devtools-middleware)
+  - [Ignoring Specific Actions](#ignoring-specific-actions)
 
 # Getting Started
 
 1.  For getting started with Blazor, visit https://blazor.net/../get-started.html.
 2.  Install https://www.nuget.org/packages/Blazor.Realm/.
 
-> **NOTE**
->
-> Blazor Realm >= 0.5.9 is compatible with Blazor 0.5.x.
+**Compatibility**
+
+| Blazor Realm | Blazor |
+| ------------ | ------ |
+| 0.5.9        | 0.5.x  |
+| 0.6.x        | 0.6.x  |
+| 0.7.x        | 0.7.x  |
+
 
 # Application State
 
@@ -42,6 +47,14 @@ public class AppState
 {
     public int Count { get; set; }
     public IEnumerable<WeatherForecast> WeatherForecasts { get; set; } = new WeatherForecast[] { };
+}
+
+public class WeatherForecast
+{
+    public DateTime Date { get; set; }
+    public int TemperatureC { get; set; }
+    public int TemperatureF { get; set; }
+    public string Summary { get; set; }
 }
 ```
 
