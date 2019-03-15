@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.7.1"></a>
+## [0.7.1](https://github.com/dworthen/BlazorRealm/compare/v0.7.0...v0.7.1) (2019-03-15)
+
+
+### Features
+
+* Add RealmStateContainer ([3af8cec](https://github.com/dworthen/BlazorRealm/commit/3af8cec))
+
+
+
 <a name="0.7.0"></a>
 # [0.7.0](https://github.com/dworthen/BlazorRealm/compare/v0.6.0...v0.7.0) (2019-01-05)
 
