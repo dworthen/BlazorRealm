@@ -1,6 +1,6 @@
 {
   "name": "blazor-realm",
-  "version": "0.7.3",
+  "version": "0.8.0",
   "description": "",
   "main": "index.js",
   "directories": {
@@ -8,7 +8,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "clean": "rimraf **/BlazorRealm*/bin/* && rimraf **/BlazorStandAlone/bin/*",
+    "clean": "rimraf **/BlazorRealm*/bin/* && rimraf **/examples/*/bin/*",
     "pack-blazor-realm": "dotnet pack ./src/BlazorRealm/BlazorRealm.csproj -o ./nupkgs/",
     "prepack-blazor-realm": "rimraf ./src/BlazorRealm/nupkgs/*",
     "pack-blazor-realm-async": "dotnet pack ./src/BlazorRealmAsync/BlazorRealmAsync.csproj -o ./nupkgs/",
