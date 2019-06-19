@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.8.1"></a>
+## [0.8.1](https://github.com/dworthen/BlazorRealm/compare/v0.8.0...v0.8.1) (2019-06-19)
+
+
+### Bug Fixes
+
+* Ignore examples/BlazorStandAlone ([ea5a318](https://github.com/dworthen/BlazorRealm/commit/ea5a318))
+* Update Client side example ([bcbf6b9](https://github.com/dworthen/BlazorRealm/commit/bcbf6b9))
+
+
+
 <a name="0.8.0"></a>
 # [0.8.0](https://github.com/dworthen/BlazorRealm/compare/v0.7.3...v0.8.0) (2019-06-19)
 
