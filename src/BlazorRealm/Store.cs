@@ -1,5 +1,6 @@
 ﻿using Microsoft.JSInterop;
 using System;
+using System.Text.Json.Serialization;
 
 namespace Blazor.Realm
 {
@@ -29,7 +30,7 @@ namespace Blazor.Realm
         {
             try
             {
-                return Json.Deserialize<TState>(Json.Serialize(State));
+                return JsonSerializer.Parse<TState>(JsonSerializer.ToString<TState>(State));
             } catch (Exception e)
             {
                 return State;

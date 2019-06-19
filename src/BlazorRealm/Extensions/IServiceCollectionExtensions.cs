@@ -9,9 +9,9 @@ namespace Blazor.Realm.Extensions
         {
             Store<TState> store = new Store<TState>(initialState, rootReducer);
             services.AddSingleton<Store<TState>>(store);
-            IServiceProvider serviceProvider = services.BuildServiceProvider();
-            IStoreBuilder<TState> builder = new StoreBuilder<TState>(serviceProvider);
-            services.AddSingleton<IStoreBuilder<TState>>(builder);
+            //IServiceProvider serviceProvider = services.BuildServiceProvider();
+            //IStoreBuilder<TState> builder = new StoreBuilder<TState>(serviceProvider);
+            services.AddSingleton<IStoreBuilder<TState>, StoreBuilder<TState>>(/*builder*/);
             return store;
         }
     }

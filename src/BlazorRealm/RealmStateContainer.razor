@@ -5,7 +5,7 @@
 @ComponentTemplate(Store)
 
 
-@functions {
+@code {
 
     [Inject]
     private Store<TState> Store { get; set; }
@@ -29,7 +29,7 @@
     protected virtual void OnChangeHandler(object sender, EventArgs e)
     {
         State = Store.GetState();
-        StateHasChanged();
+        this.StateHasChanged();
     }
 
 }

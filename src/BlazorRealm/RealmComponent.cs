@@ -1,9 +1,9 @@
-﻿using Microsoft.AspNetCore.Blazor.Components;
+﻿using Microsoft.AspNetCore.Components;
 using System;
 
 namespace Blazor.Realm
 {
-    public class RealmComponent<TState> : BlazorComponent, IDisposable
+    public class RealmComponent<TState> : ComponentBase, IDisposable
     {
         [Inject]
         public Store<TState> Store { get; private set; }

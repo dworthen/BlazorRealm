@@ -1,18 +1,19 @@
 ﻿using Microsoft.JSInterop;
 using System;
+using System.Text.Json.Serialization;
 
 namespace Blazor.Realm.ReduxDevTools
 {
-    public class MessageEventArgs: EventArgs
-    {
-        public Message Message { get; set; }
+    //public class MessageEventArgs: EventArgs
+    //{
+    //    public Message Message { get; set; }
 
-        public MessageEventArgs(string message)
-        {
-            Message = Json.Deserialize<Message>(message);
-        }
+    //    public MessageEventArgs(string message)
+    //    {
+    //        Message = JsonSerializer.Parse<Message>(message);
+    //    }
 
-    }
+    //}
 
     public class Message
     {

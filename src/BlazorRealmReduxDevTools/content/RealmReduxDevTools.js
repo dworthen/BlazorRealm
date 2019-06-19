@@ -10,6 +10,9 @@
         },
 
         Connect: function () {
+            devTools({
+                latency: 0
+            });
             devTools = devTools.connect();
         },
 
@@ -23,8 +26,8 @@
 
         Subscribe: function () {
             devTools.subscribe((message) => {
-                var json = JSON.stringify(message);
-                DotNet.invokeMethod(assemblyName, "OnMessageReceived", json);
+                //var json = JSON.stringify(message);
+                DotNet.invokeMethod(assemblyName, "OnMessageReceived", message);
             });
         },
 

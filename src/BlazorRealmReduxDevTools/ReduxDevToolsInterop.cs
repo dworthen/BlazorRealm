@@ -1,43 +1,53 @@
 ﻿using System;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Components;
 using Microsoft.JSInterop;
 
 namespace Blazor.Realm.ReduxDevTools
 {
-    public static class ReduxDevToolsInterop
+    public class ReduxDevToolsInterop
     {
-        private static readonly string JSNameSpace = "BlazorRealmReduxDevTools";
-        public static event EventHandler<MessageEventArgs> MessageReceived;
-        [JSInvokable]
-        public static void OnMessageReceived(string message) => MessageReceived?.Invoke(null, new MessageEventArgs(message));
-        public static async Task<bool> IsAvailableAsync()
+        protected readonly string JSNameSpace = "BlazorRealmReduxDevTools";
+        protected readonly IJSRuntime JSRuntime;
+        protected readonly IUriHelper UriHelper;
+        public static event EventHandler<Message> MessageReceived;
+
+        public ReduxDevToolsInterop(IJSRuntime jsRuntime, IUriHelper uriHelper)
         {
-            bool result = await JSRuntime.Current.InvokeAsync<bool>($"{JSNameSpace}.IsAvailable");
+            JSRuntime = jsRuntime;
+            UriHelper = uriHelper;
+        }
+
+        [JSInvokable]
+        public static void OnMessageReceived(Message message) => MessageReceived?.Invoke(null, message);
+        public async Task<bool> IsAvailableAsync()
+        {
+            bool result = await JSRuntime.InvokeAsync<bool>($"{JSNameSpace}.IsAvailable");
             return result;
         }
-        public static void Connect()
+        public void Connect()
         {
-            JSRuntime.Current.InvokeAsync<object>($"{JSNameSpace}.Connect");
+            JSRuntime.InvokeAsync<object>($"{JSNameSpace}.Connect");
         }
-        public static void Init(object state)
+        public void Init(object state)
         {
-            JSRuntime.Current.InvokeAsync<object>($"{JSNameSpace}.Init", state);
+            JSRuntime.InvokeAsync<object>($"{JSNameSpace}.Init", state);
         }
-        public static void Subscribe()
+        public void Subscribe()
         {
-            JSRuntime.Current.InvokeAsync<object>($"{JSNameSpace}.Subscribe");
+            JSRuntime.InvokeAsync<object>($"{JSNameSpace}.Subscribe");
         }
-        public static void Send(object action, object state)
+        public void Send(object action, object state)
         {
-            JSRuntime.Current.InvokeAsync<object>($"{JSNameSpace}.Send", new { type = action.GetType().Name }, state);
+            JSRuntime.InvokeAsync<object>($"{JSNameSpace}.Send", new { type = action.GetType().FullName }, state);
         }
-        public static void UnSubscribe()
+        public void UnSubscribe()
         {
-            JSRuntime.Current.InvokeAsync<object>($"{JSNameSpace}.UnSubscribe");
+            JSRuntime.InvokeAsync<object>($"{JSNameSpace}.UnSubscribe");
         }
-        public static void Disconnect()
+        public void Disconnect()
         {
-            JSRuntime.Current.InvokeAsync<object>($"{JSNameSpace}.Disconnect");
+            JSRuntime.InvokeAsync<object>($"{JSNameSpace}.Disconnect");
         }
     }
 }
