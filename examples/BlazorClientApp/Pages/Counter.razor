@@ -1,0 +1,66 @@
+﻿@page "/counter"
+@inherits RealmComponent<AppState>
+@inject IUriHelper UriHelper
+
+<h1>Counter</h1>
+
+@if (State.IsLoading)
+{
+    <div><em>Loading...</em></div>
+}
+else
+{
+    <p>
+        Current count from central store: @Store.GetState().Count
+    </p>
+    <p>
+        Current count from local state: @State.Count
+    </p>
+
+    <p>
+        Change By: <input type="text" name="IncementAmount" @bind="@ChangeBy" />
+    </p>
+
+
+    <button class="btn btn-primary" @onclick="@IncrementCount">Increment</button>
+    <button class="btn btn-primary" @onclick="@DecrementCount">Decrement</button>
+    <button class="btn btn-primary" @onclick="@Reset">Reset</button>
+    <button class="btn btn-primary" @onclick="@Navigate">Reset</button>
+
+}
+
+
+
+@code {
+    [Parameter]
+    private int ChangeBy { get; set; } = 1;
+
+    public int count { get; set; } = 0;
+
+    void IncrementCount()
+    {
+        Dispatch(new Redux.Actions.Counter.IncrementByValue(ChangeBy));
+    }
+
+    void DecrementCount()
+    {
+        Dispatch(new Redux.Actions.Counter.DecrementByValue(ChangeBy));
+    }
+
+    void Reset()
+    {
+        Dispatch(new Redux.Actions.Counter.Reset());
+    }
+
+    public override void Dispose()
+    {
+        base.Dispose();
+        Dispatch(new Redux.Actions.Counter.Dispose());
+    }
+
+    public void Navigate()
+    {
+        count++;
+        UriHelper.NavigateTo($"/counter?testing{count}");
+    }
+}
