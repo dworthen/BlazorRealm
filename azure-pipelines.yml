@@ -1,0 +1,53 @@
+# ASP.NET Core (.NET Framework)
+# Build and test ASP.NET Core projects targeting the full .NET Framework.
+# Add steps that publish symbols, save build artifacts, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
+
+pr:
+  branches:
+    exclude:
+      - master
+
+trigger:
+  branches:
+    include:
+    - master
+  paths:
+    include:
+      - 'src/BlazorRealm/*'
+
+pool:
+  vmImage: 'windows-latest'
+
+variables:
+  solution: '**/*.sln'
+  blazorRealmProject: 'src/BlazorRealm/BlazorRealm.csproj'
+  buildPlatform: 'Any CPU'
+  buildConfiguration: 'Release'
+
+steps:
+- task: DotNetCoreInstaller@0
+  inputs:
+    version: '3.0.100-preview6-012264'
+
+- task: DotNetCoreCLI@2
+  inputs:
+    command: restore
+    projects: '$(blazorRealmProject)'
+    arguments: '--no-cache'
+
+- task: DotNetCoreCLI@2
+  inputs:
+    command: build
+    projects: '$(blazorRealmProject)'
+    arguments: '--configuration $(buildConfiguration)'
+
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'pack'
+    projects: '$(blazorRealmProject)'
+
+- task: PublishPipelineArtifact@0
+  inputs:
+    artifactName: 'BlazorRealmDrop'
+    targetPath: '$(Build.ArtifactStagingDirectory)'
