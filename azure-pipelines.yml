@@ -34,7 +34,7 @@ steps:
   inputs:
     command: restore
     projects: '$(blazorRealmProject)'
-    arguments: '--no-cache'
+    noCache: true
 
 - task: DotNetCoreCLI@2
   inputs:
@@ -45,7 +45,9 @@ steps:
 - task: DotNetCoreCLI@2
   inputs:
     command: 'pack'
-    projects: '$(blazorRealmProject)'
+    packagesToPack: '$(blazorRealmProject)'
+    packDirectory: '$(Build.ArtifactStagingDirectory)'
+    nobuild: true
 
 - task: PublishPipelineArtifact@0
   inputs:
