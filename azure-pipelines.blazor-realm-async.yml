@@ -1,0 +1,74 @@
+# ASP.NET Core (.NET Framework)
+# Build and test ASP.NET Core projects targeting the full .NET Framework.
+# Add steps that publish symbols, save build artifacts, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
+
+pr:
+  branches:
+    exclude:
+      - master
+
+trigger:
+  branches:
+    include:
+      - master
+  paths:
+    include:
+      - "src/BlazorRealmAsync/*"
+
+pool:
+  vmImage: "windows-latest"
+
+variables:
+  solution: "**/*.sln"
+  project: "src/BlazorRealmAsync/BlazorRealmAsync.csproj"
+  buildPlatform: "Any CPU"
+  buildConfiguration: "Release"
+  artifactName: "BlazorRealmAsyncDrop"
+
+steps:
+  - task: DotNetCoreInstaller@0
+    displayName: "Install DotNet"
+    inputs:
+      version: "3.0.100-preview6-012264"
+
+  - task: DotNetCoreCLI@2
+    displayName: "DotNet Restore packages"
+    inputs:
+      command: restore
+      projects: "$(project)"
+      noCache: true
+
+  - task: DotNetCoreCLI@2
+    displayName: "DotNet build"
+    inputs:
+      command: build
+      projects: "$(project)"
+      arguments: "--configuration $(buildConfiguration)"
+
+  - task: DotNetCoreCLI@2
+    displayName: "DotNet pack"
+    inputs:
+      command: "pack"
+      packagesToPack: "$(project)"
+      packDirectory: "$(Build.ArtifactStagingDirectory)"
+      nobuild: true
+
+  - task: PublishPipelineArtifact@0
+    displayName: "Publish artifact"
+    inputs:
+      artifactName: "$(artifactName)"
+      targetPath: "$(Build.ArtifactStagingDirectory)"
+
+  - task: NuGetToolInstaller@0
+    displayName: "Install Nuget"
+    inputs:
+      checkLatest: true
+
+  - task: NuGetCommand@2
+    displayName: "Nuget publish"
+    inputs:
+      command: push
+      packagesToPush: "$(Build.ArtifactStagingDirectory)/**/*.nupkg"
+      nuGetFeedType: external
+      publishFeedCredentials: Nuget.org

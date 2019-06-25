@@ -21,44 +21,52 @@ pool:
 
 variables:
   solution: '**/*.sln'
-  blazorRealmProject: 'src/BlazorRealm/BlazorRealm.csproj'
+  project: 'src/BlazorRealm/BlazorRealm.csproj'
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
+  artifactName: 'BlazorRealmDrop'
 
 steps:
 - task: DotNetCoreInstaller@0
+  displayName: 'Install DotNet'
   inputs:
     version: '3.0.100-preview6-012264'
 
 - task: DotNetCoreCLI@2
+  displayName: 'DotNet Restore packages'
   inputs:
     command: restore
-    projects: '$(blazorRealmProject)'
+    projects: '$(project)'
     noCache: true
 
 - task: DotNetCoreCLI@2
+  displayName: 'DotNet build'
   inputs:
     command: build
-    projects: '$(blazorRealmProject)'
+    projects: '$(project)'
     arguments: '--configuration $(buildConfiguration)'
 
 - task: DotNetCoreCLI@2
+  displayName: 'DotNet pack'
   inputs:
     command: 'pack'
-    packagesToPack: '$(blazorRealmProject)'
+    packagesToPack: '$(project)'
     packDirectory: '$(Build.ArtifactStagingDirectory)'
     nobuild: true
 
 - task: PublishPipelineArtifact@0
+  displayName: 'Publish artifact'
   inputs:
-    artifactName: 'BlazorRealmDrop'
+    artifactName: '$(artifactName)'
     targetPath: '$(Build.ArtifactStagingDirectory)'
 
 - task: NuGetToolInstaller@0
+  displayName: 'Install Nuget'
   inputs:
     checkLatest: true
 
 - task: NuGetCommand@2
+  displayName: 'Nuget publish'
   inputs:
     command: push
     packagesToPush: '$(Build.ArtifactStagingDirectory)/**/*.nupkg'
