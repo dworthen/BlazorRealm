@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.8.2"></a>
+## [0.8.2](https://github.com/dworthen/BlazorRealm/compare/v0.8.1...v0.8.2) (2019-06-25)
+
+
+### Bug Fixes
+
+* update build process ([7fad516](https://github.com/dworthen/BlazorRealm/commit/7fad516))
+
+
+
 <a name="0.8.1"></a>
 ## [0.8.1](https://github.com/dworthen/BlazorRealm/compare/v0.8.0...v0.8.1) (2019-06-19)
 
