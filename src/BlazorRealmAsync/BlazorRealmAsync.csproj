@@ -41,7 +41,7 @@
     </When>
     <Otherwise>
       <ItemGroup>
-        <PackageReference Include="Blazor.Realm" Version="0.*" />
+        <PackageReference Include="Blazor.Realm" Version="0.8.1" />
       </ItemGroup>
     </Otherwise>
   </Choose>

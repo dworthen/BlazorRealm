@@ -17,7 +17,8 @@
     "prepack-blazor-realm-reduxdevtools": "rimraf ./src/BlazorRealmReduxDevTools/nupkgs/*",
     "pack": "npm-run-all pack-blazor-realm pack-blazor-realm-async pack-blazor-realm-reduxdevtools",
     "release": "standard-version -a",
-    "update-nuget-version": "cross-env replace \"(<Version>).*(</Version>)\" \"<Version>$npm_package_version</Version>\" . -r --include=\"BlazorRealm*.csproj\""
+    "update-nuget-version": "cross-env replace \"(<Version>).*(</Version>)\" \"<Version>$npm_package_version</Version>\" . -r --include=\"BlazorRealm*.csproj\"",
+    "preupdate-nuget-version": "cross-env replace \"<PackageReference Include=\\\"Blazor.Realm\\\" Version=\\\".*\\\" />\" \"<PackageReference Include=\\\"Blazor.Realm\\\" Version=\\\"$npm_package_version\\\" />\" . -r --include=\"BlazorRealm*.csproj\""
   },
   "repository": {
     "type": "git",
