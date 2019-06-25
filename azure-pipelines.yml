@@ -53,3 +53,14 @@ steps:
   inputs:
     artifactName: 'BlazorRealmDrop'
     targetPath: '$(Build.ArtifactStagingDirectory)'
+
+- task: NuGetToolInstaller@0
+  inputs:
+    checkLatest: true
+
+- task: NuGetCommand@2
+  inputs:
+    command: push
+    packagesToPush: '$(Build.ArtifactStagingDirectory)/**/*.nupkg'
+    nuGetFeedType: external
+    publishFeedCredentials: Nuget.org
