@@ -12,11 +12,8 @@ pr:
 
 trigger:
   branches:
-    include:
+    exclude:
       - master
-  paths:
-    include:
-      - "src/BlazorRealmReduxDevTools/*"
 
 pool:
   vmImage: "windows-latest"
