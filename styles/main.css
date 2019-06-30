@@ -1,9 +1,8 @@
-
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700');
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,700");
 
 html,
 body {
-  font-family: 'Open Sans', 'Segoe UI', Tahoma, Helvetica, sans-serif;
+  font-family: "Open Sans", "Segoe UI", Tahoma, Helvetica, sans-serif;
 }
 
 body {
@@ -26,11 +25,14 @@ body {
   background-color: hsl(206, 100%, 25%);
 }
 
-.navbar-inverse .navbar-nav>li>a, .navbar-inverse .navbar-text {
+.navbar-inverse .navbar-nav > li > a,
+.navbar-inverse .navbar-text {
   color: #d5d5d5;
 }
 
-.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover {
+.navbar-inverse .navbar-nav > .active > a,
+.navbar-inverse .navbar-nav > .active > a:focus,
+.navbar-inverse .navbar-nav > .active > a:hover {
   color: #000000;
   background-color: #ffffff;
 }
@@ -46,7 +48,10 @@ body {
   font-weight: 300;
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   font-weight: 300;
 }
 
@@ -85,37 +90,44 @@ h6 {
   font-size: 1.4rem;
 }
 
- pre {
-   border-radius: 0;
-   background-color: #fbfbfb;
-   border: 1px solid lightgray;
- }
+pre {
+  border-radius: 0;
+  background-color: #fbfbfb;
+  border: 1px solid lightgray;
+}
 
- .sidenav, .fixed_header, .toc {
-   background: transparent;
- }
+.sidenav,
+.fixed_header,
+.toc {
+  background: transparent;
+}
 
- .toc-filter > input {
-   border: 1px solid lightgray;
-   padding: 4px;
- }
+.toc-filter > input {
+  border: 1px solid lightgray;
+  padding: 4px;
+}
 
- .toc-filter > span {
-   display: none;
- }
+.toc-filter > span {
+  display: none;
+}
 
- .sidefilter {
-   top: 130px;
-   background: transparent;
-   border: 0;
- }
+.sidefilter {
+  top: 130px;
+  background: transparent;
+  border: 0;
+}
 
- .sidetoc {
+.sidetoc {
   top: 190px;
   background: transparent;
   border: 0;
- }
+}
 
- body .toc {
-   background: transparent;
- }
+body .toc {
+  background: transparent;
+}
+
+[data-uid="index-page"] {
+  max-width: 900px;
+  margin: 0 auto;
+}

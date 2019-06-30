@@ -75,56 +75,59 @@
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
-    <div class="level1"><span class="xref">Microsoft.AspNetCore.Blazor.Components.BlazorComponent</span></div>
+    <div class="level1"><span class="xref">Microsoft.AspNetCore.Components.ComponentBase</span></div>
     <div class="level2"><span class="xref">RealmComponent&lt;TState&gt;</span></div>
   </div>
   <div classs="implements">
     <h5>Implements</h5>
-    <div><span class="xref">Microsoft.AspNetCore.Blazor.Components.IComponent</span></div>
-    <div><span class="xref">Microsoft.AspNetCore.Blazor.Components.IHandleEvent</span></div>
-    <div><span class="xref">Microsoft.AspNetCore.Blazor.Components.IHandleAfterRender</span></div>
+    <div><span class="xref">Microsoft.AspNetCore.Components.IComponent</span></div>
+    <div><span class="xref">Microsoft.AspNetCore.Components.IHandleEvent</span></div>
+    <div><span class="xref">Microsoft.AspNetCore.Components.IHandleAfterRender</span></div>
     <div><span class="xref">System.IDisposable</span></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
-      <span class="xref">Microsoft.AspNetCore.Blazor.Components.BlazorComponent.BuildRenderTreeMethodName</span>
+      <span class="xref">Microsoft.AspNetCore.Components.ComponentBase.BuildRenderTree(Microsoft.AspNetCore.Components.RenderTree.RenderTreeBuilder)</span>
     </div>
     <div>
-      <span class="xref">Microsoft.AspNetCore.Blazor.Components.BlazorComponent.BuildRenderTree(Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder)</span>
+      <span class="xref">Microsoft.AspNetCore.Components.ComponentBase.OnInitAsync()</span>
     </div>
     <div>
-      <span class="xref">Microsoft.AspNetCore.Blazor.Components.BlazorComponent.OnInitAsync()</span>
+      <span class="xref">Microsoft.AspNetCore.Components.ComponentBase.OnParametersSet()</span>
     </div>
     <div>
-      <span class="xref">Microsoft.AspNetCore.Blazor.Components.BlazorComponent.OnParametersSet()</span>
+      <span class="xref">Microsoft.AspNetCore.Components.ComponentBase.OnParametersSetAsync()</span>
     </div>
     <div>
-      <span class="xref">Microsoft.AspNetCore.Blazor.Components.BlazorComponent.OnParametersSetAsync()</span>
+      <span class="xref">Microsoft.AspNetCore.Components.ComponentBase.StateHasChanged()</span>
     </div>
     <div>
-      <span class="xref">Microsoft.AspNetCore.Blazor.Components.BlazorComponent.StateHasChanged()</span>
+      <span class="xref">Microsoft.AspNetCore.Components.ComponentBase.ShouldRender()</span>
     </div>
     <div>
-      <span class="xref">Microsoft.AspNetCore.Blazor.Components.BlazorComponent.ShouldRender()</span>
+      <span class="xref">Microsoft.AspNetCore.Components.ComponentBase.OnAfterRender()</span>
     </div>
     <div>
-      <span class="xref">Microsoft.AspNetCore.Blazor.Components.BlazorComponent.OnAfterRender()</span>
+      <span class="xref">Microsoft.AspNetCore.Components.ComponentBase.OnAfterRenderAsync()</span>
     </div>
     <div>
-      <span class="xref">Microsoft.AspNetCore.Blazor.Components.BlazorComponent.OnAfterRenderAsync()</span>
+      <span class="xref">Microsoft.AspNetCore.Components.ComponentBase.Invoke(System.Action)</span>
     </div>
     <div>
-      <span class="xref">Microsoft.AspNetCore.Blazor.Components.BlazorComponent.Microsoft.AspNetCore.Blazor.Components.IComponent.Init(Microsoft.AspNetCore.Blazor.Components.RenderHandle)</span>
+      <span class="xref">Microsoft.AspNetCore.Components.ComponentBase.InvokeAsync(System.Func&lt;System.Threading.Tasks.Task&gt;)</span>
     </div>
     <div>
-      <span class="xref">Microsoft.AspNetCore.Blazor.Components.BlazorComponent.SetParameters(Microsoft.AspNetCore.Blazor.Components.ParameterCollection)</span>
+      <span class="xref">Microsoft.AspNetCore.Components.ComponentBase.Microsoft.AspNetCore.Components.IComponent.Configure(Microsoft.AspNetCore.Components.RenderHandle)</span>
     </div>
     <div>
-      <span class="xref">Microsoft.AspNetCore.Blazor.Components.BlazorComponent.Microsoft.AspNetCore.Blazor.Components.IHandleEvent.HandleEvent(Microsoft.AspNetCore.Blazor.Components.EventHandlerInvoker, Microsoft.AspNetCore.Blazor.UIEventArgs)</span>
+      <span class="xref">Microsoft.AspNetCore.Components.ComponentBase.SetParametersAsync(Microsoft.AspNetCore.Components.ParameterCollection)</span>
     </div>
     <div>
-      <span class="xref">Microsoft.AspNetCore.Blazor.Components.BlazorComponent.Microsoft.AspNetCore.Blazor.Components.IHandleAfterRender.OnAfterRender()</span>
+      <span class="xref">Microsoft.AspNetCore.Components.ComponentBase.Microsoft.AspNetCore.Components.IHandleEvent.HandleEventAsync(Microsoft.AspNetCore.Components.EventCallbackWorkItem, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.AspNetCore.Components.ComponentBase.Microsoft.AspNetCore.Components.IHandleAfterRender.OnAfterRenderAsync()</span>
     </div>
     <div>
       <span class="xref">System.Object.Equals(System.Object)</span>
@@ -152,7 +155,7 @@
   <h6><strong>Assembly</strong>: Blazor.Realm.dll</h6>
   <h5 id="Blazor_Realm_RealmComponent_1_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class RealmComponent&lt;TState&gt; : BlazorComponent, IComponent, IHandleEvent, IHandleAfterRender, IDisposable</code></pre>
+    <pre><code class="lang-csharp hljs">public class RealmComponent&lt;TState&gt; : ComponentBase, IComponent, IHandleEvent, IHandleAfterRender, IDisposable</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -332,16 +335,16 @@ public Store&lt;TState&gt; Store { get; }</code></pre>
     <pre><code class="lang-csharp hljs">protected override void OnInit()</code></pre>
   </div>
   <h5 class="overrides">Overrides</h5>
-  <div><span class="xref">Microsoft.AspNetCore.Blazor.Components.BlazorComponent.OnInit()</span></div>
+  <div><span class="xref">Microsoft.AspNetCore.Components.ComponentBase.OnInit()</span></div>
   <h3 id="implements">Implements</h3>
   <div>
-      <span class="xref">Microsoft.AspNetCore.Blazor.Components.IComponent</span>
+      <span class="xref">Microsoft.AspNetCore.Components.IComponent</span>
   </div>
   <div>
-      <span class="xref">Microsoft.AspNetCore.Blazor.Components.IHandleEvent</span>
+      <span class="xref">Microsoft.AspNetCore.Components.IHandleEvent</span>
   </div>
   <div>
-      <span class="xref">Microsoft.AspNetCore.Blazor.Components.IHandleAfterRender</span>
+      <span class="xref">Microsoft.AspNetCore.Components.IHandleAfterRender</span>
   </div>
   <div>
       <span class="xref">System.IDisposable</span>

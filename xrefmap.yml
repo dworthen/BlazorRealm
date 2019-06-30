@@ -433,6 +433,25 @@ references:
   commentId: N:Blazor.Realm.ReduxDevTools.Extensions
   fullName: Blazor.Realm.ReduxDevTools.Extensions
   nameWithType: Blazor.Realm.ReduxDevTools.Extensions
+- uid: Blazor.Realm.ReduxDevTools.Extensions.IServiceCollectionExtensions
+  name: IServiceCollectionExtensions
+  href: api/Blazor.Realm.ReduxDevTools.Extensions.IServiceCollectionExtensions.html
+  commentId: T:Blazor.Realm.ReduxDevTools.Extensions.IServiceCollectionExtensions
+  fullName: Blazor.Realm.ReduxDevTools.Extensions.IServiceCollectionExtensions
+  nameWithType: IServiceCollectionExtensions
+- uid: Blazor.Realm.ReduxDevTools.Extensions.IServiceCollectionExtensions.AddRealmReduxDevToolServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+  name: AddRealmReduxDevToolServices(IServiceCollection)
+  href: api/Blazor.Realm.ReduxDevTools.Extensions.IServiceCollectionExtensions.html#Blazor_Realm_ReduxDevTools_Extensions_IServiceCollectionExtensions_AddRealmReduxDevToolServices_Microsoft_Extensions_DependencyInjection_IServiceCollection_
+  commentId: M:Blazor.Realm.ReduxDevTools.Extensions.IServiceCollectionExtensions.AddRealmReduxDevToolServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+  fullName: Blazor.Realm.ReduxDevTools.Extensions.IServiceCollectionExtensions.AddRealmReduxDevToolServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+  nameWithType: IServiceCollectionExtensions.AddRealmReduxDevToolServices(IServiceCollection)
+- uid: Blazor.Realm.ReduxDevTools.Extensions.IServiceCollectionExtensions.AddRealmReduxDevToolServices*
+  name: AddRealmReduxDevToolServices
+  href: api/Blazor.Realm.ReduxDevTools.Extensions.IServiceCollectionExtensions.html#Blazor_Realm_ReduxDevTools_Extensions_IServiceCollectionExtensions_AddRealmReduxDevToolServices_
+  commentId: Overload:Blazor.Realm.ReduxDevTools.Extensions.IServiceCollectionExtensions.AddRealmReduxDevToolServices
+  isSpec: "True"
+  fullName: Blazor.Realm.ReduxDevTools.Extensions.IServiceCollectionExtensions.AddRealmReduxDevToolServices
+  nameWithType: IServiceCollectionExtensions.AddRealmReduxDevToolServices
 - uid: Blazor.Realm.ReduxDevTools.Extensions.IStoreBuilderExtensions
   name: IStoreBuilderExtensions
   href: api/Blazor.Realm.ReduxDevTools.Extensions.IStoreBuilderExtensions.html
@@ -601,38 +620,6 @@ references:
   isSpec: "True"
   fullName: Blazor.Realm.ReduxDevTools.Message.Type
   nameWithType: Message.Type
-- uid: Blazor.Realm.ReduxDevTools.MessageEventArgs
-  name: MessageEventArgs
-  href: api/Blazor.Realm.ReduxDevTools.MessageEventArgs.html
-  commentId: T:Blazor.Realm.ReduxDevTools.MessageEventArgs
-  fullName: Blazor.Realm.ReduxDevTools.MessageEventArgs
-  nameWithType: MessageEventArgs
-- uid: Blazor.Realm.ReduxDevTools.MessageEventArgs.#ctor(System.String)
-  name: MessageEventArgs(String)
-  href: api/Blazor.Realm.ReduxDevTools.MessageEventArgs.html#Blazor_Realm_ReduxDevTools_MessageEventArgs__ctor_System_String_
-  commentId: M:Blazor.Realm.ReduxDevTools.MessageEventArgs.#ctor(System.String)
-  fullName: Blazor.Realm.ReduxDevTools.MessageEventArgs.MessageEventArgs(System.String)
-  nameWithType: MessageEventArgs.MessageEventArgs(String)
-- uid: Blazor.Realm.ReduxDevTools.MessageEventArgs.#ctor*
-  name: MessageEventArgs
-  href: api/Blazor.Realm.ReduxDevTools.MessageEventArgs.html#Blazor_Realm_ReduxDevTools_MessageEventArgs__ctor_
-  commentId: Overload:Blazor.Realm.ReduxDevTools.MessageEventArgs.#ctor
-  isSpec: "True"
-  fullName: Blazor.Realm.ReduxDevTools.MessageEventArgs.MessageEventArgs
-  nameWithType: MessageEventArgs.MessageEventArgs
-- uid: Blazor.Realm.ReduxDevTools.MessageEventArgs.Message
-  name: Message
-  href: api/Blazor.Realm.ReduxDevTools.MessageEventArgs.html#Blazor_Realm_ReduxDevTools_MessageEventArgs_Message
-  commentId: P:Blazor.Realm.ReduxDevTools.MessageEventArgs.Message
-  fullName: Blazor.Realm.ReduxDevTools.MessageEventArgs.Message
-  nameWithType: MessageEventArgs.Message
-- uid: Blazor.Realm.ReduxDevTools.MessageEventArgs.Message*
-  name: Message
-  href: api/Blazor.Realm.ReduxDevTools.MessageEventArgs.html#Blazor_Realm_ReduxDevTools_MessageEventArgs_Message_
-  commentId: Overload:Blazor.Realm.ReduxDevTools.MessageEventArgs.Message
-  isSpec: "True"
-  fullName: Blazor.Realm.ReduxDevTools.MessageEventArgs.Message
-  nameWithType: MessageEventArgs.Message
 - uid: Blazor.Realm.ReduxDevTools.Payload
   name: Payload
   href: api/Blazor.Realm.ReduxDevTools.Payload.html
@@ -697,6 +684,19 @@ references:
   commentId: T:Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop
   fullName: Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop
   nameWithType: ReduxDevToolsInterop
+- uid: Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.#ctor(Microsoft.JSInterop.IJSRuntime,Microsoft.AspNetCore.Components.IUriHelper)
+  name: ReduxDevToolsInterop(IJSRuntime, IUriHelper)
+  href: api/Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.html#Blazor_Realm_ReduxDevTools_ReduxDevToolsInterop__ctor_Microsoft_JSInterop_IJSRuntime_Microsoft_AspNetCore_Components_IUriHelper_
+  commentId: M:Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.#ctor(Microsoft.JSInterop.IJSRuntime,Microsoft.AspNetCore.Components.IUriHelper)
+  fullName: Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.ReduxDevToolsInterop(Microsoft.JSInterop.IJSRuntime, Microsoft.AspNetCore.Components.IUriHelper)
+  nameWithType: ReduxDevToolsInterop.ReduxDevToolsInterop(IJSRuntime, IUriHelper)
+- uid: Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.#ctor*
+  name: ReduxDevToolsInterop
+  href: api/Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.html#Blazor_Realm_ReduxDevTools_ReduxDevToolsInterop__ctor_
+  commentId: Overload:Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.#ctor
+  isSpec: "True"
+  fullName: Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.ReduxDevToolsInterop
+  nameWithType: ReduxDevToolsInterop.ReduxDevToolsInterop
 - uid: Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.Connect
   name: Connect()
   href: api/Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.html#Blazor_Realm_ReduxDevTools_ReduxDevToolsInterop_Connect
@@ -749,18 +749,30 @@ references:
   isSpec: "True"
   fullName: Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.IsAvailableAsync
   nameWithType: ReduxDevToolsInterop.IsAvailableAsync
+- uid: Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.JSNameSpace
+  name: JSNameSpace
+  href: api/Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.html#Blazor_Realm_ReduxDevTools_ReduxDevToolsInterop_JSNameSpace
+  commentId: F:Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.JSNameSpace
+  fullName: Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.JSNameSpace
+  nameWithType: ReduxDevToolsInterop.JSNameSpace
+- uid: Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.JSRuntime
+  name: JSRuntime
+  href: api/Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.html#Blazor_Realm_ReduxDevTools_ReduxDevToolsInterop_JSRuntime
+  commentId: F:Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.JSRuntime
+  fullName: Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.JSRuntime
+  nameWithType: ReduxDevToolsInterop.JSRuntime
 - uid: Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.MessageReceived
   name: MessageReceived
   href: api/Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.html#Blazor_Realm_ReduxDevTools_ReduxDevToolsInterop_MessageReceived
   commentId: E:Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.MessageReceived
   fullName: Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.MessageReceived
   nameWithType: ReduxDevToolsInterop.MessageReceived
-- uid: Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.OnMessageReceived(System.String)
-  name: OnMessageReceived(String)
-  href: api/Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.html#Blazor_Realm_ReduxDevTools_ReduxDevToolsInterop_OnMessageReceived_System_String_
-  commentId: M:Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.OnMessageReceived(System.String)
-  fullName: Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.OnMessageReceived(System.String)
-  nameWithType: ReduxDevToolsInterop.OnMessageReceived(String)
+- uid: Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.OnMessageReceived(Blazor.Realm.ReduxDevTools.Message)
+  name: OnMessageReceived(Message)
+  href: api/Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.html#Blazor_Realm_ReduxDevTools_ReduxDevToolsInterop_OnMessageReceived_Blazor_Realm_ReduxDevTools_Message_
+  commentId: M:Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.OnMessageReceived(Blazor.Realm.ReduxDevTools.Message)
+  fullName: Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.OnMessageReceived(Blazor.Realm.ReduxDevTools.Message)
+  nameWithType: ReduxDevToolsInterop.OnMessageReceived(Message)
 - uid: Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.OnMessageReceived*
   name: OnMessageReceived
   href: api/Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.html#Blazor_Realm_ReduxDevTools_ReduxDevToolsInterop_OnMessageReceived_
@@ -807,6 +819,12 @@ references:
   isSpec: "True"
   fullName: Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.UnSubscribe
   nameWithType: ReduxDevToolsInterop.UnSubscribe
+- uid: Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.UriHelper
+  name: UriHelper
+  href: api/Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.html#Blazor_Realm_ReduxDevTools_ReduxDevToolsInterop_UriHelper
+  commentId: F:Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.UriHelper
+  fullName: Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.UriHelper
+  nameWithType: ReduxDevToolsInterop.UriHelper
 - uid: Blazor.Realm.Store`1
   name: Store<TState>
   href: api/Blazor.Realm.Store-1.html
@@ -970,103 +988,6 @@ references:
   fullName.vb: Blazor.Realm.StoreBuilder(Of TState).ServiceProvider
   nameWithType: StoreBuilder<TState>.ServiceProvider
   nameWithType.vb: StoreBuilder(Of TState).ServiceProvider
-- uid: BlazorRealm
-  name: BlazorRealm
-  href: api/BlazorRealm.html
-  commentId: N:BlazorRealm
-  fullName: BlazorRealm
-  nameWithType: BlazorRealm
-- uid: BlazorRealm.RealmStateContainer`1
-  name: RealmStateContainer<TState>
-  href: api/BlazorRealm.RealmStateContainer-1.html
-  commentId: T:BlazorRealm.RealmStateContainer`1
-  name.vb: RealmStateContainer(Of TState)
-  fullName: BlazorRealm.RealmStateContainer<TState>
-  fullName.vb: BlazorRealm.RealmStateContainer(Of TState)
-  nameWithType: RealmStateContainer<TState>
-  nameWithType.vb: RealmStateContainer(Of TState)
-- uid: BlazorRealm.RealmStateContainer`1.BuildRenderTree(Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder)
-  name: BuildRenderTree(RenderTreeBuilder)
-  href: api/BlazorRealm.RealmStateContainer-1.html#BlazorRealm_RealmStateContainer_1_BuildRenderTree_Microsoft_AspNetCore_Blazor_RenderTree_RenderTreeBuilder_
-  commentId: M:BlazorRealm.RealmStateContainer`1.BuildRenderTree(Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder)
-  fullName: BlazorRealm.RealmStateContainer<TState>.BuildRenderTree(Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder)
-  fullName.vb: BlazorRealm.RealmStateContainer(Of TState).BuildRenderTree(Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder)
-  nameWithType: RealmStateContainer<TState>.BuildRenderTree(RenderTreeBuilder)
-  nameWithType.vb: RealmStateContainer(Of TState).BuildRenderTree(RenderTreeBuilder)
-- uid: BlazorRealm.RealmStateContainer`1.BuildRenderTree*
-  name: BuildRenderTree
-  href: api/BlazorRealm.RealmStateContainer-1.html#BlazorRealm_RealmStateContainer_1_BuildRenderTree_
-  commentId: Overload:BlazorRealm.RealmStateContainer`1.BuildRenderTree
-  isSpec: "True"
-  fullName: BlazorRealm.RealmStateContainer<TState>.BuildRenderTree
-  fullName.vb: BlazorRealm.RealmStateContainer(Of TState).BuildRenderTree
-  nameWithType: RealmStateContainer<TState>.BuildRenderTree
-  nameWithType.vb: RealmStateContainer(Of TState).BuildRenderTree
-- uid: BlazorRealm.RealmStateContainer`1.ComponentTemplate
-  name: ComponentTemplate
-  href: api/BlazorRealm.RealmStateContainer-1.html#BlazorRealm_RealmStateContainer_1_ComponentTemplate
-  commentId: P:BlazorRealm.RealmStateContainer`1.ComponentTemplate
-  fullName: BlazorRealm.RealmStateContainer<TState>.ComponentTemplate
-  fullName.vb: BlazorRealm.RealmStateContainer(Of TState).ComponentTemplate
-  nameWithType: RealmStateContainer<TState>.ComponentTemplate
-  nameWithType.vb: RealmStateContainer(Of TState).ComponentTemplate
-- uid: BlazorRealm.RealmStateContainer`1.ComponentTemplate*
-  name: ComponentTemplate
-  href: api/BlazorRealm.RealmStateContainer-1.html#BlazorRealm_RealmStateContainer_1_ComponentTemplate_
-  commentId: Overload:BlazorRealm.RealmStateContainer`1.ComponentTemplate
-  isSpec: "True"
-  fullName: BlazorRealm.RealmStateContainer<TState>.ComponentTemplate
-  fullName.vb: BlazorRealm.RealmStateContainer(Of TState).ComponentTemplate
-  nameWithType: RealmStateContainer<TState>.ComponentTemplate
-  nameWithType.vb: RealmStateContainer(Of TState).ComponentTemplate
-- uid: BlazorRealm.RealmStateContainer`1.Dispose
-  name: Dispose()
-  href: api/BlazorRealm.RealmStateContainer-1.html#BlazorRealm_RealmStateContainer_1_Dispose
-  commentId: M:BlazorRealm.RealmStateContainer`1.Dispose
-  fullName: BlazorRealm.RealmStateContainer<TState>.Dispose()
-  fullName.vb: BlazorRealm.RealmStateContainer(Of TState).Dispose()
-  nameWithType: RealmStateContainer<TState>.Dispose()
-  nameWithType.vb: RealmStateContainer(Of TState).Dispose()
-- uid: BlazorRealm.RealmStateContainer`1.Dispose*
-  name: Dispose
-  href: api/BlazorRealm.RealmStateContainer-1.html#BlazorRealm_RealmStateContainer_1_Dispose_
-  commentId: Overload:BlazorRealm.RealmStateContainer`1.Dispose
-  isSpec: "True"
-  fullName: BlazorRealm.RealmStateContainer<TState>.Dispose
-  fullName.vb: BlazorRealm.RealmStateContainer(Of TState).Dispose
-  nameWithType: RealmStateContainer<TState>.Dispose
-  nameWithType.vb: RealmStateContainer(Of TState).Dispose
-- uid: BlazorRealm.RealmStateContainer`1.OnChangeHandler(System.Object,System.EventArgs)
-  name: OnChangeHandler(Object, EventArgs)
-  href: api/BlazorRealm.RealmStateContainer-1.html#BlazorRealm_RealmStateContainer_1_OnChangeHandler_System_Object_System_EventArgs_
-  commentId: M:BlazorRealm.RealmStateContainer`1.OnChangeHandler(System.Object,System.EventArgs)
-  fullName: BlazorRealm.RealmStateContainer<TState>.OnChangeHandler(System.Object, System.EventArgs)
-  fullName.vb: BlazorRealm.RealmStateContainer(Of TState).OnChangeHandler(System.Object, System.EventArgs)
-  nameWithType: RealmStateContainer<TState>.OnChangeHandler(Object, EventArgs)
-  nameWithType.vb: RealmStateContainer(Of TState).OnChangeHandler(Object, EventArgs)
-- uid: BlazorRealm.RealmStateContainer`1.OnChangeHandler*
-  name: OnChangeHandler
-  href: api/BlazorRealm.RealmStateContainer-1.html#BlazorRealm_RealmStateContainer_1_OnChangeHandler_
-  commentId: Overload:BlazorRealm.RealmStateContainer`1.OnChangeHandler
-  isSpec: "True"
-  fullName: BlazorRealm.RealmStateContainer<TState>.OnChangeHandler
-  fullName.vb: BlazorRealm.RealmStateContainer(Of TState).OnChangeHandler
-  nameWithType: RealmStateContainer<TState>.OnChangeHandler
-  nameWithType.vb: RealmStateContainer(Of TState).OnChangeHandler
-- uid: BlazorRealm.RealmStateContainer`1.OnInit
-  name: OnInit()
-  href: api/BlazorRealm.RealmStateContainer-1.html#BlazorRealm_RealmStateContainer_1_OnInit
-  commentId: M:BlazorRealm.RealmStateContainer`1.OnInit
-  fullName: BlazorRealm.RealmStateContainer<TState>.OnInit()
-  fullName.vb: BlazorRealm.RealmStateContainer(Of TState).OnInit()
-  nameWithType: RealmStateContainer<TState>.OnInit()
-  nameWithType.vb: RealmStateContainer(Of TState).OnInit()
-- uid: BlazorRealm.RealmStateContainer`1.OnInit*
-  name: OnInit
-  href: api/BlazorRealm.RealmStateContainer-1.html#BlazorRealm_RealmStateContainer_1_OnInit_
-  commentId: Overload:BlazorRealm.RealmStateContainer`1.OnInit
-  isSpec: "True"
-  fullName: BlazorRealm.RealmStateContainer<TState>.OnInit
-  fullName.vb: BlazorRealm.RealmStateContainer(Of TState).OnInit
-  nameWithType: RealmStateContainer<TState>.OnInit
-  nameWithType.vb: RealmStateContainer(Of TState).OnInit
+- uid: index-page
+  name: Blazor Realm
+  href: index.html
