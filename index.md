@@ -1,8 +1,8 @@
----
-_disableAffix: true
-uid: index-page
----
-
+---  
+_disableAffix: true  
+uid: index-page  
+---  
+  
 # Blazor Realm
 
 Redux state management for Blazor. Realm takes the design patterns of Redux, centralized state and single direction data flow, and brings them to Blazor.

@@ -16,7 +16,7 @@
     "postclean:gh-pages": "git clone https://github.com/dworthen/BlazorRealm.git --branch gh-pages ../gh-pages && rimraf ../gh-pages/*",
     "clean:all": "npm-run-all clean:index clean:obj clean:site clean:gh-pages",
     "premove:readme": "npm run clean:index",
-    "move:readme": "copyfiles ../README.md docs && renamer -f README.md -r index.md README.md",
+    "move:readme": "echo --- >> index.md && echo _disableAffix: true >> index.md && echo uid: index-page >> index.md && echo --- >> index.md && echo\\ >> index.md && cat ../README.md >> index.md",
     "premove:gh-pages": "npm run clean:gh-pages",
     "move:gh-pages": "copyfiles _site/**/* ../gh-pages -u 1",
     "prebuild:metadata": "npm run clean:obj",
