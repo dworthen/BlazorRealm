@@ -1,8 +1,0 @@
-- name: Docs
-  href: docs/
-  homepage: docs/quickstart.md
-- name: API
-  href: obj/docfx/api/
-  homepage: obj/docfx/api/Blazor.Realm.yml
-- name: GitHub
-  href: https://github.com/dworthen/BlazorRealm
