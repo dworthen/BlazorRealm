@@ -1,0 +1,54 @@
+{
+    "metadata": [
+      {
+        "src": [
+          {
+            "files": [ "BlazorRealm*/*.csproj" ],
+            "exclude": [ "**/bin/**", "**/obj/**" ],
+            "src": "../src"
+          }
+        ],
+        "dest": "obj/docfx/api",
+        "force": true
+      }
+    ],
+    "build": {
+      "content": [
+        {
+          "files": [ "**/*.yml" ],
+          "src": "obj/docfx/api",
+          "dest": "api"
+        },
+        {
+          "files": [ "docs/**/*.md", "docs/toc.yml", "*.md", "toc.yml" ]
+        }
+      ],
+      "resource": [
+        {
+          "files": [ "images/**", "realm.svg"]
+        }
+      ],
+      "keepFileLink": false,
+      "overwrite": [ "api/*.md" ],
+      "globalMetaDataFiles": [],
+      "fileMetaDataFiles": [],
+      "globalMetadata": {
+        "_appTitle": "Blazor Realm",
+        "_appName": "Realm",
+        "_appLogoPath": "realm.svg",
+        "_enableNewTab": true,
+        "_enableSearch": false,
+        "_fluid": true,
+        "_gitContribute": {
+            "branch": "master",
+            "apiSpecFolder": "api"
+        }
+      },
+      "template": [
+        "default",
+        "templates/custom"
+      ],
+      "dest": "_site"
+    }
+  }
+  

@@ -1,0 +1,4 @@
+docfx
+_site
+node_modules
+obj
