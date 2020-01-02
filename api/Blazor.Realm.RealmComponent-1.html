@@ -24,7 +24,7 @@
       <header>
         
         <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
-          <div class="container-fluid">
+          <div class="container">
             <div class="navbar-header">
               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
                 <span class="sr-only">Toggle navigation</span>
@@ -48,14 +48,14 @@
         </nav>
         
         <div class="subnav navbar navbar-default">
-          <div class="container-fluid hide-when-search" id="breadcrumb">
+          <div class="container hide-when-search" id="breadcrumb">
             <ul class="breadcrumb">
               <li></li>
             </ul>
           </div>
         </div>
       </header>
-      <div role="main" class="container-fluid body-content hide-when-search">
+      <div role="main" class="container body-content hide-when-search">
         
         <div class="sidenav hide-when-search">
           <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
@@ -88,10 +88,10 @@
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
-      <span class="xref">Microsoft.AspNetCore.Components.ComponentBase.BuildRenderTree(Microsoft.AspNetCore.Components.RenderTree.RenderTreeBuilder)</span>
+      <span class="xref">Microsoft.AspNetCore.Components.ComponentBase.BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)</span>
     </div>
     <div>
-      <span class="xref">Microsoft.AspNetCore.Components.ComponentBase.OnInitAsync()</span>
+      <span class="xref">Microsoft.AspNetCore.Components.ComponentBase.OnInitializedAsync()</span>
     </div>
     <div>
       <span class="xref">Microsoft.AspNetCore.Components.ComponentBase.OnParametersSet()</span>
@@ -106,22 +106,22 @@
       <span class="xref">Microsoft.AspNetCore.Components.ComponentBase.ShouldRender()</span>
     </div>
     <div>
-      <span class="xref">Microsoft.AspNetCore.Components.ComponentBase.OnAfterRender()</span>
+      <span class="xref">Microsoft.AspNetCore.Components.ComponentBase.OnAfterRender(System.Boolean)</span>
     </div>
     <div>
-      <span class="xref">Microsoft.AspNetCore.Components.ComponentBase.OnAfterRenderAsync()</span>
+      <span class="xref">Microsoft.AspNetCore.Components.ComponentBase.OnAfterRenderAsync(System.Boolean)</span>
     </div>
     <div>
-      <span class="xref">Microsoft.AspNetCore.Components.ComponentBase.Invoke(System.Action)</span>
+      <span class="xref">Microsoft.AspNetCore.Components.ComponentBase.InvokeAsync(System.Action)</span>
     </div>
     <div>
       <span class="xref">Microsoft.AspNetCore.Components.ComponentBase.InvokeAsync(System.Func&lt;System.Threading.Tasks.Task&gt;)</span>
     </div>
     <div>
-      <span class="xref">Microsoft.AspNetCore.Components.ComponentBase.Microsoft.AspNetCore.Components.IComponent.Configure(Microsoft.AspNetCore.Components.RenderHandle)</span>
+      <span class="xref">Microsoft.AspNetCore.Components.ComponentBase.Microsoft.AspNetCore.Components.IComponent.Attach(Microsoft.AspNetCore.Components.RenderHandle)</span>
     </div>
     <div>
-      <span class="xref">Microsoft.AspNetCore.Components.ComponentBase.SetParametersAsync(Microsoft.AspNetCore.Components.ParameterCollection)</span>
+      <span class="xref">Microsoft.AspNetCore.Components.ComponentBase.SetParametersAsync(Microsoft.AspNetCore.Components.ParameterView)</span>
     </div>
     <div>
       <span class="xref">Microsoft.AspNetCore.Components.ComponentBase.Microsoft.AspNetCore.Components.IHandleEvent.HandleEventAsync(Microsoft.AspNetCore.Components.EventCallbackWorkItem, System.Object)</span>
@@ -321,21 +321,21 @@ public Store&lt;TState&gt; Store { get; }</code></pre>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dworthen/BlazorRealm/new/master/api/new?filename=Blazor_Realm_RealmComponent_1_OnInit.md&amp;value=---%0Auid%3A%20Blazor.Realm.RealmComponent%601.OnInit%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dworthen/BlazorRealm/new/master/api/new?filename=Blazor_Realm_RealmComponent_1_OnInitialized.md&amp;value=---%0Auid%3A%20Blazor.Realm.RealmComponent%601.OnInitialized%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/dworthen/BlazorRealm/blob/master/src/BlazorRealm/RealmComponent.cs/#L19">View Source</a>
   </span>
-  <a id="Blazor_Realm_RealmComponent_1_OnInit_" data-uid="Blazor.Realm.RealmComponent`1.OnInit*"></a>
-  <h4 id="Blazor_Realm_RealmComponent_1_OnInit" data-uid="Blazor.Realm.RealmComponent`1.OnInit">OnInit()</h4>
+  <a id="Blazor_Realm_RealmComponent_1_OnInitialized_" data-uid="Blazor.Realm.RealmComponent`1.OnInitialized*"></a>
+  <h4 id="Blazor_Realm_RealmComponent_1_OnInitialized" data-uid="Blazor.Realm.RealmComponent`1.OnInitialized">OnInitialized()</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected override void OnInit()</code></pre>
+    <pre><code class="lang-csharp hljs">protected override void OnInitialized()</code></pre>
   </div>
   <h5 class="overrides">Overrides</h5>
-  <div><span class="xref">Microsoft.AspNetCore.Components.ComponentBase.OnInit()</span></div>
+  <div><span class="xref">Microsoft.AspNetCore.Components.ComponentBase.OnInitialized()</span></div>
   <h3 id="implements">Implements</h3>
   <div>
       <span class="xref">Microsoft.AspNetCore.Components.IComponent</span>

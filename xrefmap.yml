@@ -361,23 +361,23 @@ references:
   fullName.vb: Blazor.Realm.RealmComponent(Of TState).OnChangeHandler
   nameWithType: RealmComponent<TState>.OnChangeHandler
   nameWithType.vb: RealmComponent(Of TState).OnChangeHandler
-- uid: Blazor.Realm.RealmComponent`1.OnInit
-  name: OnInit()
-  href: api/Blazor.Realm.RealmComponent-1.html#Blazor_Realm_RealmComponent_1_OnInit
-  commentId: M:Blazor.Realm.RealmComponent`1.OnInit
-  fullName: Blazor.Realm.RealmComponent<TState>.OnInit()
-  fullName.vb: Blazor.Realm.RealmComponent(Of TState).OnInit()
-  nameWithType: RealmComponent<TState>.OnInit()
-  nameWithType.vb: RealmComponent(Of TState).OnInit()
-- uid: Blazor.Realm.RealmComponent`1.OnInit*
-  name: OnInit
-  href: api/Blazor.Realm.RealmComponent-1.html#Blazor_Realm_RealmComponent_1_OnInit_
-  commentId: Overload:Blazor.Realm.RealmComponent`1.OnInit
+- uid: Blazor.Realm.RealmComponent`1.OnInitialized
+  name: OnInitialized()
+  href: api/Blazor.Realm.RealmComponent-1.html#Blazor_Realm_RealmComponent_1_OnInitialized
+  commentId: M:Blazor.Realm.RealmComponent`1.OnInitialized
+  fullName: Blazor.Realm.RealmComponent<TState>.OnInitialized()
+  fullName.vb: Blazor.Realm.RealmComponent(Of TState).OnInitialized()
+  nameWithType: RealmComponent<TState>.OnInitialized()
+  nameWithType.vb: RealmComponent(Of TState).OnInitialized()
+- uid: Blazor.Realm.RealmComponent`1.OnInitialized*
+  name: OnInitialized
+  href: api/Blazor.Realm.RealmComponent-1.html#Blazor_Realm_RealmComponent_1_OnInitialized_
+  commentId: Overload:Blazor.Realm.RealmComponent`1.OnInitialized
   isSpec: "True"
-  fullName: Blazor.Realm.RealmComponent<TState>.OnInit
-  fullName.vb: Blazor.Realm.RealmComponent(Of TState).OnInit
-  nameWithType: RealmComponent<TState>.OnInit
-  nameWithType.vb: RealmComponent(Of TState).OnInit
+  fullName: Blazor.Realm.RealmComponent<TState>.OnInitialized
+  fullName.vb: Blazor.Realm.RealmComponent(Of TState).OnInitialized
+  nameWithType: RealmComponent<TState>.OnInitialized
+  nameWithType.vb: RealmComponent(Of TState).OnInitialized
 - uid: Blazor.Realm.RealmComponent`1.State
   name: State
   href: api/Blazor.Realm.RealmComponent-1.html#Blazor_Realm_RealmComponent_1_State
@@ -474,6 +474,24 @@ references:
   fullName.vb: Blazor.Realm.ReduxDevTools.Extensions.IStoreBuilderExtensions.UseRealmReduxDevTools(Of TState)(IStoreBuilder(Of TState))
   nameWithType: IStoreBuilderExtensions.UseRealmReduxDevTools<TState>(IStoreBuilder<TState>)
   nameWithType.vb: IStoreBuilderExtensions.UseRealmReduxDevTools(Of TState)(IStoreBuilder(Of TState))
+- uid: Blazor.Realm.ReduxDevTools.Extensions.IStoreBuilderExtensions.UseRealmReduxDevTools``1(IStoreBuilder{``0},System.IServiceProvider)
+  name: UseRealmReduxDevTools<TState>(IStoreBuilder<TState>, IServiceProvider)
+  href: api/Blazor.Realm.ReduxDevTools.Extensions.IStoreBuilderExtensions.html#Blazor_Realm_ReduxDevTools_Extensions_IStoreBuilderExtensions_UseRealmReduxDevTools__1_IStoreBuilder___0__System_IServiceProvider_
+  commentId: M:Blazor.Realm.ReduxDevTools.Extensions.IStoreBuilderExtensions.UseRealmReduxDevTools``1(IStoreBuilder{``0},System.IServiceProvider)
+  name.vb: UseRealmReduxDevTools(Of TState)(IStoreBuilder(Of TState), IServiceProvider)
+  fullName: Blazor.Realm.ReduxDevTools.Extensions.IStoreBuilderExtensions.UseRealmReduxDevTools<TState>(IStoreBuilder<TState>, System.IServiceProvider)
+  fullName.vb: Blazor.Realm.ReduxDevTools.Extensions.IStoreBuilderExtensions.UseRealmReduxDevTools(Of TState)(IStoreBuilder(Of TState), System.IServiceProvider)
+  nameWithType: IStoreBuilderExtensions.UseRealmReduxDevTools<TState>(IStoreBuilder<TState>, IServiceProvider)
+  nameWithType.vb: IStoreBuilderExtensions.UseRealmReduxDevTools(Of TState)(IStoreBuilder(Of TState), IServiceProvider)
+- uid: Blazor.Realm.ReduxDevTools.Extensions.IStoreBuilderExtensions.UseRealmReduxDevTools``1(IStoreBuilder{``0},System.IServiceProvider,System.Type[])
+  name: UseRealmReduxDevTools<TState>(IStoreBuilder<TState>, IServiceProvider, Type[])
+  href: api/Blazor.Realm.ReduxDevTools.Extensions.IStoreBuilderExtensions.html#Blazor_Realm_ReduxDevTools_Extensions_IStoreBuilderExtensions_UseRealmReduxDevTools__1_IStoreBuilder___0__System_IServiceProvider_System_Type___
+  commentId: M:Blazor.Realm.ReduxDevTools.Extensions.IStoreBuilderExtensions.UseRealmReduxDevTools``1(IStoreBuilder{``0},System.IServiceProvider,System.Type[])
+  name.vb: UseRealmReduxDevTools(Of TState)(IStoreBuilder(Of TState), IServiceProvider, Type())
+  fullName: Blazor.Realm.ReduxDevTools.Extensions.IStoreBuilderExtensions.UseRealmReduxDevTools<TState>(IStoreBuilder<TState>, System.IServiceProvider, System.Type[])
+  fullName.vb: Blazor.Realm.ReduxDevTools.Extensions.IStoreBuilderExtensions.UseRealmReduxDevTools(Of TState)(IStoreBuilder(Of TState), System.IServiceProvider, System.Type())
+  nameWithType: IStoreBuilderExtensions.UseRealmReduxDevTools<TState>(IStoreBuilder<TState>, IServiceProvider, Type[])
+  nameWithType.vb: IStoreBuilderExtensions.UseRealmReduxDevTools(Of TState)(IStoreBuilder(Of TState), IServiceProvider, Type())
 - uid: Blazor.Realm.ReduxDevTools.Extensions.IStoreBuilderExtensions.UseRealmReduxDevTools``1(IStoreBuilder{``0},System.Type[])
   name: UseRealmReduxDevTools<TState>(IStoreBuilder<TState>, Type[])
   href: api/Blazor.Realm.ReduxDevTools.Extensions.IStoreBuilderExtensions.html#Blazor_Realm_ReduxDevTools_Extensions_IStoreBuilderExtensions_UseRealmReduxDevTools__1_IStoreBuilder___0__System_Type___
@@ -492,22 +510,22 @@ references:
   fullName.vb: Blazor.Realm.ReduxDevTools.HandleReduxDevTools(Of TState)
   nameWithType: HandleReduxDevTools<TState>
   nameWithType.vb: HandleReduxDevTools(Of TState)
-- uid: Blazor.Realm.ReduxDevTools.HandleReduxDevTools`1.#ctor(Store{`0},Dispatcher{`0},System.IServiceProvider)
+- uid: Blazor.Realm.ReduxDevTools.HandleReduxDevTools`1.#ctor(Store{`0},Microsoft.AspNetCore.Components.Dispatcher{`0},System.IServiceProvider)
   name: HandleReduxDevTools(Store<TState>, Dispatcher<TState>, IServiceProvider)
-  href: api/Blazor.Realm.ReduxDevTools.HandleReduxDevTools-1.html#Blazor_Realm_ReduxDevTools_HandleReduxDevTools_1__ctor_Store__0__Dispatcher__0__System_IServiceProvider_
-  commentId: M:Blazor.Realm.ReduxDevTools.HandleReduxDevTools`1.#ctor(Store{`0},Dispatcher{`0},System.IServiceProvider)
+  href: api/Blazor.Realm.ReduxDevTools.HandleReduxDevTools-1.html#Blazor_Realm_ReduxDevTools_HandleReduxDevTools_1__ctor_Store__0__Microsoft_AspNetCore_Components_Dispatcher__0__System_IServiceProvider_
+  commentId: M:Blazor.Realm.ReduxDevTools.HandleReduxDevTools`1.#ctor(Store{`0},Microsoft.AspNetCore.Components.Dispatcher{`0},System.IServiceProvider)
   name.vb: HandleReduxDevTools(Store(Of TState), Dispatcher(Of TState), IServiceProvider)
-  fullName: Blazor.Realm.ReduxDevTools.HandleReduxDevTools<TState>.HandleReduxDevTools(Store<TState>, Dispatcher<TState>, System.IServiceProvider)
-  fullName.vb: Blazor.Realm.ReduxDevTools.HandleReduxDevTools(Of TState).HandleReduxDevTools(Store(Of TState), Dispatcher(Of TState), System.IServiceProvider)
+  fullName: Blazor.Realm.ReduxDevTools.HandleReduxDevTools<TState>.HandleReduxDevTools(Store<TState>, Microsoft.AspNetCore.Components.Dispatcher<TState>, System.IServiceProvider)
+  fullName.vb: Blazor.Realm.ReduxDevTools.HandleReduxDevTools(Of TState).HandleReduxDevTools(Store(Of TState), Microsoft.AspNetCore.Components.Dispatcher(Of TState), System.IServiceProvider)
   nameWithType: HandleReduxDevTools<TState>.HandleReduxDevTools(Store<TState>, Dispatcher<TState>, IServiceProvider)
   nameWithType.vb: HandleReduxDevTools(Of TState).HandleReduxDevTools(Store(Of TState), Dispatcher(Of TState), IServiceProvider)
-- uid: Blazor.Realm.ReduxDevTools.HandleReduxDevTools`1.#ctor(Store{`0},Dispatcher{`0},System.IServiceProvider,System.Type[])
+- uid: Blazor.Realm.ReduxDevTools.HandleReduxDevTools`1.#ctor(Store{`0},Microsoft.AspNetCore.Components.Dispatcher{`0},System.IServiceProvider,System.Type[])
   name: HandleReduxDevTools(Store<TState>, Dispatcher<TState>, IServiceProvider, Type[])
-  href: api/Blazor.Realm.ReduxDevTools.HandleReduxDevTools-1.html#Blazor_Realm_ReduxDevTools_HandleReduxDevTools_1__ctor_Store__0__Dispatcher__0__System_IServiceProvider_System_Type___
-  commentId: M:Blazor.Realm.ReduxDevTools.HandleReduxDevTools`1.#ctor(Store{`0},Dispatcher{`0},System.IServiceProvider,System.Type[])
+  href: api/Blazor.Realm.ReduxDevTools.HandleReduxDevTools-1.html#Blazor_Realm_ReduxDevTools_HandleReduxDevTools_1__ctor_Store__0__Microsoft_AspNetCore_Components_Dispatcher__0__System_IServiceProvider_System_Type___
+  commentId: M:Blazor.Realm.ReduxDevTools.HandleReduxDevTools`1.#ctor(Store{`0},Microsoft.AspNetCore.Components.Dispatcher{`0},System.IServiceProvider,System.Type[])
   name.vb: HandleReduxDevTools(Store(Of TState), Dispatcher(Of TState), IServiceProvider, Type())
-  fullName: Blazor.Realm.ReduxDevTools.HandleReduxDevTools<TState>.HandleReduxDevTools(Store<TState>, Dispatcher<TState>, System.IServiceProvider, System.Type[])
-  fullName.vb: Blazor.Realm.ReduxDevTools.HandleReduxDevTools(Of TState).HandleReduxDevTools(Store(Of TState), Dispatcher(Of TState), System.IServiceProvider, System.Type())
+  fullName: Blazor.Realm.ReduxDevTools.HandleReduxDevTools<TState>.HandleReduxDevTools(Store<TState>, Microsoft.AspNetCore.Components.Dispatcher<TState>, System.IServiceProvider, System.Type[])
+  fullName.vb: Blazor.Realm.ReduxDevTools.HandleReduxDevTools(Of TState).HandleReduxDevTools(Store(Of TState), Microsoft.AspNetCore.Components.Dispatcher(Of TState), System.IServiceProvider, System.Type())
   nameWithType: HandleReduxDevTools<TState>.HandleReduxDevTools(Store<TState>, Dispatcher<TState>, IServiceProvider, Type[])
   nameWithType.vb: HandleReduxDevTools(Of TState).HandleReduxDevTools(Store(Of TState), Dispatcher(Of TState), IServiceProvider, Type())
 - uid: Blazor.Realm.ReduxDevTools.HandleReduxDevTools`1.#ctor*
@@ -684,12 +702,12 @@ references:
   commentId: T:Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop
   fullName: Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop
   nameWithType: ReduxDevToolsInterop
-- uid: Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.#ctor(Microsoft.JSInterop.IJSRuntime,Microsoft.AspNetCore.Components.IUriHelper)
-  name: ReduxDevToolsInterop(IJSRuntime, IUriHelper)
-  href: api/Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.html#Blazor_Realm_ReduxDevTools_ReduxDevToolsInterop__ctor_Microsoft_JSInterop_IJSRuntime_Microsoft_AspNetCore_Components_IUriHelper_
-  commentId: M:Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.#ctor(Microsoft.JSInterop.IJSRuntime,Microsoft.AspNetCore.Components.IUriHelper)
-  fullName: Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.ReduxDevToolsInterop(Microsoft.JSInterop.IJSRuntime, Microsoft.AspNetCore.Components.IUriHelper)
-  nameWithType: ReduxDevToolsInterop.ReduxDevToolsInterop(IJSRuntime, IUriHelper)
+- uid: Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.#ctor(Microsoft.JSInterop.IJSRuntime)
+  name: ReduxDevToolsInterop(IJSRuntime)
+  href: api/Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.html#Blazor_Realm_ReduxDevTools_ReduxDevToolsInterop__ctor_Microsoft_JSInterop_IJSRuntime_
+  commentId: M:Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.#ctor(Microsoft.JSInterop.IJSRuntime)
+  fullName: Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.ReduxDevToolsInterop(Microsoft.JSInterop.IJSRuntime)
+  nameWithType: ReduxDevToolsInterop.ReduxDevToolsInterop(IJSRuntime)
 - uid: Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.#ctor*
   name: ReduxDevToolsInterop
   href: api/Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.html#Blazor_Realm_ReduxDevTools_ReduxDevToolsInterop__ctor_
@@ -819,12 +837,6 @@ references:
   isSpec: "True"
   fullName: Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.UnSubscribe
   nameWithType: ReduxDevToolsInterop.UnSubscribe
-- uid: Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.UriHelper
-  name: UriHelper
-  href: api/Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.html#Blazor_Realm_ReduxDevTools_ReduxDevToolsInterop_UriHelper
-  commentId: F:Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.UriHelper
-  fullName: Blazor.Realm.ReduxDevTools.ReduxDevToolsInterop.UriHelper
-  nameWithType: ReduxDevToolsInterop.UriHelper
 - uid: Blazor.Realm.Store`1
   name: Store<TState>
   href: api/Blazor.Realm.Store-1.html

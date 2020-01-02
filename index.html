@@ -15,14 +15,14 @@
     <link rel="stylesheet" href="styles/hljs-vs.css"> 
     <link rel="stylesheet" href="styles/main.css">
     <meta property="docfx:navrel" content="toc.html">
-    <meta property="docfx:tocrel" content="toc.html">   
+    <meta property="docfx:tocrel" content="docs/toc.html">   
     <meta property="docfx:newtab" content="true">
   </head>  <body data-spy="scroll" data-target="#affix" data-offset="120">
     <div id="wrapper">
       <header>
         
         <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
-          <div class="container-fluid">
+          <div class="container">
             <div class="navbar-header">
               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
                 <span class="sr-only">Toggle navigation</span>
@@ -46,26 +46,42 @@
         </nav>
         
         <div class="subnav navbar navbar-default">
-          <div class="container-fluid hide-when-search" id="breadcrumb">
+          <div class="container hide-when-search" id="breadcrumb">
             <ul class="breadcrumb">
               <li></li>
             </ul>
           </div>
         </div>
       </header>
-      <div role="main" class="container-fluid body-content hide-when-search">
-        <div class="article row grid">
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
           <div class="col-md-12">
             <article class="content wrap" id="_content" data-uid="index-page">
 <h1 id="blazor-realm">Blazor Realm</h1>
 
-<p>Redux state management for Blazor. Realm takes the design patterns of Redux, centralized state and single direction data flow, and brings them to Blazor.</p>
+<p><a href="https://redux.js.org/">Redux</a> state management for <a href="https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor">Blazor.net</a>.</p>
 <h3 id="centralized-state">Centralized state.</h3>
-<p>Application state is defined in one location. This helps reason about an application&#39;s data needs and acts as a single source of truth, eliminating state conflicts.</p>
+<p>Application state is defined in one location. This helps reason about state and acts as a single source of truth.</p>
 <h3 id="single-direction-data-flow">Single direction data flow.</h3>
-<p>Instead of updating the application state directly, the UI dispatches actions for the Realm store to handle. The store, in turn, updates the centralized state and triggers a rerender of the UI.</p>
+<p>Instead of updating the application state directly, views dispatch actions for a Realm store to handle. The store, in turn, updates the centralized state and triggers a rerender of the UI.</p>
 <h3 id="view-as-a-function-of-data">View as a function of data.</h3>
-<p>The single direction data flow pattern works well with UI frameworks that render UI, or views, as a function of data. The component UI model of Blazor works in this way. Components receive data as props and render based on the provided values. Components rerender as data/props change, receiving the updated values for rendering.</p>
+<p>The single direction data flow pattern works well with UI frameworks that render UI, or views, as functions of data. The component UI model of Blazor works in this way. Components receive data as props and render based on the provided values. Components rerender as data/props change.</p>
+<h3 id="middleware">Middleware</h3>
+<p>Realm is extendable and supports the same middleware design pattern as Redux.</p>
+<h3 id="integrates-with-redux-devtools">Integrates with Redux DevTools</h3>
+<p>The <a href="https://docs.microsoft.com/en-us/aspnet/core/blazor/hosting-models?view=aspnetcore-3.1#blazor-webassembly">Blazor WebAssembly</a> project supports integrating with <a href="https://github.com/reduxjs/redux-devtools">Redux DevTools</a> for a powerful debugging experience with time-traveling capabilities.</p>
+<blockquote><p><strong>NOTE</strong></p>
+<p>The Redux DevTools middleware does not currently support <a href="https://docs.microsoft.com/en-us/aspnet/core/blazor/hosting-models?view=aspnetcore-3.1#blazor-server">Blazor Server</a>. Work is being done to support integrating with Redux DevTools from a Blazor Server project.</p>
+</blockquote>
+<h3 id="getting-started">Getting Started</h3>
+<p><a href="docs/quickstart.html">Quickstart</a></p>
 </article>
           </div>
         </div>

@@ -22,7 +22,7 @@
       <header>
         
         <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
-          <div class="container-fluid">
+          <div class="container">
             <div class="navbar-header">
               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
                 <span class="sr-only">Toggle navigation</span>
@@ -46,14 +46,14 @@
         </nav>
         
         <div class="subnav navbar navbar-default">
-          <div class="container-fluid hide-when-search" id="breadcrumb">
+          <div class="container hide-when-search" id="breadcrumb">
             <ul class="breadcrumb">
               <li></li>
             </ul>
           </div>
         </div>
       </header>
-      <div role="main" class="container-fluid body-content hide-when-search">
+      <div role="main" class="container body-content hide-when-search">
         
         <div class="sidenav hide-when-search">
           <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
@@ -71,8 +71,8 @@
 <p>Application state is defined in one location. This not only helps reason about an application&#39;s data needs but also acts as a single source of truth, eliminating state conflicts.</p>
 <h3 id="single-direction-data-flow">Single direction data flow.</h3>
 <p>Instead of updating an application&#39;s state directly, the UI dispatches actions for the Realm store to handle, in turn, updating the centralized application state and triggering a rerender of the UI.</p>
-<h3 id="views-as-a-function-of-data">Views as a function of data.</h3>
-<p>The single direction data flow pattern works well with UI frameworks that render UI, or views, as a function of data. The component UI model of Blazor works in this way. Components receive data as props and render based on the provided values. Components rerender as data/props update, receiving the updated values for rendering.</p>
+<h3 id="view-as-a-function-of-data">View as a function of data.</h3>
+<p>The single direction data flow pattern works well with UI frameworks that render UI, or views, as functions of data. The component UI model of Blazor works in this way. Components receive data as props and render based on the provided values. Components rerender as data/props update, receiving the updated values for rendering.</p>
 <div class="tabGroup" id="tabgroup_pGGObpF-GS">
 <ul role="tablist">
 <li role="presentation">
@@ -149,7 +149,7 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/dworthen/BlazorRealm/blob/master/docs/docs/introduction.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/dworthen/BlazorRealm/blob/master/docs/introduction.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>
