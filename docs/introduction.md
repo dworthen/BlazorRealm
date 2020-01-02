@@ -10,9 +10,9 @@ Application state is defined in one location. This not only helps reason about a
 
 Instead of updating an application's state directly, the UI dispatches actions for the Realm store to handle, in turn, updating the centralized application state and triggering a rerender of the UI.
 
-### Views as a function of data. 
+### View as a function of data. 
 
-The single direction data flow pattern works well with UI frameworks that render UI, or views, as a function of data. The component UI model of Blazor works in this way. Components receive data as props and render based on the provided values. Components rerender as data/props update, receiving the updated values for rendering.
+The single direction data flow pattern works well with UI frameworks that render UI, or views, as functions of data. The component UI model of Blazor works in this way. Components receive data as props and render based on the provided values. Components rerender as data/props update, receiving the updated values for rendering.
 
 # [AppState.cs](#tab/AppState)
 

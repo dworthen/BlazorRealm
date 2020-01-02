@@ -1,40 +1,11 @@
 # Blazor Realm
 
-Redux state management for [blazor.net](https://blazor.net).
-
-[Documentation](https://dworthen.github.io/BlazorRealm/../quickstart.html)
-
-> **NOTE FROM BLAZOR**
->
-> Blazor is an unsupported experimental web framework that shouldn't be used for production workloads at this time.
-
-- [Blazor Realm](#blazor-realm)
-- [Getting Started](#getting-started)
-- [Application State](#application-state)
-- [Actions](#actions)
-- [Reducer](#reducer)
-- [Add Realm Service](#add-realm-service)
-- [State Components](#state-components)
-- [Async Actions](#async-actions)
-  - [Register Async Middleware](#register-async-middleware)
-  - [Dispatching Async Actions](#dispatching-async-actions)
-- [Redux Dev Tools](#redux-dev-tools)
-  - [Register DevTools Middleware](#register-devtools-middleware)
-  - [Ignoring Specific Actions](#ignoring-specific-actions)
+[Redux](https://redux.js.org/) state management for [Blazor.net](https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor).
 
 # Getting Started
 
-1.  For getting started with Blazor, visit https://blazor.net/../get-started.html.
+1.  For getting started with Blazor, visit https://docs.microsoft.com/en-us/aspnet/core/blazor/get-started?view=aspnetcore-3.1&tabs=visual-studio.
 2.  Install https://www.nuget.org/packages/Blazor.Realm/.
-
-**Compatibility**
-
-| Blazor Realm | Blazor |
-| ------------ | ------ |
-| 0.5.9        | 0.5.x  |
-| 0.6.x        | 0.6.x  |
-| 0.7.x        | 0.7.x  |
-
 
 # Application State
 
@@ -42,7 +13,7 @@ Redux state management for [blazor.net](https://blazor.net).
 // AppState.cs
 public class AppState
 {
-    public int Count { get; set; }
+    public int Count { get; set; } = 0;
     public IEnumerable<WeatherForecast> WeatherForecasts { get; set; } = new WeatherForecast[] { };
 }
 
@@ -161,15 +132,38 @@ public static class Reducers
 
 # Add Realm Service
 
+Register the Realm store service in the Startup.cs `ConfigureServices` method.
+
 ```csharp
 // Startup.cs
 public void ConfigureServices(IServiceCollection services)
 {
+    ...
     services.AddRealmStore<AppState>(new AppState(), Reducers.RootReducer);
 }
 ```
 
-# State Components
+# Components
+
+There are two ways to work with a Realm store within a Blazor component.
+
+1. State components
+2. RealmComponent Inheritance
+
+> **Note**
+>
+> Don't forget to add `@using Blazor.Realm` to the top of Razor components or to the \_imports.razor file.
+
+## State Component
+
+The `RealmStateContainer` component is akin to the render prop technique common in React components. Like the render prop technique, `RealmStateContainer`
+
+1. Follows a component model for working with and injecting state into child components.
+2. Will render the `ComponentTemplate` instead of implementing/rendering its own logic.
+
+`RealmStateContainer` will dynamically render the `ComponentTemplate` and inject the `AppState` that was registered in Startup.cs `ConfigureServices`.
+
+Here is an example.
 
 ```csharp
 @page "/counter"
@@ -196,19 +190,74 @@ public void ConfigureServices(IServiceCollection services)
     </ComponentTemplate>
 </RealmStateContainer>
 
-@functions {
+@code {
     private int ChangeAmount { get; set; } = 1;
 }
 ```
 
-# Async Actions
+- `TState` attribute specifies the type of the Realm Store to inject. This type should match what was registered in the Startup.cs `ConfigureServices` method.
+- `Context` attribute defines the variable name used for exposing the Realm store to the `ComponentTemplate`.
+- `ComponentTemplate` specify what to render and has access to the Realm store captured in the context variable that was injected by `RealmStateContainer`.
 
-As with Redux, Async actions in Realm are handled by middleware. Download the [Blazor.Realm.Async nuget package](https://www.nuget.org/packages/Blazor.Realm.Async/).
+Here is another example: https://github.com/dworthen/BlazorRealm/blob/master/examples/BlazorClientApp/Pages/FetchData.razor
 
-I prefer placing async actions in a seperate _Operations.cs_ file.
+Notice that this example does not render content directly. Instead the `ComponentTemplate` renders a custom `WeatherForecastsTemplate` component, setting all necessary props (https://github.com/dworthen/BlazorRealm/blob/master/examples/BlazorClientApp/Pages/FetchData.razor#L16). This is similar to defining pure UI components in React as functional components and then wrapping those components in Class components for managing and injecting state. That way, the pure components stay pure and reusable.
+
+## RealmComponent Inheritance
+
+The second option for working with a Realm store it to inherit from `RealmComponent<TState>`. This will expose
+
+1. The application state as `State`.
+2. A `Dispatch` action.
 
 ```csharp
-// Operations.cs
+// Counter.razor
+@page "/counter"
+@inherits RealmComponent<AppState>
+
+<CounterTemplate Count=@State.Count ChangeAmount=1 OnIncrement=@Increment OnDecrement=@Decrement>
+
+@code {
+    void Increment()
+    {
+        Dispatch(new Redux.Actions.Counter.IncrementByValue(ChangeAmount));
+    }
+
+    void Decrement()
+    {
+        Dispatch(new Redux.Actions.Counter.DecrementByValue(ChangeAmount));
+    }
+}
+
+// CounterTemplate.razor
+<h1>Counter</h1>
+
+<p>Current count: @Count</p>
+
+Change By: <input type="text" bind="@ChangeAmount" /><br />
+
+<button class="btn btn-primary" onclick="@OnIncrement">Increment</button><br />
+<button class="btn btn-primary" onclick="@OnDecrement">Decrement</button><br />
+
+@code {
+  [Parameter] public int Count { get; set; } = 0;
+  [Parameter] public int ChangeAmount { get; set; } = 1;
+  [Parameter] public Action OnIncrement { get; set; }
+  [Parameter] public Action OnDecrement { get; set; }
+}
+```
+
+The above example uses two components. `Counter` inherits from `RealmComponent` and is thus coupled to the store/data source. `CounterTemplate`, on the other hand, is a pure component receiving all data as props and therefore more reusable. This is similar to defining pure UI components in React as functional components and then wrapping those components in Class components for managing and injecting state.
+
+# Async Actions
+
+As with Redux, Async actions in Realm are handled by middleware.
+
+1. Download the [Blazor.Realm.Async nuget package](https://www.nuget.org/packages/Blazor.Realm.Async/).
+2. Add Async actions, this time implementing `IAsyncRealmAction`.
+
+```csharp
+// Actions.cs
 
 public class AsyncIncrementCounter : IAsyncRealmAction
 {
@@ -236,13 +285,11 @@ public class AsyncIncrementCounter : IAsyncRealmAction
 }
 ```
 
-Async actions must implement the `IAsyncRealmAction` interface and, in turn, implement `Task Invoke` method.
-
 ## Register Async Middleware
 
 ```csharp
 // Startup.cs
-public void Configure(IBlazorApplicationBuilder app, 
+public void Configure(IBlazorApplicationBuilder app,
     IStoreBuilder<AppState> RealmStoreBuilder)
 {
     RealmStoreBuilder.UseRealmAsync<AppState>();
@@ -253,9 +300,8 @@ public void Configure(IBlazorApplicationBuilder app,
 
 ## Dispatching Async Actions
 
-In _Counter.cshtml_
-
 ```csharp
+// Counter.razor
 @page "/counter"
 @addTagHelper *, Blazor.Realm
 @using Blazor.Realm;
@@ -289,18 +335,22 @@ In _Counter.cshtml_
 
 ![Redux DevTools](../images/redux-devtools.GIF)
 
-Connecting to the [Redux DevTools](http://extension.remotedev.io/) browser extension is handled by middleware.
+Connecting to [Redux DevTools](http://extension.remotedev.io/) is handled by middleware.
 
 Steps for connecting to Redux Dev Tools:
 
 1.  [Install the browser extension](http://extension.remotedev.io/#installation).
 2.  Install the middleware, https://www.nuget.org/packages/Blazor.Realm.ReduxDevTools/
 
+> **NOTE**
+>
+> The Redux DevTools middleware does not currently support [Blazor Server](https://docs.microsoft.com/en-us/aspnet/core/blazor/hosting-models?view=aspnetcore-3.1#blazor-server). Work is being done to support integrating with Redux DevTools from a Blazor Server project.
+
 ## Register DevTools Middleware
 
 ```csharp
 // Startup.cs
-public void Configure(IBlazorApplicationBuilder app, 
+public void Configure(IBlazorApplicationBuilder app,
     IStoreBuilder<AppState> RealmStoreBuilder)
 {
     RealmStoreBuilder.UseRealmAsync<AppState>();
@@ -319,7 +369,7 @@ public void Configure(IBlazorApplicationBuilder app,
 
 ```csharp
 // Startup.cs
-public void Configure(IBlazorApplicationBuilder app, 
+public void Configure(IBlazorApplicationBuilder app,
     IStoreBuilder<AppState> RealmStoreBuilder)
 {
     RealmStoreBuilder.UseRealmAsync<AppState>();
