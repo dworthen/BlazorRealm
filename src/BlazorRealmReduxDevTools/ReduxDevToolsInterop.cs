@@ -9,13 +9,13 @@ namespace Blazor.Realm.ReduxDevTools
     {
         protected readonly string JSNameSpace = "BlazorRealmReduxDevTools";
         protected readonly IJSRuntime JSRuntime;
-        protected readonly IUriHelper UriHelper;
+        //protected readonly NavigationManager UriHelper;
         public static event EventHandler<Message> MessageReceived;
 
-        public ReduxDevToolsInterop(IJSRuntime jsRuntime, IUriHelper uriHelper)
+        public ReduxDevToolsInterop(IJSRuntime jsRuntime /*NavigationManager uriHelper*/)
         {
             JSRuntime = jsRuntime;
-            UriHelper = uriHelper;
+            //UriHelper = uriHelper;
         }
 
         [JSInvokable]

@@ -6,7 +6,7 @@ namespace Blazor.Realm.ReduxDevTools.Extensions
     {
         public static IServiceCollection AddRealmReduxDevToolServices(this IServiceCollection services)
         {
-            services.AddSingleton<ReduxDevToolsInterop>();
+            services.AddScoped<ReduxDevToolsInterop>();
             return services;
         }
     }

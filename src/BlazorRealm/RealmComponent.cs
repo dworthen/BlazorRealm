@@ -16,7 +16,7 @@ namespace Blazor.Realm
             Store.Change -= OnChangeHandler;
         }
 
-        protected override void OnInit()
+        protected override void OnInitialized()
         {
             State = Store.GetState();
             Store.Change += OnChangeHandler;

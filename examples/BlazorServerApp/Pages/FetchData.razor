@@ -1,0 +1,18 @@
+﻿@page "/fetchdata"
+@inject HttpClient Http
+
+<h1>Weather forecast</h1>
+
+<p>This component demonstrates fetching data from the server.</p>
+
+<RealmStateContainer TState="AppState">
+    <ComponentTemplate Context="store">
+        @{
+            AppState State = store.GetState();
+            Action<IRealmAction> Dispatch = store.Dispatch;
+            Action Load = () => Dispatch(new Redux.Actions.WeatherForecasts.FetchAsync(store, Http));
+            Action Clear = () => Dispatch(new Redux.Actions.WeatherForecasts.Clear());
+        }
+        <WeatherForecastsTemplate Load="@Load" Clear="@Clear" IsLoading="@State.IsLoading" WeatherForecasts="@State.WeatherForecasts" />
+    </ComponentTemplate>
+</RealmStateContainer>

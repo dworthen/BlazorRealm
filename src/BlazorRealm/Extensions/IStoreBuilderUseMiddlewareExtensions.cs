@@ -29,19 +29,19 @@ namespace Blazor.Realm.Extensions
 
                 if (invokeMethods.Length != 1)
                 {
-                    throw new InvalidOperationException("ERROR 1");
+                    throw new InvalidOperationException("Middleware should have only one Invoke method.");
                 }
 
                 MethodInfo methodinfo = invokeMethods[0];
                 if (!typeof(TState).IsAssignableFrom(methodinfo.ReturnType))
                 {
-                    throw new InvalidOperationException("ERROR 2");
+                    throw new InvalidOperationException($"Middleware should return type {typeof(TState)}");
                 }
 
                 ParameterInfo[] parameters = methodinfo.GetParameters();
                 if (parameters.Length != 1 || parameters[0].ParameterType != typeof(IRealmAction))
                 {
-                    throw new InvalidOperationException("ERROR 3");
+                    throw new InvalidOperationException("Middleware Invoke should accept one argument of type IRealmAction");
                 }
 
                 object[] ctorArgs = new object[args.Length + 2];

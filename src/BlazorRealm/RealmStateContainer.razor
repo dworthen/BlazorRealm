@@ -13,14 +13,15 @@
     private TState State { get; set; }
     private Action<IRealmAction> Dispatch => Store.Dispatch;
 
-    [Parameter] protected RenderFragment<Store<TState>> ComponentTemplate { get; set; }
+    [Parameter] 
+    public RenderFragment<Store<TState>> ComponentTemplate { get; set; }
 
     public virtual void Dispose()
     {
         Store.Change -= OnChangeHandler;
     }
 
-    protected override void OnInit()
+    protected override void OnInitialized()
     {
         State = Store.GetState();
         Store.Change += OnChangeHandler;
